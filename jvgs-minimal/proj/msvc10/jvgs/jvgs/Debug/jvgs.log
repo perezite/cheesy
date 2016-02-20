@@ -1,0 +1,144 @@
+﻿Der Buildvorgang wurde am 13.12.2013 20:19:56 gestartet.
+     1>Projekt "C:\data\code\jvgs-minimal\proj\msvc10\jvgs\jvgs\jvgs.vcxproj" auf Knoten "2", rebuild Ziel(e).
+     1>_PrepareForClean:
+         Die Datei "Debug\jvgs.lastbuildstate" wird gelöscht.
+       InitializeBuildStatus:
+         "Debug\jvgs.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\..\include /I..\..\..\include\lua /I..\..\..\include\SDL /I..\..\..\include\freetype /I..\..\..\include\freetype\freetype2 /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D TIXML_USE_STL /D JVGS_MUTE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\..\src\main.cpp ..\..\..\..\src\core\LogManager.cpp ..\..\..\..\src\core\PropertyMap.cpp ..\..\..\..\src\core\TimeManager.cpp ..\..\..\..\src\core\View.cpp ..\..\..\..\src\core\XMLLoadable.cpp ..\..\..\..\src\tinyxml\tinystr.cpp ..\..\..\..\src\tinyxml\tinyxml.cpp ..\..\..\..\src\tinyxml\tinyxmlerror.cpp ..\..\..\..\src\tinyxml\tinyxmlparser.cpp ..\..\..\..\src\math\AffineTransformationMatrix.cpp ..\..\..\..\src\math\BoundedObject.cpp ..\..\..\..\src\math\BoundingBox.cpp ..\..\..\..\src\math\CollisionDetector.cpp ..\..\..\..\src\math\LineSegment.cpp ..\..\..\..\src\math\MathManager.cpp ..\..\..\..\src\math\Matrix.cpp ..\..\..\..\src\math\Polygon.cpp ..\..\..\..\src\math\Vector2D.cpp ..\..\..\..\src\video\Color.cpp ..\..\..\..\src\video\DataRenderer.cpp ..\..\..\..\src\video\FPSLogger.cpp ..\..\..\..\src\video\ListManager.cpp ..\..\..\..\src\video\Renderer.cpp ..\..\..\..\src\video\SketchyRenderer.cpp ..\..\..\..\src\video\VideoManager.cpp ..\..\..\..\src\game\Affector.cpp ..\..\..\..\src\game\Camera.cpp ..\..\..\..\src\game\CollisionResponsePositioner.cpp ..\..\..\..\src\game\Controller.cpp ..\..\..\..\src\game\Entity.cpp ..\..\..\..\src\game\InputController.cpp ..\..\..\..\src\game\Level.cpp ..\..\..\..\src\game\LevelManager.cpp ..\..\..\..\src\input\InputConfiguration.cpp ..\..\..\..\src\input\InputManager.cpp ..\..\..\..\src\sketch\Sketch.cpp ..\..\..\..\src\sketch\SketchManager.cpp
+         SketchManager.cpp
+         Sketch.cpp
+         InputManager.cpp
+         InputConfiguration.cpp
+         LevelManager.cpp
+         Level.cpp
+         InputController.cpp
+         Entity.cpp
+         Controller.cpp
+         CollisionResponsePositioner.cpp
+         Camera.cpp
+         Affector.cpp
+         VideoManager.cpp
+         SketchyRenderer.cpp
+         Renderer.cpp
+         ListManager.cpp
+         FPSLogger.cpp
+         DataRenderer.cpp
+         Color.cpp
+         Vector2D.cpp
+         Code wird generiert...
+         Kompilieren...
+         Polygon.cpp
+         Matrix.cpp
+         MathManager.cpp
+         LineSegment.cpp
+         CollisionDetector.cpp
+         BoundingBox.cpp
+         BoundedObject.cpp
+         AffineTransformationMatrix.cpp
+         tinyxmlparser.cpp
+         tinyxmlerror.cpp
+         tinyxml.cpp
+         tinystr.cpp
+         XMLLoadable.cpp
+         View.cpp
+         TimeManager.cpp
+         PropertyMap.cpp
+         LogManager.cpp
+         main.cpp
+         Code wird generiert...
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\jvgs.exe.embed.manifest.res" Debug\jvgs_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\bin\jvgs.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\lib lua51.lib SDLmain.lib SDL.lib SDL_mixer.lib opengl32.lib freetype.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\jvgs.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\data\code\jvgs-minimal\bin\jvgs.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\data\code\jvgs-minimal\proj\msvc10\jvgs\..\..\..\bin\jvgs.lib" /MACHINE:X86 Debug\jvgs.exe.embed.manifest.res
+         Debug\main.obj
+         Debug\LogManager.obj
+         Debug\PropertyMap.obj
+         Debug\TimeManager.obj
+         Debug\View.obj
+         Debug\XMLLoadable.obj
+         Debug\tinystr.obj
+         Debug\tinyxml.obj
+         Debug\tinyxmlerror.obj
+         Debug\tinyxmlparser.obj
+         Debug\AffineTransformationMatrix.obj
+         Debug\BoundedObject.obj
+         Debug\BoundingBox.obj
+         Debug\CollisionDetector.obj
+         Debug\LineSegment.obj
+         Debug\MathManager.obj
+         Debug\Matrix.obj
+         Debug\Polygon.obj
+         Debug\Vector2D.obj
+         Debug\Color.obj
+         Debug\DataRenderer.obj
+         Debug\FPSLogger.obj
+         Debug\ListManager.obj
+         Debug\Renderer.obj
+         Debug\SketchyRenderer.obj
+         Debug\VideoManager.obj
+         Debug\Affector.obj
+         Debug\Camera.obj
+         Debug\CollisionResponsePositioner.obj
+         Debug\Controller.obj
+         Debug\Entity.obj
+         Debug\InputController.obj
+         Debug\Level.obj
+         Debug\LevelManager.obj
+         Debug\InputConfiguration.obj
+         Debug\InputManager.obj
+         Debug\Sketch.obj
+         Debug\SketchManager.obj
+       Manifest:
+         Die Datei "Debug\jvgs.exe.embed.manifest" wird gelöscht.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\jvgs.exe.embed.manifest" /manifest Debug\jvgs.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\jvgs.exe.embed.manifest.res" Debug\jvgs_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\bin\jvgs.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\..\lib lua51.lib SDLmain.lib SDL.lib SDL_mixer.lib opengl32.lib freetype.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\jvgs.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\data\code\jvgs-minimal\bin\jvgs.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\data\code\jvgs-minimal\proj\msvc10\jvgs\..\..\..\bin\jvgs.lib" /MACHINE:X86 Debug\jvgs.exe.embed.manifest.res
+         Debug\main.obj
+         Debug\LogManager.obj
+         Debug\PropertyMap.obj
+         Debug\TimeManager.obj
+         Debug\View.obj
+         Debug\XMLLoadable.obj
+         Debug\tinystr.obj
+         Debug\tinyxml.obj
+         Debug\tinyxmlerror.obj
+         Debug\tinyxmlparser.obj
+         Debug\AffineTransformationMatrix.obj
+         Debug\BoundedObject.obj
+         Debug\BoundingBox.obj
+         Debug\CollisionDetector.obj
+         Debug\LineSegment.obj
+         Debug\MathManager.obj
+         Debug\Matrix.obj
+         Debug\Polygon.obj
+         Debug\Vector2D.obj
+         Debug\Color.obj
+         Debug\DataRenderer.obj
+         Debug\FPSLogger.obj
+         Debug\ListManager.obj
+         Debug\Renderer.obj
+         Debug\SketchyRenderer.obj
+         Debug\VideoManager.obj
+         Debug\Affector.obj
+         Debug\Camera.obj
+         Debug\CollisionResponsePositioner.obj
+         Debug\Controller.obj
+         Debug\Entity.obj
+         Debug\InputController.obj
+         Debug\Level.obj
+         Debug\LevelManager.obj
+         Debug\InputConfiguration.obj
+         Debug\InputManager.obj
+         Debug\Sketch.obj
+         Debug\SketchManager.obj
+         jvgs.vcxproj -> C:\data\code\jvgs-minimal\proj\msvc10\jvgs\..\..\..\bin\jvgs.exe
+       FinalizeBuildStatus:
+         Die Datei "Debug\jvgs.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\jvgs.lastbuildstate".
+     1>Die Erstellung des Projekts "C:\data\code\jvgs-minimal\proj\msvc10\jvgs\jvgs\jvgs.vcxproj" ist abgeschlossen, rebuild Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:19.21

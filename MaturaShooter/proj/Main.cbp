@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Main" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Win32 Release">
+				<Option output="H:\portfolio\MaturaShooter\proj\Release\matura_shooter" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-O2" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="dsound" />
+					<Add library="ddraw" />
+					<Add library="winmm" />
+					<Add library="dxguid" />
+				</Linker>
+			</Target>
+			<Target title="Win32 Debug">
+				<Option output="H:\portfolio\MaturaShooter\proj\Debug\matura_shooter" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-fexceptions" />
+					<Add option="-g" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-D_MBCS" />
+				</Compiler>
+				<Linker>
+					<Add library="kernel32" />
+					<Add library="user32" />
+					<Add library="gdi32" />
+					<Add library="winspool" />
+					<Add library="comdlg32" />
+					<Add library="advapi32" />
+					<Add library="shell32" />
+					<Add library="ole32" />
+					<Add library="oleaut32" />
+					<Add library="uuid" />
+					<Add library="odbc32" />
+					<Add library="odbccp32" />
+					<Add library="dsound" />
+					<Add library="ddraw" />
+					<Add library="winmm" />
+					<Add library="dxguid" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add directory="..\ext\dx7\Include" />
+		</Compiler>
+		<Linker>
+			<Add directory="..\ext\dx7\Lib\x86" />
+		</Linker>
+		<Unit filename="..\src\Global.h" />
+		<Unit filename="..\src\Grafik.h" />
+		<Unit filename="..\src\Objekt.h" />
+		<Unit filename="..\src\Sounds.h" />
+		<Unit filename="..\src\WinMain.cpp" />
+		<Unit filename="..\src\WinMain.h" />
+		<Unit filename="..\src\dc.cpp" />
+		<Unit filename="..\src\dc.h" />
+		<Unit filename="..\src\ddutil.cpp" />
+		<Unit filename="..\src\ddutil.h" />
+		<Unit filename="..\src\dxinit.cpp" />
+		<Unit filename="..\src\dxinit.h" />
+		<Unit filename="..\src\objekt_basis.cpp" />
+		<Unit filename="..\src\objekt_basis.h" />
+		<Unit filename="..\src\particle.cpp" />
+		<Unit filename="..\src\particle.h" />
+		<Unit filename="..\src\sound.cpp" />
+		<Unit filename="..\src\sound.h" />
+		<Unit filename="..\src\sprite.cpp" />
+		<Unit filename="..\src\sprite.h" />
+		<Unit filename="..\src\units.cpp" />
+		<Unit filename="..\src\units.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

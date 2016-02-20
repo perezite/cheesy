@@ -1,0 +1,110 @@
+# depslib dependency file v1.0
+1359729736 source:h:\portfolio\maturashooter\src\winmain.cpp
+	<windows.h>
+	<stdio.h>
+	<time.h>
+	"WinMain.h"
+	"Global.h"
+	"Grafik.h"
+	"Objekt.h"
+	"Sounds.h"
+
+1145564846 h:\portfolio\maturashooter\src\winmain.h
+	"dxinit.h"
+
+1129205662 h:\portfolio\maturashooter\src\dxinit.h
+	<windows.h>
+	<ddraw.h>
+
+1183370484 h:\portfolio\maturashooter\ext\dx7\include\ddraw.h
+	<objbase.h>
+
+1128601632 h:\portfolio\maturashooter\src\global.h
+	<windows.h>
+
+1124566852 h:\portfolio\maturashooter\src\grafik.h
+	"sprite.h"
+	"ddutil.h"
+	"dxinit.h"
+	"dc.h"
+
+1145564846 h:\portfolio\maturashooter\src\sprite.h
+	<ddraw.h>
+	"dxinit.h"
+
+1043238412 h:\portfolio\maturashooter\src\ddutil.h
+
+1128153890 h:\portfolio\maturashooter\src\dc.h
+	<windows.h>
+	"WinMain.h"
+
+1145564846 h:\portfolio\maturashooter\src\objekt.h
+	"objekt_basis.h"
+	"units.h"
+	"particle.h"
+
+1145564846 h:\portfolio\maturashooter\src\objekt_basis.h
+	<list>
+	"Grafik.h"
+
+1145564846 h:\portfolio\maturashooter\src\units.h
+	"Global.h"
+	"Objekt.h"
+	"Grafik.h"
+	"Sounds.h"
+
+1145564846 h:\portfolio\maturashooter\src\sounds.h
+	"sound.h"
+
+1145564846 h:\portfolio\maturashooter\src\sound.h
+	<windows.h>
+	<dsound.h>
+	<mmsystem.h>
+
+1183370484 h:\portfolio\maturashooter\ext\dx7\include\dsound.h
+	<objbase.h>
+	<float.h>
+
+1145564846 h:\portfolio\maturashooter\src\particle.h
+	<list>
+	"Grafik.h"
+	"Objekt.h"
+
+1129132006 source:h:\portfolio\maturashooter\src\dc.cpp
+	"dc.h"
+
+1042833810 source:h:\portfolio\maturashooter\src\ddutil.cpp
+	<windows.h>
+	<windowsx.h>
+	<ddraw.h>
+	"ddutil.h"
+
+1129205626 source:h:\portfolio\maturashooter\src\dxinit.cpp
+	"dxinit.h"
+	"Grafik.h"
+	<windows.h>
+
+1136306050 source:h:\portfolio\maturashooter\src\objekt_basis.cpp
+	<stdio.h>
+	"Objekt.h"
+	"WinMain.h"
+	"Grafik.h"
+
+1129225870 source:h:\portfolio\maturashooter\src\particle.cpp
+	"particle.h"
+	<math.h>
+
+1129235324 source:h:\portfolio\maturashooter\src\sound.cpp
+	"sound.h"
+
+1129206204 source:h:\portfolio\maturashooter\src\sprite.cpp
+	"sprite.h"
+	"ddutil.h"
+	"Global.h"
+
+1145565048 source:h:\portfolio\maturashooter\src\units.cpp
+	<windows.h>
+	<stdio.h>
+	<math.h>
+	"units.h"
+

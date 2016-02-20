@@ -1,0 +1,597 @@
+# depslib dependency file v1.0
+1359654548 source:h:\portfolio\matura_shooter\game\src\winmain.cpp
+	<windows.h>
+	<stdio.h>
+	<time.h>
+	"main.h"
+	"dxinit.h"
+	"sprite.h"
+	"objekt_basis.h"
+	"main.h"
+	"Global.h"
+	"Grafik.h"
+	"Objekt.h"
+	"tiles.h"
+	"audio.h"
+	"units.h"
+
+1359654032 h:\portfolio\matura_shooter\game\src\main.h
+	"dxinit.h"
+
+1293044117 h:\portfolio\matura_shooter\game\src\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1255796864 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_platform.h
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\begin_code.h
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\close_code.h
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_keysym.h
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\matura_shooter\game\ext\sdl-1.2.14\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1293044131 h:\portfolio\matura_shooter\game\src\sprite.h
+	"dxinit.h"
+
+1293044126 h:\portfolio\matura_shooter\game\src\objekt_basis.h
+	<list>
+	<map>
+	"sprite.h"
+
+1295210454 h:\portfolio\matura_shooter\game\src\global.h
+	<windows.h>
+	<assert.h>
+
+1293044117 h:\portfolio\matura_shooter\game\src\grafik.h
+	"sprite.h"
+	"dxinit.h"
+
+1293044126 h:\portfolio\matura_shooter\game\src\objekt.h
+	"objekt_basis.h"
+	"units.h"
+
+1293044133 h:\portfolio\matura_shooter\game\src\units.h
+	"Global.h"
+	"Objekt.h"
+	"Grafik.h"
+
+1293044132 h:\portfolio\matura_shooter\game\src\tiles.h
+	"sprite.h"
+	<map>
+	<string>
+	<list>
+
+1293044115 h:\portfolio\matura_shooter\game\src\audio.h
+	<irrKlang.h>
+	<string>
+	<windows.h>
+
+1293044115 source:h:\portfolio\matura_shooter\game\src\audio.cpp
+	"audio.h"
+	<stdio.h>
+	<string.h>
+
+1293044117 source:h:\portfolio\matura_shooter\game\src\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+
+1293044123 source:h:\portfolio\matura_shooter\game\src\levelloader.cpp
+	"levelloader.h"
+	"objekt_basis.h"
+	"sprite.h"
+	"units.h"
+	"tiles.h"
+	"linalg.h"
+
+1293044124 h:\portfolio\matura_shooter\game\src\levelloader.h
+	<windows.h>
+	"objekt_basis.h"
+
+1293044124 h:\portfolio\matura_shooter\game\src\linalg.h
+	<math.h>
+
+1293044124 source:h:\portfolio\matura_shooter\game\src\linalg.cpp
+	<math.h>
+	<stdlib.h>
+	"linalg.h"
+
+1293044126 source:h:\portfolio\matura_shooter\game\src\objekt_basis.cpp
+	<stdio.h>
+	"objekt_basis.h"
+	"dxinit.h"
+	"units.h"
+	"levelloader.h"
+	<iostream>
+	<fstream>
+	<map>
+
+1293044131 source:h:\portfolio\matura_shooter\game\src\sprite.cpp
+	"Global.h"
+	"sprite.h"
+	<iostream>
+	<fstream>
+
+1293044132 source:h:\portfolio\matura_shooter\game\src\tiles.cpp
+	"tiles.h"
+	"dxinit.h"
+	"units.h"
+	"objekt_basis.h"
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<vector>
+
+1293115014 source:h:\portfolio\matura_shooter\game\src\units.cpp
+	<windows.h>
+	<stdio.h>
+	<math.h>
+	<vector>
+	<map>
+	"linalg.h"
+	"units.h"
+	"main.h"
+	"audio.h"
+	"levelloader.h"
+
+1293044115 source:h:\portfolio\maturashootereditor\game\src\audio.cpp
+	"audio.h"
+	<stdio.h>
+	<string.h>
+
+1293044115 h:\portfolio\maturashootereditor\game\src\audio.h
+	<irrKlang.h>
+	<string>
+	<windows.h>
+
+1293044117 source:h:\portfolio\maturashootereditor\game\src\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+
+1293044117 h:\portfolio\maturashootereditor\game\src\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1255796864 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_platform.h
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\begin_code.h
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\close_code.h
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_keysym.h
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\maturashootereditor\game\ext\sdl-1.2.14\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1293044123 source:h:\portfolio\maturashootereditor\game\src\levelloader.cpp
+	"levelloader.h"
+	"objekt_basis.h"
+	"sprite.h"
+	"units.h"
+	"tiles.h"
+	"linalg.h"
+
+1293044124 h:\portfolio\maturashootereditor\game\src\levelloader.h
+	<windows.h>
+	"objekt_basis.h"
+
+1293044126 h:\portfolio\maturashootereditor\game\src\objekt_basis.h
+	<list>
+	<map>
+	"sprite.h"
+
+1293044131 h:\portfolio\maturashootereditor\game\src\sprite.h
+	"dxinit.h"
+
+1359733492 h:\portfolio\maturashootereditor\game\src\units.h
+	"Global.h"
+	"Objekt.h"
+	"Grafik.h"
+
+1295210454 h:\portfolio\maturashootereditor\game\src\global.h
+	<windows.h>
+	<assert.h>
+
+1293044126 h:\portfolio\maturashootereditor\game\src\objekt.h
+	"objekt_basis.h"
+	"units.h"
+
+1293044117 h:\portfolio\maturashootereditor\game\src\grafik.h
+	"sprite.h"
+	"dxinit.h"
+
+1293044132 h:\portfolio\maturashootereditor\game\src\tiles.h
+	"sprite.h"
+	<map>
+	<string>
+	<list>
+
+1293044124 h:\portfolio\maturashootereditor\game\src\linalg.h
+	<math.h>
+
+1293044124 source:h:\portfolio\maturashootereditor\game\src\linalg.cpp
+	<math.h>
+	<stdlib.h>
+	"linalg.h"
+
+1293044126 source:h:\portfolio\maturashootereditor\game\src\objekt_basis.cpp
+	<stdio.h>
+	"objekt_basis.h"
+	"dxinit.h"
+	"units.h"
+	"levelloader.h"
+	<iostream>
+	<fstream>
+	<map>
+
+1293044131 source:h:\portfolio\maturashootereditor\game\src\sprite.cpp
+	"Global.h"
+	"sprite.h"
+	<iostream>
+	<fstream>
+
+1293044132 source:h:\portfolio\maturashootereditor\game\src\tiles.cpp
+	"tiles.h"
+	"dxinit.h"
+	"units.h"
+	"objekt_basis.h"
+	<stdio.h>
+	<iostream>
+	<fstream>
+	<vector>
+
+1359733484 source:h:\portfolio\maturashootereditor\game\src\units.cpp
+	<windows.h>
+	<stdio.h>
+	<math.h>
+	<vector>
+	<map>
+	"linalg.h"
+	"units.h"
+	"main.h"
+	"audio.h"
+	"levelloader.h"
+
+1359654032 h:\portfolio\maturashootereditor\game\src\main.h
+	"dxinit.h"
+

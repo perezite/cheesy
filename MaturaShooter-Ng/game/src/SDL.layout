@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="Global.h" open="1" top="0" tabpos="14">
+		<Cursor position="384" topLine="1" />
+	</File>
+	<File name="Grafik.h" open="1" top="0" tabpos="15">
+		<Cursor position="6" topLine="0" />
+	</File>
+	<File name="Objekt.h" open="1" top="0" tabpos="12">
+		<Cursor position="38" topLine="0" />
+	</File>
+	<File name="WinMain.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="483" topLine="0" />
+	</File>
+	<File name="audio.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="151" topLine="0" />
+	</File>
+	<File name="audio.h" open="1" top="0" tabpos="16">
+		<Cursor position="415" topLine="0" />
+	</File>
+	<File name="dxinit.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="1980" topLine="69" />
+	</File>
+	<File name="dxinit.h" open="1" top="0" tabpos="13">
+		<Cursor position="462" topLine="2" />
+	</File>
+	<File name="levelloader.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="8826" topLine="270" />
+	</File>
+	<File name="levelloader.h" open="1" top="0" tabpos="18">
+		<Cursor position="1700" topLine="12" />
+	</File>
+	<File name="linalg.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="1689" topLine="66" />
+	</File>
+	<File name="linalg.h" open="0" top="0" tabpos="10">
+		<Cursor position="207" topLine="0" />
+	</File>
+	<File name="main.h" open="1" top="0" tabpos="17">
+		<Cursor position="1887" topLine="13" />
+	</File>
+	<File name="objekt_basis.cpp" open="1" top="1" tabpos="8">
+		<Cursor position="8904" topLine="240" />
+	</File>
+	<File name="objekt_basis.h" open="1" top="0" tabpos="11">
+		<Cursor position="407" topLine="6" />
+	</File>
+	<File name="sprite.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="3624" topLine="135" />
+	</File>
+	<File name="sprite.h" open="0" top="0" tabpos="12">
+		<Cursor position="1679" topLine="78" />
+	</File>
+	<File name="tiles.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="4418" topLine="191" />
+	</File>
+	<File name="tiles.h" open="0" top="0" tabpos="13">
+		<Cursor position="1065" topLine="24" />
+	</File>
+	<File name="units.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="64684" topLine="1943" />
+	</File>
+	<File name="units.h" open="0" top="0" tabpos="2">
+		<Cursor position="1036" topLine="5" />
+	</File>
+</CodeBlocks_layout_file>

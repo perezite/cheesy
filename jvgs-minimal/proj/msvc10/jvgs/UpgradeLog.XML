@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="jvgs">
+</Property><Property Name="Projektmappendatei" Value="C:\data\code\jvgs-minimal\proj\msvc10\jvgs\jvgs.sln">
+</Property><Property Name="Date" Value="Montag, 9. Dezember 2013">
+</Property><Property Name="Time" Value="15:12">
+</Property></Properties><Event ErrorLevel="0" Project="jvgs" Source="jvgs\jvgs.vcproj" Description="Converting project file 'C:\data\code\jvgs-minimal\proj\msvc10\jvgs\jvgs\jvgs.vcproj'.">
+</Event><Event ErrorLevel="1" Project="jvgs" Source="jvgs\jvgs.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="jvgs" Source="jvgs\jvgs.vcproj" Description="MSB8012: $(TargetPath) ('C:\data\code\jvgs-minimal\proj\msvc10\jvgs\Debug\jvgs.exe') does not match the Linker's OutputFile property value '../../../../bin/jvgs.exe' ('C:\data\code\jvgs-minimal\proj\msvc10\jvgs\../../../../bin/jvgs.exe') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="jvgs" Source="jvgs\jvgs.vcproj" Description="MSB8012: $(TargetPath) ('C:\data\code\jvgs-minimal\proj\msvc10\jvgs\Release\jvgs.exe') does not match the Linker's OutputFile property value '../../../../bin/jvgs.exe' ('C:\data\code\jvgs-minimal\proj\msvc10\jvgs\../../../../bin/jvgs.exe') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="jvgs" Source="jvgs\jvgs.vcproj" Description="Done converting to new project file 'C:\data\code\jvgs-minimal\proj\msvc10\jvgs\jvgs\jvgs.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="jvgs" Source="jvgs\jvgs.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="jvgs.sln" Description="Die Projektmappe wurde erfolgreich konvertiert.">
+</Event><Event ErrorLevel="3" Project="" Source="jvgs.sln" Description="Converted">
+</Event></UpgradeLog>

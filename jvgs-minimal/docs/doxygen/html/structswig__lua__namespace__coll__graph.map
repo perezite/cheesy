@@ -1,0 +1,6 @@
+base referer
+rect $structswig__lua__method.html 5,97 128,124
+rect $structswig__lua__const__info.html 152,97 291,124
+rect $structswig__type__info.html 259,5 365,32
+rect $structswig__cast__info.html 315,97 421,124
+rect $structswig__lua__attribute.html 495,97 621,124

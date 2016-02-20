@@ -1,0 +1,6 @@
+<propertymap>
+    <entry key="fullscreen" value="no" />
+    <entry key="height" value="600" />
+    <entry key="level" value="resources/level-simple/level.xml" />
+    <entry key="width" value="800" />
+</propertymap>

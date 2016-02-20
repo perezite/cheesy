@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Tank" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Tank" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Tank" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="..\..\ext\glew-1.5.8\include" />
+			<Add directory="..\..\ext\glut-3.7.6-bin" />
+			<Add directory="..\..\ext\freealut-1.1.0-bin\include" />
+			<Add directory="..\..\ext\openal-1.1\include" />
+		</Compiler>
+		<Linker>
+			<Add library="..\..\ext\freealut-1.1.0-bin\lib\alut.lib" />
+			<Add library="..\..\ext\openal-1.1\libs\Win32\OpenAL32.lib" />
+			<Add library="glut32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add directory="..\..\ext\glew-1.5.8\lib" />
+			<Add directory="..\..\ext\glut-3.7.6-bin" />
+			<Add directory="..\..\ext\freealut-1.1.0-bin\lib" />
+			<Add directory="..\..\ext\openal-1.1\libs" />
+		</Linker>
+		<Unit filename="..\..\src\AStarNode.hpp" />
+		<Unit filename="..\..\src\CollisionModel.cpp" />
+		<Unit filename="..\..\src\CollisionModel.h" />
+		<Unit filename="..\..\src\azimuthBar.cpp" />
+		<Unit filename="..\..\src\azimuthBar.hpp" />
+		<Unit filename="..\..\src\block.cpp" />
+		<Unit filename="..\..\src\block.hpp" />
+		<Unit filename="..\..\src\bullet.cpp" />
+		<Unit filename="..\..\src\bullet.hpp" />
+		<Unit filename="..\..\src\config.hpp" />
+		<Unit filename="..\..\src\defs.hpp" />
+		<Unit filename="..\..\src\drawable.hpp" />
+		<Unit filename="..\..\src\elevationBar.cpp" />
+		<Unit filename="..\..\src\elevationBar.hpp" />
+		<Unit filename="..\..\src\enemy.cpp" />
+		<Unit filename="..\..\src\enemy.hpp" />
+		<Unit filename="..\..\src\exception.hpp" />
+		<Unit filename="..\..\src\fileUtils.cpp" />
+		<Unit filename="..\..\src\fileUtils.hpp" />
+		<Unit filename="..\..\src\gameStateInfo.cpp" />
+		<Unit filename="..\..\src\gameStateInfo.hpp" />
+		<Unit filename="..\..\src\generator.cpp" />
+		<Unit filename="..\..\src\generator.hpp" />
+		<Unit filename="..\..\src\gl_includes.hpp" />
+		<Unit filename="..\..\src\house.cpp" />
+		<Unit filename="..\..\src\house.hpp" />
+		<Unit filename="..\..\src\landscape.cpp" />
+		<Unit filename="..\..\src\landscape.hpp" />
+		<Unit filename="..\..\src\main.cpp" />
+		<Unit filename="..\..\src\material.cpp" />
+		<Unit filename="..\..\src\material.hpp" />
+		<Unit filename="..\..\src\parameters.hpp" />
+		<Unit filename="..\..\src\particle.cpp" />
+		<Unit filename="..\..\src\particle.hpp" />
+		<Unit filename="..\..\src\particleSystem.cpp" />
+		<Unit filename="..\..\src\particleSystem.hpp" />
+		<Unit filename="..\..\src\place.cpp" />
+		<Unit filename="..\..\src\place.hpp" />
+		<Unit filename="..\..\src\powerBar.cpp" />
+		<Unit filename="..\..\src\powerBar.hpp" />
+		<Unit filename="..\..\src\powerUp.cpp" />
+		<Unit filename="..\..\src\powerUp.hpp" />
+		<Unit filename="..\..\src\radar.cpp" />
+		<Unit filename="..\..\src\radar.hpp" />
+		<Unit filename="..\..\src\scene.cpp" />
+		<Unit filename="..\..\src\scene.hpp" />
+		<Unit filename="..\..\src\screenTexture.cpp" />
+		<Unit filename="..\..\src\screenTexture.hpp" />
+		<Unit filename="..\..\src\section.cpp" />
+		<Unit filename="..\..\src\section.hpp" />
+		<Unit filename="..\..\src\skybox.cpp" />
+		<Unit filename="..\..\src\skybox.hpp" />
+		<Unit filename="..\..\src\sound.cpp" />
+		<Unit filename="..\..\src\sound.hpp" />
+		<Unit filename="..\..\src\speedBar.cpp" />
+		<Unit filename="..\..\src\speedBar.hpp" />
+		<Unit filename="..\..\src\street.cpp" />
+		<Unit filename="..\..\src\street.hpp" />
+		<Unit filename="..\..\src\tank.cpp" />
+		<Unit filename="..\..\src\tank.hpp" />
+		<Unit filename="..\..\src\textBox.cpp" />
+		<Unit filename="..\..\src\textBox.hpp" />
+		<Unit filename="..\..\src\texture.cpp" />
+		<Unit filename="..\..\src\texture.hpp" />
+		<Unit filename="..\..\src\tgaTexture.cpp" />
+		<Unit filename="..\..\src\tgaTexture.hpp" />
+		<Unit filename="..\..\src\time.cpp" />
+		<Unit filename="..\..\src\time.hpp" />
+		<Unit filename="..\..\src\types.hpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

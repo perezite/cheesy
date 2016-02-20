@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SDL" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin\Release\SDL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="..\ext\SDL-1.2.14\include\SDL" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDLmain" />
+			<Add library="SDL.dll" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add directory="..\ext\SDL-1.2.14\lib" />
+		</Linker>
+		<Unit filename="Global.h" />
+		<Unit filename="Grafik.h" />
+		<Unit filename="Objekt.h" />
+		<Unit filename="WinMain.cpp" />
+		<Unit filename="audio.cpp" />
+		<Unit filename="audio.h" />
+		<Unit filename="cb.bmp" />
+		<Unit filename="dxinit.cpp" />
+		<Unit filename="dxinit.h" />
+		<Unit filename="graphics\Back64A.bmp" />
+		<Unit filename="graphics\Block1.bmp" />
+		<Unit filename="graphics\Copy of trmissile.bmp" />
+		<Unit filename="graphics\Exp16.bmp" />
+		<Unit filename="graphics\Exp32.bmp" />
+		<Unit filename="graphics\Exp64.bmp" />
+		<Unit filename="graphics\Extra.bmp" />
+		<Unit filename="graphics\GAster32.bmp" />
+		<Unit filename="graphics\GAster64.bmp" />
+		<Unit filename="graphics\GAster96.bmp" />
+		<Unit filename="graphics\GDust.bmp" />
+		<Unit filename="graphics\HRocket.bmp" />
+		<Unit filename="graphics\Kopie von background.bmp" />
+		<Unit filename="graphics\Kopie von hmissile.bmp" />
+		<Unit filename="graphics\Kopie von logo.bmp" />
+		<Unit filename="graphics\MMark.bmp" />
+		<Unit filename="graphics\Missile2.bmp" />
+		<Unit filename="graphics\Monster1A.bmp" />
+		<Unit filename="graphics\Monster1B.bmp" />
+		<Unit filename="graphics\Monster1C.bmp" />
+		<Unit filename="graphics\PUArmor.bmp" />
+		<Unit filename="graphics\PUDive.bmp" />
+		<Unit filename="graphics\PUHRocket.bmp" />
+		<Unit filename="graphics\PUInvuln.bmp" />
+		<Unit filename="graphics\PULaser.bmp" />
+		<Unit filename="graphics\PULife.bmp" />
+		<Unit filename="graphics\PUMissil.bmp" />
+		<Unit filename="graphics\PUSpeed.bmp" />
+		<Unit filename="graphics\PUWeapon.bmp" />
+		<Unit filename="graphics\SAster32.bmp" />
+		<Unit filename="graphics\SAster64.bmp" />
+		<Unit filename="graphics\SAster96.bmp" />
+		<Unit filename="graphics\Schuss.bmp" />
+		<Unit filename="graphics\Ship.bmp" />
+		<Unit filename="graphics\SporeA.bmp" />
+		<Unit filename="graphics\Stone64.bmp" />
+		<Unit filename="graphics\anfaenger.bmp" />
+		<Unit filename="graphics\background1024.bmp" />
+		<Unit filename="graphics\background800.bmp" />
+		<Unit filename="graphics\beenden.bmp" />
+		<Unit filename="graphics\cursor.bmp" />
+		<Unit filename="graphics\drone.bmp" />
+		<Unit filename="graphics\dualmissile.bmp" />
+		<Unit filename="graphics\dummy.bmp" />
+		<Unit filename="graphics\dust.bmp" />
+		<Unit filename="graphics\erfahren.bmp" />
+		<Unit filename="graphics\highscore.bmp" />
+		<Unit filename="graphics\hmissile.bmp" />
+		<Unit filename="graphics\logo.bmp" />
+		<Unit filename="graphics\pod.bmp" />
+		<Unit filename="graphics\profi.bmp" />
+		<Unit filename="graphics\rusher.bmp" />
+		<Unit filename="graphics\shield1.bmp" />
+		<Unit filename="graphics\spinners.bmp" />
+		<Unit filename="graphics\starten.bmp" />
+		<Unit filename="graphics\trmissile.bmp" />
+		<Unit filename="levelloader.cpp" />
+		<Unit filename="levelloader.h" />
+		<Unit filename="linalg.cpp" />
+		<Unit filename="linalg.h" />
+		<Unit filename="main.h" />
+		<Unit filename="objekt_basis.cpp" />
+		<Unit filename="objekt_basis.h" />
+		<Unit filename="sprite.cpp" />
+		<Unit filename="sprite.h" />
+		<Unit filename="tiles.cpp" />
+		<Unit filename="tiles.h" />
+		<Unit filename="units.cpp" />
+		<Unit filename="units.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

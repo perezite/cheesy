@@ -1,0 +1,653 @@
+<html>
+<!-- DW6 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Frageneditor</title>
+<style>
+body.menuseite  { font-family: "Arial", sans-serif; font-size: 12pt; background-color: #8283cf }
+
+a:link          { text-decoration: none; color: blue }
+a:visited       { text-decoration: none; color: blue }
+
+h3							{ font-size: 14pt; font-weight: bold; font-family: "Arial", sans-serif }
+h4							{ font-size: 12pt; font-weight: bold; font-family: "Arial", sans-serif }
+
+sup							{ font-size: 10pt }
+sub							{ font-size: 10pt }
+
+p								{ font-size: 12pt; font-family: "Arial", sans-serif }
+input						{ font-size: 10pt; font-family: 'Arial', sans-serif }
+textarea				{ font-size: 10pt; font-family: 'Arial', sans-serif }				
+
+td.tdgrau 	   	{ background-color: #efefef }
+td.tdweiss			{ background-color: #ffffff }
+
+.kursiv					{ font-style: italic }
+.textrot				{ color: #cc0000 }
+.textklein 	  	{ font-size: 10pt; font-family: 'Arial', sans-serif }
+.legende  	  	{ font-size: 10pt; font-family: 'Arial', sans-serif; font-weight: bold }
+.fett     	 	 	{ font-family: 'Arial', sans-serif; font-weight: bold }
+</style>
+<script language="JavaScript">
+
+// browser detection
+var DOM = ( document.getElementById ) ? true : false ;
+var NS4 = ( navigator.appName == 'Netscape' && parseInt(navigator.appVersion) >= 4 && !DOM ) ;
+
+if ( NS4 ) alert ('Diese Editor funktioniert leider nur unter Netscape 6+ und Internet Explorer 5.5+.') ;
+
+// general script variables
+var answers = 'ABCDE' ;
+var labels = new Array ( 'A', 'B', 'C', 'D', 'E') ;
+var questions = new Array () ;
+		questions.length = 0 ;
+var tape = ' ' ;
+var scriptloaded = false ;
+var rightScript = false ;
+
+// functions to open an all-purpose utility window
+
+function wrapperOpen ( file ) {
+ utility = eval ( 'window.open ( file, "MultiPurpose","WIDTH=500,HEIGHT=600,RESIZABLE=YES,SCROLLBARS=YES")' ) ;
+ utility.focus()
+}
+
+function OpenUtility ( utilitySource ) {
+ if ( window.utility ) {
+	if ( utility.closed ) openit = eval ( 'setTimeout("wrapperOpen(\'' + utilitySource + '\')",500)' )
+  else {
+   utility.location = utilitySource ;
+   utility.focus()
+  }
+ }
+ if ( !window.utility ) eval ( 'setTimeout("wrapperOpen(\'' + utilitySource + '\')",500)' )
+}
+
+
+// feedback function
+function feedback ( reply ) {
+
+	document.getElementById('htmlhelp').style.display = "block" ;
+	var feedback1 = '<p class="fett">Das Javascript wurde erfolgreich geladen.</p><p class="fett"align="center"><a href="javascript:htmlHelp(false);">OK</a></p>' ;
+	var feedback2 = '<p class="fett">Der eingegebene Fragentyp wurde nicht erkannt.</p><p class="fett"align="center"><a href="javascript:htmlHelp(false);">OK</a></p>' ;
+	var feedback3 = '<p class="fett">Leider gab es beim Laden der Fragen Probleme.</p><p class="fett"align="center"><a href="javascript:htmlHelp(false);">OK</a></p>' ;
+	var feedback4 = '<p class="fett">Die Datei die Sie gew&auml;hlt haben ist kein Javascript (dateiname<span class="textrot">.js</span>).</p><p class="fett"align="center"><a href="javascript:htmlHelp(false);">OK</a></p>' ;
+	var feedback5 = '<p class="fett">Leider gab es Probleme beim Laden der Fragen. Sind Sie sicher das Sie die richtige Datei gew&auml;hlt haben?</p><p class="fett"align="center"><a href="javascript:htmlHelp(false);">OK</a></p>' ;
+	var feedback6 = '<p class="fett">Die Bilder die Sie gew&auml;hlt haben entsprechen nicht den im WWW verwendbaren Dateitypen <span class="textrot">.gif</span> oder <span class="textrot">.jpg</span></p><p class="fett"align="center"><a href="javascript:htmlHelp(false);">OK</a></p>' ;
+
+	document.getElementById('htmlhelp').innerHTML = eval ( 'feedback' + reply )
+
+}	// end feedback
+
+
+// display location control
+function goToQuestion (gotoquestion) {
+
+	self.location = eval ('"#' + gotoquestion + '"' )
+
+} // end goToQuestion
+
+
+// HTML help control
+function htmlHelp (openit) {
+
+	if ( openit ) {
+		document.getElementById('htmlhelp').style.display = "block" ;
+		tape  = '<table border="0" cellspacing="2" cellpadding="3"><tr><td colspan="4"><p class="fett">HTML Erkl&auml;rungen und Eingabehilfe</p></td>' ;
+		tape += '<td rowspan="2" width="170"><p align="right"><a href="javascript:htmlHelp(false);">schliessen</a></p></td></tr>' ; 
+		tape += '<tr><td width="50"><p class="legende">Zeichen</p></td><td width="85"><p class="legende">HTML Code</p>' ;
+		tape += '</td><td width="71"><p class="legende">Zeichen</p></td><td width="450"><p class="legende">HTML Code</p></td>' ;
+		tape += '</tr><tr><td class="tdweiss" width="50"> <p class="textklein">&gt;</p></td><td class="tdweiss" width="85">' ; 
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>' ;
+		tape += '<td class="tdweiss" width="71"> <p class="textklein">Zeilenumbruch</p></td><td class="tdweiss" width="450">' ; 
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td><td class="tdweiss" rowspan="7">' ; 
+		tape += '<p class="textklein">Den <span class="textrot">roten Text</span> bitte durch den gew&uuml;nschten Text ' ;
+		tape += 'oder Dateinamen ersetzen</p></td></tr><tr><td class="tdweiss" width="50"><p class="textklein">&lt;</p></td>' ; 
+		tape += '<td class="tdweiss" width="85"><p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;lt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>' ; 
+		tape += '<td class="tdweiss" width="71"> <p class="textklein">Superscript</p></td><td class="tdweiss" width="450">' ; 
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sup&gt;<span class="textrot">Text</span>&lt;/sup&gt;&nbsp;&nbsp' ;
+		tape += ';&nbsp;&nbsp;&nbsp;</p></td></tr><tr> <td class="tdweiss" width="50"> <p class="textklein">&amp;</p></td>' ;
+		tape += '<td class="tdweiss" width="85"><p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>' ;
+		tape += '<td class="tdweiss" width="71"><p class="textklein">Subscript</p></td><td class="tdweiss" width="450">' ;
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sub&gt;<span class="textrot">Text</span>&lt;/sub&gt;&nbsp;&nbsp;' ;
+		tape += '&nbsp;&nbsp;&nbsp;</p></td></tr><tr><td class="tdweiss" width="50"><p class="textklein">&rsquo;</p></td>' ;
+		tape += '<td class="tdweiss" width="85"><p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;rsquo;&nbsp;&nbsp;&nbsp;' ; 
+		tape += '&nbsp;&nbsp;</p></td><td class="tdweiss" width="71"><p class="textklein">Bild</p></td><td class="tdweiss" width="450">' ;
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;testbilder/<span class="textrot">Dateiname</span>' ;
+		tape += '&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td></tr><tr><td class="tdweiss" width="50"><p class="textklein">&deg;</p>' ; 
+		tape += '</td><td class="tdweiss" width="85"><p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;deg;&nbsp;&nbsp;' ; 
+		tape += '&nbsp;&nbsp;&nbsp;</p></td><td class="tdweiss" width="71"><p class="textklein">kursiver Text</p></td>' ;
+		tape += '<td class="tdweiss" width="450"><p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span style=&quot;' ; 
+		tape += 'font-style: italic&quot;&gt;<span class="textrot">Text</span>&lt;/span&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>' ;
+		tape += '</td></tr><tr><td class="tdweiss" width="50"> <p class="textklein">&micro;</p></td><td class="tdweiss" width="85">' ; 
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;micro;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>' ;
+		tape += '<td class="tdweiss" width="71"> <p class="textklein">fetter Text</p></td><td class="tdweiss" width="450">' ;
+		tape += '<p class="textklein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span style=&quot;font-weight: bold&quot;&gt;<span class="textrot">' ;
+		tape += 'Text</span>&lt;/span&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td></tr><tr>' ;
+		tape += '<td class="tdweiss" width="50"><p class="textklein">&times;</p></td><td class="tdweiss" width="85">' ;
+		tape += '<p class="tdweiss">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;times;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p></td>' ;
+		tape += '<td class="tdweiss" width="71">&nbsp;</td><td class="tdweiss" width="450">&nbsp;</td></tr></table>' ;
+		document.getElementById('htmlhelp').innerHTML = tape
+	}
+	if ( !openit ) {
+		document.getElementById('htmlhelp').innerHTML = '';
+		document.getElementById('htmlhelp').style.display = "none"
+	}
+}
+
+
+// function to load a js data script
+function getScript () {
+
+	var scriptToEdit = 'text' ;
+	var namelocation = 0 ;
+
+	scriptToEdit = document.getElementById('scriptid').value ;
+	namelocation = scriptToEdit.lastIndexOf('\\') + 1 ;
+	scriptToEdit = scriptToEdit.substr(namelocation) ;
+
+	// load file if the file type implies a javascript
+	if ( scriptToEdit.search('.js') != -1 && ( scriptToEdit.lastIndexOf('.js') == scriptToEdit.lastIndexOf('.') ) ) {
+		var el = document.createElement('script') ; 
+		el.src= scriptToEdit ;
+		el.type='text/javascript' ;
+		document.getElementsByTagName('head')[0].appendChild(el) ;
+		feedback(1)
+	}
+	// send warning if the filetype does not imply that the file is a javascript
+	else feedback(4)
+
+} // end getScript
+	
+
+// function to load the question data called from the selected js (no call in this file)
+function load_question ( questionData ) {
+
+	questions[questions.length] = questionData
+
+} // end load_question
+
+
+// functions to load questions from the selected js
+function loadScript () {
+	
+	// execute js if none has been loaded before and if it contains the necessary function
+	if ( ! scriptloaded  ) {
+		get_questions() ;
+		scriptloaded = true
+	}
+		
+} // end loadScript
+
+
+// function to erase a question
+function eraseQuestion (eraseone) {
+
+	if ( confirm('Soll Frage ' + (eraseone + 1) + ' gelöscht werden?') ) {
+		for ( i = eraseone; i < questions.length-1 ; i++ ) questions[i] = questions[i+1] ;
+		questions.length = questions.length -1 ;
+		display_questions ()
+	}
+
+} // end eraseQuestion
+
+
+// function to insert a question
+function insertQuestion (insertone) {
+
+	if ( questions.length != 0 ) insertone ++ ;
+	questiontype = prompt( 'Welcher UniZH Fragentyp (a, b, e oder k ) soll erstellt werden?' ) ;
+	switch (questiontype) {
+		case 'a':
+			questiontype = 0 ; // single-choice (simple MCQ)
+			break ;
+		case 'k':
+			questiontype = 1; // multiple-choice
+			break ;
+		case 'e':
+			questiontype = 2 ; //  statement a because statement b
+			break ;
+		case 'b':
+			questiontype = 3; // asign five
+			break ;
+		case 'text':
+			questiontype = 4; // free text answer
+			break ;
+		case 'comment':
+			questiontype = 5; // comment in question sequence
+			break ;
+		default :
+			feedback(2) ;
+			questiontype = -1 
+	}
+			
+	if ( questiontype >= 0 ) {
+		questions.length = questions.length + 1 ;
+		if ( questions.length > 1 ) for ( i = questions.length - 2 ; i >= insertone ; i-- ) questions[i+1] = questions[i] ;
+		questions[insertone] = ['', ['', ' '],['', ' '],['', ' '],['', ' '],['', ' '], '', questiontype , 'none' ] ;
+		
+		// preset possible answers for MCQs with more than one correct answer
+		if ( questiontype == 1 ) {
+			questions[insertone][0] = ' <br><br>1. <br>2. <br>3. <br>4. ' ;
+			questions[insertone][1][0] = '1, 2 und 3 sind richtig' ;
+			questions[insertone][2][0] = '1 und 3 sind richtig' ;
+			questions[insertone][3][0] = '2 und 4 sind richtig' ;
+			questions[insertone][4][0] = '4 ist richtig' ;
+			questions[insertone][5][0] = 'alle sind richtig'
+		}
+		
+		// preset text and possible answers for MCQs of statement a because statement b type
+		if ( questiontype == 2 ) {
+			questions[insertone][0] = '(a) <br><br>weil<br><br>(b) ' ;
+			questions[insertone][1][0] = 'a und b richtig; b als Begr&uuml;ndung von a richtig' ;
+			questions[insertone][2][0] = 'a und b richtig; b als Begr&uuml;ndung von a falsch' ;
+			questions[insertone][3][0] = 'a richtig, b falsch' ;
+			questions[insertone][4][0] = 'a falsch, b richtig' ;
+			questions[insertone][5][0] = 'a falsch, b falsch'
+		}
+		
+		// preset correct answers array for asign-five (type 3) question and free text answer (type 4) questions
+		if ( questiontype == 3 || questiontype == 4 ) questions[insertone][6] = ['A', 'B', 'C', 'D', 'E'];
+
+		scriptloaded = true ;
+		display_questions () ;
+		eval ( 'setTimeout ( "goToQuestion(' + insertone + ')", 200 )' ) 
+	}
+
+}	// end insertQuestion
+
+
+// function to save changes to a question
+function question_change (toedit) {
+
+	var newimage = 'text' ;
+	var displayThem = true ;
+
+	questions[toedit][0] = document.getElementById('questiontext').value ;
+	if ( Math.abs(questions[toedit][7]) < 4 ) {
+		for ( m = 1; m < 6; m++ ) {
+			questions[toedit][m][0] = eval ( 'document.getElementById("answer' + m + '").value' ) ;
+			questions[toedit][m][1] = eval ( 'document.getElementById("comment' + m + '").value' ) ;
+			
+			// use an image as answer selection or append an image to the answer text
+			if ( eval ( 'document.getElementById("answerimage' + m + '").value != ""' ) ) {
+				newimage = eval ( 'document.getElementById("answerimage' + m + '").value' ) ;
+				newimage = newimage.substr(newimage.lastIndexOf('\\') + 1 ) ;
+				newimage = 'testbilder/' + newimage ;
+				if ( newimage.toLowerCase().search('.gif') != -1 || newimage.toLowerCase().search('.jpg') != -1 ) questions[toedit][m][0] += '<img src="' + newimage + '" align="right">'
+				else {
+					feedback (6) ;
+					displayThem = false
+				}
+			}
+		}
+	}
+	if ( Math.abs(questions[toedit][7]) < 3 ) questions[toedit][6] = document.getElementById('answers').value ;
+	if ( Math.abs(questions[toedit][7]) == 3 || Math.abs(questions[toedit][7]) == 4 ) questions[toedit][6] = eval ( '[' + document.getElementById('answers').value + ']' ) ;
+	
+	// add or change an image associated with the question
+	if ( document.getElementById('newimage').value != '' ) {
+		newimage = 'testbilder/' + document.getElementById('newimage').value.substr(document.getElementById('newimage').value.lastIndexOf('\\') + 1 ) ;
+		questions[toedit][8] = newimage
+	}
+	if ( displayThem ) {
+		display_questions () ;
+		eval ( 'setTimeout ( "goToQuestion(' + toedit + ')", 200 )' ) 
+	}
+	
+} // end question_change
+
+
+// function to move a question up one position in a sequence of questions
+function moveUp ( tomove ) {
+
+	var tempq = new Array () ;
+			tempq.length = 0 ;
+	if ( tomove != 0 ) {
+		tempq = questions [ tomove ] ;
+		questions [ tomove ] = questions [ tomove - 1 ] ;
+		questions [ tomove - 1 ] = tempq
+		display_questions () ;
+		eval ( 'setTimeout ( "goToQuestion(' + ( tomove -1 ) + ')", 200 )' ) 
+	}
+
+} // end moveup
+
+
+// function to move a question down one position in a sequence of questions
+function moveDown ( tomove ) {
+
+	var tempq = new Array () ;
+			tempq.length = 0 ;
+	if ( tomove + 1  != questions.length ) {
+		tempq = questions [ tomove + 1 ] ;
+		questions [ tomove + 1 ] = questions [ tomove ] ;
+		questions [ tomove  ] = tempq
+		display_questions () ;
+		eval ( 'setTimeout ( "goToQuestion(' + ( tomove + 1 ) + ')", 200 )' ) 
+	}
+
+} // end moveDown
+
+
+// function to display a question in the editor
+function question_edit (toedit) {
+	
+	tape = '<form name="editor">' ;
+	tape += '<table width="100%"><tr><td><p>' ;
+	if ( Math.abs(questions[toedit][7]) != 5 ) tape += '<span class="fett">Text der Frage</span><br>'
+	else tape += '<span class="fett">Kommentar</span><br>' ;
+	tape += '<span class="textklein">HTML Eingabe m&ouml;glich - <a href="javascript:htmlHelp(true);">HTML Hilfe</a></span></p><td>' ;
+	
+	// controls to insert, change and display images
+	if ( questions[toedit][8] != 'none' ) {
+		tape += '<td align="right"><p class="textklein">Bild &auml;ndern<br><input type="button" name="image" value="Bild zeigen" ' ;
+		tape += 'onClick="OpenUtility(\'' + questions[toedit][8] + '\');"><input type="file" id="newimage" name="newimage" value=""></p></td>'
+	}
+	if ( questions[toedit][8] == 'none' ) {
+		tape += '<td align="right"><p class="textklein">Bild einf&uuml;gen<br>' ;
+		tape += '<input type="file" id="newimage" name="newimage" value=""></p></td>'
+	}
+	
+	tape += '</tr></table>' ;
+
+	// textarea for the question
+	tape += '<p><textarea name="questiontext" id="questiontext" cols="100" rows="4" wrap="VIRTUAL"></textarea></p>' ;
+
+	tape += '<table border="0" cellspacing="0" cellpadding="5"> ' ;
+	
+	// selections and comment for question types 1 - 3
+	if ( Math.abs(questions[toedit][7]) < 4 ) {
+		tape += '<tr><td><p><span class="fett">Antwortauswahl</span><br>' ;
+		tape += '<span style="font-size: 10pt">HTML Eingabe m&ouml;glich</span></p></td>' ;
+		tape += '<td><p class="fett">Bildantworten</p></td>' ;
+		tape += '<td><p><span class="fett">Kommentare</span><br>' ;
+		tape += '<span style="font-size: 10pt; color: #ff0000">HTML Eingabe nicht m&ouml;glich</span></p></td></tr>' ;
+		for ( m = 1; m < 6; m ++ ) {
+			tape += '<tr><td><input type="text" name="answer' + m + '" id="answer' + m + '" size="50" maxlength="250" value=""></td>' ;
+			tape += '<td><input type="file" id="answerimage' + m + '" name="newimage" value=""></td>' ;
+			tape += '<td><input type="text" name="comment' + m + '" id="comment' + m + '" size="50" maxlength="250" value="' ;
+			if ( questions[toedit][m].length == 2 ) tape += questions[toedit][m][1] ;
+			tape += '";></td></tr>'
+		}
+	}
+	
+	// notify free text entry (question type 4) and comment (type 5)
+	if ( Math.abs(questions[toedit][7]) == 4 ) tape += '<tr><td colspan="3"><p class="textrot">Antwort als freie Texteingabe</p></td></tr>' ;
+	if ( Math.abs(questions[toedit][7]) == 5 ) tape += '<tr><td colspan="3"><p class="textrot">Kommentar in Fragensequenz</p></td></tr>' ;
+	
+
+	// correct answer(s) for all question types but not comments (type 5)
+	if ( Math.abs(questions[toedit][7]) < 5) {
+		tape += '<tr><td><p class="fett" align="right">Korrekte Antwort:&nbsp;</p></td>' ;
+		tape += '<td colspan="2"><input type="text" name="answers" id="answers" size="50" maxlength="250" value="' ;
+		if ( Math.abs(questions[toedit][7]) < 3 ) tape += questions[toedit][6]
+		else tape += " '" + questions[toedit][6].join("', '") + "' " ;
+		tape += '";></td></tr>'
+	}
+	
+	// abort or save changes
+	tape += '<tr><td colspan="3"><p><a href="javascript: htmlHelp(false) ;question_change(' + toedit + ');">&Auml;nderungen speichern</a> ' ;
+	tape += '| <a href="javascript: htmlHelp(false); display_questions();">abbrechen</a></p></td></tr>' ;
+	tape += '</table><p>&nbsp;</p></form>' ;
+
+
+	document.getElementById('Qinterface').innerHTML = tape ;
+	document.getElementById('questiontext').value = umlauteIn ( questions[toedit][0] ) ;
+	if ( Math.abs(questions[toedit][7]) < 4 )
+		for ( m = 1; m < 6; m ++ ) eval ( 'document.getElementById("answer' + m + '").value = umlauteIn ( questions[toedit][' + m + '][0] )' ) 
+
+} // end question_edit
+
+
+// function to display all questions
+function display_questions () {
+
+	if ( scriptloaded && questions.length > 0 ) {
+
+		tape = ' ' ;
+	
+		for ( i = 0; i < questions.length; i ++ ) {
+			
+			tape += '<table cellspacing="5" cellpadding="0" border="0" width="100%">' ;
+			
+			// create anchor for the question
+			tape += '<tr><td colspan="2" class="tdgrau"><p><a name="' + i + '"></a>' ;
+			// display question ID
+			tape += '<span class="fett">Frage ' + (i+1) + '</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' ;	
+			// display control elements
+			tape += '<span class="textklein">Frage: <a href="javascript: question_edit(' + i + ');">editieren</a> | '
+			tape += '<a href="javascript: eraseQuestion(' + i + ');">l&ouml;schen</a> | ' ;
+			tape += '<a href="javascript: insertQuestion(' + i + ');">einf&uuml;gen</a> | ' ;
+			tape += '<a href="javascript: moveUp(' + i + ');">Frage nach oben</a> | ' ;
+			tape += '<a href="javascript: moveDown(' + i + ');">Frage nach unten</a>' ;
+
+			tape += '</p></td></tr>' ;
+		
+			// display the text of the question
+			tape += '<tr><td><p>' + questions[i][0] + '<br>&nbsp;</p></td>';
+
+			// add an image if required
+			if ( questions[i][8] != 'none' ) tape += '<td rowspan="1" align="center"><img src="' + questions[i][8] + '"></td>'
+			else tape += '<td><td>' ;
+		
+			tape += '</tr></table>' ;
+			tape += '<table cellspacing="5" cellpadding="0" border="0" width="100%">' ;
+
+			// display the possible answers and comments
+			tape += '<tr><td><p class="fett">Antwortauswahl</p></td><td><p class="fett">Kommentare</p></td></tr>' ;
+			for ( m = 1; m < 6; m ++ ) {
+				tape += '<tr><td><p>' ;
+				if ( Math.abs(questions[i][7]) < 3 ) tape += '<span class="fett">' + labels[m-1] + '</span> ' ;
+				tape += questions[i][m][0] + '</p></td>' ;
+				if ( questions[i][m].length == 1 ) tape += '<td><p>&nbsp;</p></td></tr>'
+				else tape += '<td><p>' + questions[i][m][1] + '</p></td></tr>'
+			}
+			tape += '</table>'
+			
+			// display the correct answer(s)
+			if ( Math.abs(questions[i][7]) < 5 )tape += '<p>Korrekte Antwort(en) : ' ;
+			if ( Math.abs(questions[i][7]) < 3 ) tape += questions[i][6] + '</p>' ;
+			if ( Math.abs(questions[i][7]) == 3 ) tape += questions[i][6].join(', ') + '</p>'
+ 
+		}
+
+		document.getElementById('Qinterface').innerHTML = tape
+
+	}
+	
+	// give a warning if the number of questions after loading the script is 0
+	else if ( rightScript ) feedback(3)
+	
+} // end display_questions
+
+
+// function to convert special characters to a script like screen output
+function convertStrings ( textstring, character ,replacement ) {
+
+	changecode = true ;
+	while ( changecode ) {
+		changecode = false ;
+		if ( textstring.search( character ) != -1 ) {
+			textstring = textstring.replace( character, replacement ) ;
+			changecode = true
+		}
+	}
+	return (textstring)
+
+} // end convertStrings
+
+
+//  replace umlaute by html
+function umlauteOut (umlautstring) {
+
+	umlautstring = convertStrings ( umlautstring, '&Auml;', '&Auml;' ) ;
+	umlautstring = convertStrings ( umlautstring, 'Ü', '&Uuml;' ) ;
+	umlautstring = convertStrings ( umlautstring, 'Ö', '&Ouml;' ) ;
+	umlautstring = convertStrings ( umlautstring, 'ä', '&auml;' ) ;
+	umlautstring = convertStrings ( umlautstring, 'ü', '&uuml;' ) ;
+	umlautstring = convertStrings ( umlautstring, 'ö', '&ouml;' ) ;
+	return (umlautstring)
+
+}	// end umlauteOut
+
+
+// replace html by umlaute
+function umlauteIn (umlautstring) {
+	umlautstring = convertStrings ( umlautstring, '&Auml;', '&Auml;' ) ;
+	umlautstring = convertStrings ( umlautstring, '&Uuml;', 'Ü' ) ;
+	umlautstring = convertStrings ( umlautstring, '&Ouml;', 'Ö' ) ;
+	umlautstring = convertStrings ( umlautstring, '&auml;', 'ä' ) ;
+	umlautstring = convertStrings ( umlautstring, '&uuml;', 'ü' ) ;
+	umlautstring = convertStrings ( umlautstring, '&ouml;', 'ö' ) ;
+	return (umlautstring)
+}	// end umlauteIn
+
+
+// function to generate the js from the question data
+function make_js () {
+
+	tape = '' ;
+	tape += 'function get_questions() {' ;
+	
+	for ( i = 0 ; i < questions.length ; i ++ ) {
+	
+		// change umlaute in question to entities
+		questions[i][0] = umlauteOut (questions[i][0]) ;
+		questions[i][0] = convertStrings (questions[i][0], "'", '&rsquo;') ;
+		tape += "load_question(['" + questions[i][0] + "', " ;
+		
+		for ( m = 1; m < 6; m ++ ) {
+			if ( questions[i][m].length == 1 ) questions[i][m][1] = ' ' ;
+			
+			// change umlaute in selection to entities
+			questions[i][m][0] = umlauteOut (questions[i][m][0]) ;
+			questions[i][m][0] = convertStrings (questions[i][m][0], "'", '&acute;') ;
+			questions[i][m][1] = convertStrings (questions[i][m][1], "'", '&acute;') ;
+			tape += "['" + questions[i][m][0] + "', '" + questions[i][m][1] + "'], " ;
+		}
+		if ( Math.abs(questions[i][7]) < 3 ) tape += "'" + questions[i][6] + "', " ;
+		if ( Math.abs(questions[i][7]) == 3 || Math.abs(questions[i][7]) == 4 ) tape += "['" + questions[i][6].join("', '") + "'], " ;
+		if ( Math.abs(questions[i][7]) == 5 ) tape += "' ', " ;
+		tape += questions[i][7] + ', ' ;
+		tape += "'" + questions[i][8] + "' ]) ;" ;
+	}
+
+	// display & as entity
+	tape = convertStrings ( tape, '&', 'xamp;' ) ;
+	tape = convertStrings ( tape, 'xamp;', '&amp;' ) ;
+	
+	// display tag delimiters as entities
+	tape = convertStrings ( tape, '<', '&lt;' ) ;
+	tape = convertStrings ( tape, '>', '&gt;' ) ;
+
+	// control of script layout
+	tape = convertStrings ( tape, ' ;', ' &<br>' ) ;
+	tape = convertStrings ( tape, ' &<br>', ' ;<br>&nbsp;&nbsp;' ) ;
+	tape += '<br>}' ;
+	tape = tape.replace('{','{<br><br>&nbsp;&nbsp;') ;
+	
+	document.getElementById('Qinterface').innerHTML = tape
+
+} // end make_js
+
+</script>
+</head>
+<body class="menuseite">
+<table border="0" cellspacing="0" cellpadding="5" width="100%">
+  <tr> 
+    <td class="tdgrau"> <h3>// Fragen Editor 1.1</h3>
+      <p> 
+        <input type="button" name="Anzeigen" value="Fragen anzeigen" onClick="loadScript();  display_questions();">
+        <input type="button" name="makeScript" value="js anzeigen" onClick="make_js();">
+        <input type="button" name="newScript" value="neuen Test erstellen" onClick="if ( ! scriptloaded || questions.length == 0 ) insertQuestion (0);">
+      </p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<div id="Qinterface" style="position:absolute; width:900px; padding: 10px; background-color: #ffffff; left: 5; top: 190"> 
+  <p>Bitte w&auml;hlen Sie das Javascript aus, dessen Fragen bearbeitet werden 
+    sollen, und laden Sie dann das Script.<br>
+    Viel Gl&uuml;ck!</p>
+  <form name="getscript" action="">
+    <input id="scriptid" value="" name="file" type="file" size="50">
+    <input type="button" name="Button" value="Javascript laden" onClick="getScript();">
+  </form>
+  <p>&nbsp;</p>
+  <p>Bevor es losgeht ... <span class="fett">Eine kleine Gebrauchsanleitung</span> 
+  </p>
+  <p>Voraussetzungen:</p>
+  <ul>
+    <li>Dieser Editor funktioniert nur in DOM kompatiblen Browsern, d.h. er funktioniert 
+      nicht in Zusammenarbeit mit Netscape 4.x (Navigator/Communicator)</li>
+    <li>Dieser Editor muss im demselben Verzeichnis wie die zu bearbeitenden oder 
+      zu erstellenden Selbsttests liegen.</li>
+    <li>Bilder, die in Tests verwendet werden sollen, m&uuml;ssen in diesem Verzeichnis 
+      in einem Unterverzeichnis mit dem Namen <span class="textrot">testbilder</span> 
+      liegen.</li>
+  </ul>
+  <p>Mit dem Editor k&ouml;nnen die folgenden Fragentypen erstellt werden:</p>
+  <table border="0" cellspacing="0" cellpadding="5">
+    <tr> 
+      <td><p><span class="textrot">a</span></p></td>
+      <td><p>MCQ mit einer korrekten Antwort</p></td>
+    </tr>
+    <tr> 
+      <td><p><span class="textrot">b</span></p></td>
+      <td><p>Verkn&uuml;pfung von zwei Aussagen durch &quot;weil&quot;</p></td>
+    </tr>
+    <tr> 
+      <td><p><span class="textrot">e</span></p></td>
+      <td><p>&quot;5 mal 5&quot; Zuordnung</p></td>
+    </tr>
+    <tr> 
+      <td><p><span class="textrot">k</span></p></td>
+      <td><p>MCQ mit mehr als einer richtigen Antwort</p></td>
+    </tr>
+    <tr> 
+      <td><p><span class="textrot">text</span></p></td>
+      <td><p>Antwort als freie Texteingabe. Die Auswertung der Antwort ist fehlertolerant. 
+          Welche Fehler akzeptiert werden ist modifizierbar.</p></td>
+    </tr>
+    <tr> 
+      <td><p><span class="textrot">comment</span></p></td>
+      <td><p>Ein Kommentar, der nicht als Frage ausgewertet wird. Dieser Eintrag 
+          macht nur bei einer vorgegebenen Fragenreihenfolge Sinn.</p></td>
+    </tr>
+  </table>
+  <p class="fett">Was kann der Editor?</p>
+  <ul>
+    <li>Mit dem Editor k&ouml;nnen Fragen der oben aufgef&uuml;hrten Typen erstellt 
+      und bearbeitet werden.</li>
+    <li>Ein Test kann zum Bearbeiten der Fragen auch zu einem sp&auml;terem Zeitpunkt 
+      wieder in den Editor geladen werden.</li>
+    <li>Bilder k&ouml;nnen sowohl der Frage alsauch den Antwortm&ouml;glichkeiten 
+      zugeordnet werden.</li>
+    <li>Bilder k&ouml;nnen in der Frage und den Antworten frei mit Text kombiniert 
+      werden.</li>
+    <li>In Fragen und Antworten l&auml;sst sich bei Bedarf html verwenden.</li>
+    <li>Antworten k&ouml;nnen mit einem Kommentar versehen werden, der bei der 
+      Auswahl einer Antwort durch den Studenten erscheint.</li>
+  </ul>
+  <p class="fett">Was kann der Editor nicht?</p>
+  <ul>
+    <li>Der Editor kann nicht alleine arbeiten.</li>
+    <li>Der Editor erstellt lediglich die f&uuml;r den Test notwendigen Daten. 
+      Er ist nicht f&uuml;r die Durchf&uuml;hrung des Tests zust&auml;ndig.</li>
+  </ul>
+  <p class="fett">Wie sichert man die Daten eines Tests?</p>
+  <ol>
+    <li>Wenn die Fragen erstellt und fertig bearbeitet sind, dr&uuml;cken Sie 
+      auf das Kn&ouml;pfchen <span class="textrot">js erstellen</span>.</li>
+    <li>Danach wird im Browser der gesamte Text mit <span class="textrot">select 
+      all</span> angew&auml;hlt und mit <span class="textrot">copy</span> in das 
+      Clipboard &uuml;bernommen.</li>
+    <li>Die Daten k&ouml;nnen jetzt in ein leeres js Dokument eingef&uuml;gt werden.</li>
+  </ol>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<div id="htmlhelp" style=" border-width: 3px; border-style: solid; border-color: #cc0088; position:absolute; width:900px; padding: 10px; background-color: #efefef; display: none; left: 5px; top: 5px"> 
+</div>
+</body>
+</html>

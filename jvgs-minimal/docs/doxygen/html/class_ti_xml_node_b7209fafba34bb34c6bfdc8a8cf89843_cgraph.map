@@ -1,0 +1,8 @@
+base referer
+rect $class_ti_xml_node.html#018cc0a981fe6e6e9a3ed5b9e205b257 229,19 400,45
+rect $class_ti_xml_document.html#390712fdb8c71646da14fead2c133dd2 231,81 399,108
+rect $class_ti_xml_node.html#543a812bf1666d4e2c7bf72452142660 255,132 374,159
+rect $class_ti_xml_node.html#0e2045395403970d413baaa4c29c07f0 451,5 615,32
+rect $struct_ti_xml_cursor.html#74e5a74f2b6c561f012a89e682e0eee6 469,56 598,83
+rect $class_ti_xml_parsing_data.html#f355d0eed42645e16c6140fcf244c08c 448,107 619,133
+rect $class_ti_xml_parsing_data.html#a5234f20b64f1d9378d6b70dad57f9b9 448,157 619,184

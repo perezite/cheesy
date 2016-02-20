@@ -1,0 +1,33 @@
+[General Search Parameters]
+Show Log=False
+Search String=, 1,
+Match Case=False
+Skip Text Files=False
+Skip Binary Files=False
+Search ZIPs=False
+Skip Underscore Dirs=False
+Whole Words Only=False
+Count Files First=True
+Recurse Subdirectories=True
+Stop after first match=False
+Invert=False
+Search Mode=2
+Text File Format=0
+Date Filter Mode=0
+Min Date=5/7/2012
+Max Date=5/7/2012
+Greater Than Days=7
+Less Than Days=7
+Size Filter Mode=0
+Min Size=1000
+Max Size=100000
+Less Than Size=1000
+Greater Than Size=100000
+Field Number=1
+Field Start=1
+Field Width=100
+Separator Char=,
+[Active File Specifications]
+0=*.js
+[Active Directory Specifications]
+0=C:\Users\Simon\Desktop\medtest\testfragen_neu\testfragen

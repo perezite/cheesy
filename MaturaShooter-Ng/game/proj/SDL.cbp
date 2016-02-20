@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SDL" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="bin\Release\SDL" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="..\ext\SDL-1.2.14\include\SDL" />
+		</Compiler>
+		<Linker>
+			<Add library="mingw32" />
+			<Add library="SDLmain" />
+			<Add library="SDL.dll" />
+			<Add library="user32" />
+			<Add library="gdi32" />
+			<Add library="winmm" />
+			<Add library="dxguid" />
+			<Add directory="..\ext\SDL-1.2.14\lib" />
+		</Linker>
+		<Unit filename="..\src\Global.h" />
+		<Unit filename="..\src\Grafik.h" />
+		<Unit filename="..\src\Objekt.h" />
+		<Unit filename="..\src\WinMain.cpp" />
+		<Unit filename="..\src\audio.cpp" />
+		<Unit filename="..\src\audio.h" />
+		<Unit filename="..\src\dxinit.cpp" />
+		<Unit filename="..\src\dxinit.h" />
+		<Unit filename="..\src\levelloader.cpp" />
+		<Unit filename="..\src\levelloader.h" />
+		<Unit filename="..\src\linalg.cpp" />
+		<Unit filename="..\src\linalg.h" />
+		<Unit filename="..\src\main.h" />
+		<Unit filename="..\src\objekt_basis.cpp" />
+		<Unit filename="..\src\objekt_basis.h" />
+		<Unit filename="..\src\sprite.cpp" />
+		<Unit filename="..\src\sprite.h" />
+		<Unit filename="..\src\tiles.cpp" />
+		<Unit filename="..\src\tiles.h" />
+		<Unit filename="..\src\units.cpp" />
+		<Unit filename="..\src\units.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

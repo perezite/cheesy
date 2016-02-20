@@ -1,0 +1,1354 @@
+# depslib dependency file v1.0
+1306411201 source:c:\users\perez\desktop\computergraphicsfinal\src\collisionmodel.cpp
+	"CollisionModel.h"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+	"config.hpp"
+
+1305817176 c:\users\perez\desktop\computergraphicsfinal\src\collisionmodel.h
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\gl_includes.hpp
+	<GL/glew.h>
+	<windows.h>
+	<glut.h>
+	<OpenGL/gl.h>
+	<GLUT/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1306513872 c:\users\perez\desktop\computergraphicsfinal\src\config.hpp
+
+1305816990 source:c:\users\perez\desktop\computergraphicsfinal\src\azimuthbar.cpp
+	"azimuthBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\azimuthbar.hpp
+	"drawable.hpp"
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\drawable.hpp
+	"defs.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\defs.hpp
+	<stdint.h>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\textbox.hpp
+	"drawable.hpp"
+	<string>
+
+1305626700 source:c:\users\perez\desktop\computergraphicsfinal\src\block.cpp
+	"block.hpp"
+	"gl_includes.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\block.hpp
+	"section.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+	"house.hpp"
+
+1306514144 c:\users\perez\desktop\computergraphicsfinal\src\section.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<stdlib.h>
+	<vector>
+	<iostream>
+	<math.h>
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\types.hpp
+	"defs.hpp"
+	<vector>
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\house.hpp
+	"section.hpp"
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1305530697 c:\users\perez\desktop\computergraphicsfinal\ext\glew-1.5.8\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\ext\glut-3.7.6-bin\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\bullet.cpp
+	"bullet.hpp"
+	<math.h>
+	<iostream>
+	"sound.hpp"
+	"gl_includes.hpp"
+	"config.hpp"
+	"parameters.hpp"
+
+1306415030 c:\users\perez\desktop\computergraphicsfinal\src\bullet.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\sound.hpp
+	"defs.hpp"
+	"types.hpp"
+	<vector>
+	<string>
+	<AL/alut.h>
+
+1305530702 c:\users\perez\desktop\computergraphicsfinal\ext\freealut-1.1.0-bin\include\al\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	<AL/al.h>
+	<AL/alc.h>
+
+1305573055 c:\users\perez\desktop\computergraphicsfinal\ext\openal-1.1\include\alc.h
+
+1305573055 c:\users\perez\desktop\computergraphicsfinal\ext\openal-1.1\include\al.h
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\ext\openal-1.1\include\al\al.h
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\ext\openal-1.1\include\al\alc.h
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\parameters.hpp
+
+1305530703 source:c:\users\perez\desktop\computergraphicsfinal\src\elevationbar.cpp
+	"elevationBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\elevationbar.hpp
+	"drawable.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\enemy.cpp
+	"enemy.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	"parameters.hpp"
+	"AStarNode.hpp"
+	"scene.hpp"
+	<iostream>
+	<cmath>
+
+1306411201 c:\users\perez\desktop\computergraphicsfinal\src\enemy.hpp
+	"tank.hpp"
+	"landscape.hpp"
+	"types.hpp"
+	<queue>
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\tank.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+	"sound.hpp"
+	"config.hpp"
+	"bullet.hpp"
+	<iostream>
+	<vector>
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\landscape.hpp
+	"drawable.hpp"
+	<vector>
+	"types.hpp"
+	"generator.hpp"
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+	"skybox.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\generator.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+	"powerUp.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\street.hpp
+	"section.hpp"
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1305626700 c:\users\perez\desktop\computergraphicsfinal\src\place.hpp
+	"section.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1306422836 c:\users\perez\desktop\computergraphicsfinal\src\powerup.hpp
+	"drawable.hpp"
+	"types.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\skybox.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"tgaTexture.hpp"
+	"material.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\tgatexture.hpp
+	"texture.hpp"
+	"types.hpp"
+	<string>
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\texture.hpp
+	"defs.hpp"
+	"types.hpp"
+	"gl_includes.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\material.hpp
+	"types.hpp"
+	"gl_includes.hpp"
+
+1306412054 c:\users\perez\desktop\computergraphicsfinal\src\astarnode.hpp
+	<queue>
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\scene.hpp
+	"defs.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	"time.hpp"
+	"tank.hpp"
+	"bullet.hpp"
+	"powerBar.hpp"
+	"elevationBar.hpp"
+	"azimuthBar.hpp"
+	"gameStateInfo.hpp"
+	"enemy.hpp"
+	"landscape.hpp"
+	"particleSystem.hpp"
+	<vector>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\time.hpp
+	"defs.hpp"
+	<windows.h>
+	<sys/time.h>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\powerbar.hpp
+	"drawable.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\gamestateinfo.hpp
+	"drawable.hpp"
+
+1305836964 c:\users\perez\desktop\computergraphicsfinal\src\particlesystem.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"particle.hpp"
+	"CollisionModel.h"
+	<vector>
+
+1305834904 c:\users\perez\desktop\computergraphicsfinal\src\particle.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\fileutils.cpp
+	"fileUtils.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\fileutils.hpp
+	"defs.hpp"
+	<stdio.h>
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\gamestateinfo.cpp
+	"gameStateInfo.hpp"
+	"gl_includes.hpp"
+	"parameters.hpp"
+	"textBox.hpp"
+	"config.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\generator.cpp
+	"generator.hpp"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+	<fstream>
+	<time.h>
+	"types.hpp"
+	"parameters.hpp"
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\house.cpp
+	"House.hpp"
+	"gl_includes.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\landscape.cpp
+	"landscape.hpp"
+	<iostream>
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	"types.hpp"
+
+1306514611 source:c:\users\perez\desktop\computergraphicsfinal\src\main.cpp
+	"exception.hpp"
+	"scene.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<time.h>
+	<csignal>
+	<cstdlib>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\exception.hpp
+	"defs.hpp"
+	<string>
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\material.cpp
+	"material.hpp"
+
+1307034599 source:c:\users\perez\desktop\computergraphicsfinal\src\particle.cpp
+	"particle.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1306178230 source:c:\users\perez\desktop\computergraphicsfinal\src\particlesystem.cpp
+	"particleSystem.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+	<math.h>
+
+1305626700 source:c:\users\perez\desktop\computergraphicsfinal\src\place.cpp
+	"place.hpp"
+	"gl_includes.hpp"
+
+1305530703 source:c:\users\perez\desktop\computergraphicsfinal\src\powerbar.cpp
+	"powerBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<sstream>
+	<iomanip>
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\powerup.cpp
+	"powerUp.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1305530703 source:c:\users\perez\desktop\computergraphicsfinal\src\radar.cpp
+	"radar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\radar.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+
+1307034599 source:c:\users\perez\desktop\computergraphicsfinal\src\scene.cpp
+	"scene.hpp"
+	"config.hpp"
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<conio.h>
+	"landscape.hpp"
+	"sound.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\screentexture.cpp
+	"screenTexture.hpp"
+
+1306513873 c:\users\perez\desktop\computergraphicsfinal\src\screentexture.hpp
+	"texture.hpp"
+	"types.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\section.cpp
+	"section.hpp"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+
+1306514487 source:c:\users\perez\desktop\computergraphicsfinal\src\skybox.cpp
+	"skybox.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+	"tgaTexture.hpp"
+	"material.hpp"
+
+1306514266 source:c:\users\perez\desktop\computergraphicsfinal\src\sound.cpp
+	"sound.hpp"
+	"config.hpp"
+	<stdlib.h>
+	<stdio.h>
+
+1305530703 source:c:\users\perez\desktop\computergraphicsfinal\src\speedbar.cpp
+	"speedBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1305530703 c:\users\perez\desktop\computergraphicsfinal\src\speedbar.hpp
+	"drawable.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\street.cpp
+	"street.hpp"
+	"gl_includes.hpp"
+
+1339400893 source:c:\users\perez\desktop\computergraphicsfinal\src\tank.cpp
+	"tank.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1305530703 source:c:\users\perez\desktop\computergraphicsfinal\src\textbox.cpp
+	"textBox.hpp"
+	"gl_includes.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\texture.cpp
+	"texture.hpp"
+
+1306513873 source:c:\users\perez\desktop\computergraphicsfinal\src\tgatexture.cpp
+	"tgaTexture.hpp"
+	"exception.hpp"
+	"fileUtils.hpp"
+	<sstream>
+
+1305530703 source:c:\users\perez\desktop\computergraphicsfinal\src\time.cpp
+	"time.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\collisionmodel.cpp
+	"CollisionModel.h"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+	"config.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\collisionmodel.h
+
+1359648209 h:\portfolio\computergraphicsfinal\src\gl_includes.hpp
+	<GL/glew.h>
+	<windows.h>
+	<glut.h>
+	<OpenGL/gl.h>
+	<GLUT/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1305527097 h:\portfolio\computergraphicsfinal\ext\glew-1.5.8\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1305527103 h:\portfolio\computergraphicsfinal\ext\glut-3.7.6-bin\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\config.hpp
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\azimuthbar.cpp
+	"azimuthBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\azimuthbar.hpp
+	"drawable.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\drawable.hpp
+	"defs.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\defs.hpp
+	<stdint.h>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\textbox.hpp
+	"drawable.hpp"
+	<string>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\block.cpp
+	"block.hpp"
+	"gl_includes.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\block.hpp
+	"section.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+	"house.hpp"
+
+1359648613 h:\portfolio\computergraphicsfinal\src\section.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<stdlib.h>
+	<vector>
+	<iostream>
+	<math.h>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\types.hpp
+	"defs.hpp"
+	<vector>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\house.hpp
+	"section.hpp"
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1359658681 source:h:\portfolio\computergraphicsfinal\src\bullet.cpp
+	"bullet.hpp"
+	<math.h>
+	<iostream>
+	"sound.hpp"
+	"gl_includes.hpp"
+	"config.hpp"
+	"parameters.hpp"
+
+1359658681 h:\portfolio\computergraphicsfinal\src\bullet.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\sound.hpp
+	"defs.hpp"
+	"types.hpp"
+	<vector>
+	<string>
+	<AL/alut.h>
+
+1305527102 h:\portfolio\computergraphicsfinal\ext\freealut-1.1.0-bin\include\al\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	<AL/al.h>
+	<AL/alc.h>
+
+1305569455 h:\portfolio\computergraphicsfinal\ext\openal-1.1\include\alc.h
+
+1305569455 h:\portfolio\computergraphicsfinal\ext\openal-1.1\include\al.h
+
+1305527103 h:\portfolio\computergraphicsfinal\ext\openal-1.1\include\al\al.h
+
+1305527103 h:\portfolio\computergraphicsfinal\ext\openal-1.1\include\al\alc.h
+
+1359648209 h:\portfolio\computergraphicsfinal\src\parameters.hpp
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\elevationbar.cpp
+	"elevationBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\elevationbar.hpp
+	"drawable.hpp"
+
+1359658681 source:h:\portfolio\computergraphicsfinal\src\enemy.cpp
+	"enemy.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	"parameters.hpp"
+	"AStarNode.hpp"
+	"scene.hpp"
+	<iostream>
+	<cmath>
+	<time.h>
+
+1359658681 h:\portfolio\computergraphicsfinal\src\enemy.hpp
+	"tank.hpp"
+	"landscape.hpp"
+	"types.hpp"
+	<queue>
+
+1359658622 h:\portfolio\computergraphicsfinal\src\tank.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+	"sound.hpp"
+	"config.hpp"
+	"bullet.hpp"
+	<iostream>
+	<vector>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\landscape.hpp
+	"drawable.hpp"
+	<vector>
+	"types.hpp"
+	"generator.hpp"
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+	"skybox.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\generator.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+	"powerUp.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\street.hpp
+	"section.hpp"
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\place.hpp
+	"section.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\powerup.hpp
+	"drawable.hpp"
+	"types.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\skybox.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"tgaTexture.hpp"
+	"material.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\tgatexture.hpp
+	"texture.hpp"
+	"types.hpp"
+	<string>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\texture.hpp
+	"defs.hpp"
+	"types.hpp"
+	"gl_includes.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\material.hpp
+	"types.hpp"
+	"gl_includes.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\astarnode.hpp
+	<queue>
+
+1359658681 h:\portfolio\computergraphicsfinal\src\scene.hpp
+	"defs.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	"time.hpp"
+	"tank.hpp"
+	"bullet.hpp"
+	"powerBar.hpp"
+	"elevationBar.hpp"
+	"azimuthBar.hpp"
+	"gameStateInfo.hpp"
+	"enemy.hpp"
+	"landscape.hpp"
+	"particleSystem.hpp"
+	<vector>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\time.hpp
+	"defs.hpp"
+	<windows.h>
+	<sys/time.h>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\powerbar.hpp
+	"drawable.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\gamestateinfo.hpp
+	"drawable.hpp"
+
+1359658681 h:\portfolio\computergraphicsfinal\src\particlesystem.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"particle.hpp"
+	"CollisionModel.h"
+	<vector>
+
+1359658681 h:\portfolio\computergraphicsfinal\src\particle.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\fileutils.cpp
+	"fileUtils.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\fileutils.hpp
+	"defs.hpp"
+	<stdio.h>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\gamestateinfo.cpp
+	"gameStateInfo.hpp"
+	"gl_includes.hpp"
+	"parameters.hpp"
+	"textBox.hpp"
+	"config.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359650295 source:h:\portfolio\computergraphicsfinal\src\generator.cpp
+	"generator.hpp"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+	<fstream>
+	<time.h>
+	"types.hpp"
+	"parameters.hpp"
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\house.cpp
+	"House.hpp"
+	"gl_includes.hpp"
+
+1359658375 source:h:\portfolio\computergraphicsfinal\src\landscape.cpp
+	"landscape.hpp"
+	<iostream>
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	"types.hpp"
+
+1359650955 source:h:\portfolio\computergraphicsfinal\src\main.cpp
+	"exception.hpp"
+	"scene.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<csignal>
+	<cstdlib>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\exception.hpp
+	"defs.hpp"
+	<string>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\material.cpp
+	"material.hpp"
+
+1359658681 source:h:\portfolio\computergraphicsfinal\src\particle.cpp
+	"particle.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1359658681 source:h:\portfolio\computergraphicsfinal\src\particlesystem.cpp
+	"particleSystem.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+	<math.h>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\place.cpp
+	"place.hpp"
+	"gl_includes.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\powerbar.cpp
+	"powerBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<sstream>
+	<iomanip>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\powerup.cpp
+	"powerUp.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\radar.cpp
+	"radar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\radar.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+
+1359658447 source:h:\portfolio\computergraphicsfinal\src\scene.cpp
+	"scene.hpp"
+	"config.hpp"
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<conio.h>
+	"landscape.hpp"
+	"sound.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\screentexture.cpp
+	"screenTexture.hpp"
+
+1359648209 h:\portfolio\computergraphicsfinal\src\screentexture.hpp
+	"texture.hpp"
+	"types.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\section.cpp
+	"section.hpp"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+
+1359649575 source:h:\portfolio\computergraphicsfinal\src\skybox.cpp
+	"skybox.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+	"tgaTexture.hpp"
+	"material.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\sound.cpp
+	"sound.hpp"
+	"config.hpp"
+	<stdlib.h>
+	<stdio.h>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\speedbar.cpp
+	"speedBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\computergraphicsfinal\src\speedbar.hpp
+	"drawable.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\street.cpp
+	"street.hpp"
+	"gl_includes.hpp"
+
+1359658681 source:h:\portfolio\computergraphicsfinal\src\tank.cpp
+	"tank.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\textbox.cpp
+	"textBox.hpp"
+	"gl_includes.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\texture.cpp
+	"texture.hpp"
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\tgatexture.cpp
+	"tgaTexture.hpp"
+	"exception.hpp"
+	"fileUtils.hpp"
+	<sstream>
+
+1359648209 source:h:\portfolio\computergraphicsfinal\src\time.cpp
+	"time.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\collisionmodel.cpp
+	"CollisionModel.h"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+	"config.hpp"
+
+1359648209 h:\portfolio\tankgame\src\collisionmodel.h
+
+1359648209 h:\portfolio\tankgame\src\gl_includes.hpp
+	<GL/glew.h>
+	<windows.h>
+	<glut.h>
+	<OpenGL/gl.h>
+	<GLUT/glut.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
+1305527097 h:\portfolio\tankgame\ext\glew-1.5.8\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1305527103 h:\portfolio\tankgame\ext\glut-3.7.6-bin\glut.h
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1359648209 h:\portfolio\tankgame\src\config.hpp
+
+1359648209 source:h:\portfolio\tankgame\src\azimuthbar.cpp
+	"azimuthBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\tankgame\src\azimuthbar.hpp
+	"drawable.hpp"
+
+1359648209 h:\portfolio\tankgame\src\drawable.hpp
+	"defs.hpp"
+
+1359648209 h:\portfolio\tankgame\src\defs.hpp
+	<stdint.h>
+
+1359648209 h:\portfolio\tankgame\src\textbox.hpp
+	"drawable.hpp"
+	<string>
+
+1359648209 source:h:\portfolio\tankgame\src\block.cpp
+	"block.hpp"
+	"gl_includes.hpp"
+
+1359648209 h:\portfolio\tankgame\src\block.hpp
+	"section.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+	"house.hpp"
+
+1359648613 h:\portfolio\tankgame\src\section.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<stdlib.h>
+	<vector>
+	<iostream>
+	<math.h>
+
+1359648209 h:\portfolio\tankgame\src\types.hpp
+	"defs.hpp"
+	<vector>
+
+1359648209 h:\portfolio\tankgame\src\house.hpp
+	"section.hpp"
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1359658681 source:h:\portfolio\tankgame\src\bullet.cpp
+	"bullet.hpp"
+	<math.h>
+	<iostream>
+	"sound.hpp"
+	"gl_includes.hpp"
+	"config.hpp"
+	"parameters.hpp"
+
+1359658681 h:\portfolio\tankgame\src\bullet.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+
+1359648209 h:\portfolio\tankgame\src\sound.hpp
+	"defs.hpp"
+	"types.hpp"
+	<vector>
+	<string>
+	<AL/alut.h>
+
+1305527102 h:\portfolio\tankgame\ext\freealut-1.1.0-bin\include\al\alut.h
+	<alc.h>
+	<al.h>
+	<OpenAL/alc.h>
+	<OpenAL/al.h>
+	<AL/al.h>
+	<AL/alc.h>
+
+1305569455 h:\portfolio\tankgame\ext\openal-1.1\include\alc.h
+
+1305569455 h:\portfolio\tankgame\ext\openal-1.1\include\al.h
+
+1305527103 h:\portfolio\tankgame\ext\openal-1.1\include\al\al.h
+
+1305527103 h:\portfolio\tankgame\ext\openal-1.1\include\al\alc.h
+
+1359648209 h:\portfolio\tankgame\src\parameters.hpp
+
+1359648209 source:h:\portfolio\tankgame\src\elevationbar.cpp
+	"elevationBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\tankgame\src\elevationbar.hpp
+	"drawable.hpp"
+
+1359658681 source:h:\portfolio\tankgame\src\enemy.cpp
+	"enemy.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	"parameters.hpp"
+	"AStarNode.hpp"
+	"scene.hpp"
+	<iostream>
+	<cmath>
+	<time.h>
+
+1359658681 h:\portfolio\tankgame\src\enemy.hpp
+	"tank.hpp"
+	"landscape.hpp"
+	"types.hpp"
+	<queue>
+
+1359658622 h:\portfolio\tankgame\src\tank.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+	"sound.hpp"
+	"config.hpp"
+	"bullet.hpp"
+	<iostream>
+	<vector>
+
+1359648209 h:\portfolio\tankgame\src\landscape.hpp
+	"drawable.hpp"
+	<vector>
+	"types.hpp"
+	"generator.hpp"
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+	"skybox.hpp"
+
+1359648209 h:\portfolio\tankgame\src\generator.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+	"powerUp.hpp"
+
+1359648209 h:\portfolio\tankgame\src\street.hpp
+	"section.hpp"
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1359648209 h:\portfolio\tankgame\src\place.hpp
+	"section.hpp"
+	"types.hpp"
+	<vector>
+	<iostream>
+
+1359648209 h:\portfolio\tankgame\src\powerup.hpp
+	"drawable.hpp"
+	"types.hpp"
+
+1359648209 h:\portfolio\tankgame\src\skybox.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"tgaTexture.hpp"
+	"material.hpp"
+
+1359648209 h:\portfolio\tankgame\src\tgatexture.hpp
+	"texture.hpp"
+	"types.hpp"
+	<string>
+
+1359648209 h:\portfolio\tankgame\src\texture.hpp
+	"defs.hpp"
+	"types.hpp"
+	"gl_includes.hpp"
+
+1359648209 h:\portfolio\tankgame\src\material.hpp
+	"types.hpp"
+	"gl_includes.hpp"
+
+1359648209 h:\portfolio\tankgame\src\astarnode.hpp
+	<queue>
+
+1359658681 h:\portfolio\tankgame\src\scene.hpp
+	"defs.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	"time.hpp"
+	"tank.hpp"
+	"bullet.hpp"
+	"powerBar.hpp"
+	"elevationBar.hpp"
+	"azimuthBar.hpp"
+	"gameStateInfo.hpp"
+	"enemy.hpp"
+	"landscape.hpp"
+	"particleSystem.hpp"
+	<vector>
+
+1359648209 h:\portfolio\tankgame\src\time.hpp
+	"defs.hpp"
+	<windows.h>
+	<sys/time.h>
+
+1359648209 h:\portfolio\tankgame\src\powerbar.hpp
+	"drawable.hpp"
+
+1359648209 h:\portfolio\tankgame\src\gamestateinfo.hpp
+	"drawable.hpp"
+
+1359658681 h:\portfolio\tankgame\src\particlesystem.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"particle.hpp"
+	"CollisionModel.h"
+	<vector>
+
+1359658681 h:\portfolio\tankgame\src\particle.hpp
+	"drawable.hpp"
+	"types.hpp"
+	"CollisionModel.h"
+
+1359648209 source:h:\portfolio\tankgame\src\fileutils.cpp
+	"fileUtils.hpp"
+
+1359648209 h:\portfolio\tankgame\src\fileutils.hpp
+	"defs.hpp"
+	<stdio.h>
+
+1359648209 source:h:\portfolio\tankgame\src\gamestateinfo.cpp
+	"gameStateInfo.hpp"
+	"gl_includes.hpp"
+	"parameters.hpp"
+	"textBox.hpp"
+	"config.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359650295 source:h:\portfolio\tankgame\src\generator.cpp
+	"generator.hpp"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+	<fstream>
+	<time.h>
+	"types.hpp"
+	"parameters.hpp"
+	"section.hpp"
+	"block.hpp"
+	"street.hpp"
+	"place.hpp"
+	"house.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\house.cpp
+	"House.hpp"
+	"gl_includes.hpp"
+
+1359658375 source:h:\portfolio\tankgame\src\landscape.cpp
+	"landscape.hpp"
+	<iostream>
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	"types.hpp"
+
+1359650955 source:h:\portfolio\tankgame\src\main.cpp
+	"exception.hpp"
+	"scene.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<csignal>
+	<cstdlib>
+
+1359648209 h:\portfolio\tankgame\src\exception.hpp
+	"defs.hpp"
+	<string>
+
+1359648209 source:h:\portfolio\tankgame\src\material.cpp
+	"material.hpp"
+
+1359658681 source:h:\portfolio\tankgame\src\particle.cpp
+	"particle.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1359658681 source:h:\portfolio\tankgame\src\particlesystem.cpp
+	"particleSystem.hpp"
+	"config.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+	<math.h>
+
+1359648209 source:h:\portfolio\tankgame\src\place.cpp
+	"place.hpp"
+	"gl_includes.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\powerbar.cpp
+	"powerBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<sstream>
+	<iomanip>
+
+1359648209 source:h:\portfolio\tankgame\src\powerup.cpp
+	"powerUp.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1359648209 source:h:\portfolio\tankgame\src\radar.cpp
+	"radar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\tankgame\src\radar.hpp
+	"drawable.hpp"
+	"types.hpp"
+	<vector>
+
+1359658447 source:h:\portfolio\tankgame\src\scene.cpp
+	"scene.hpp"
+	"config.hpp"
+	<cstdlib>
+	<iostream>
+	<cmath>
+	<conio.h>
+	"landscape.hpp"
+	"sound.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\screentexture.cpp
+	"screenTexture.hpp"
+
+1359648209 h:\portfolio\tankgame\src\screentexture.hpp
+	"texture.hpp"
+	"types.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\section.cpp
+	"section.hpp"
+	"gl_includes.hpp"
+	<cmath>
+	<math.h>
+	<iostream>
+
+1359649575 source:h:\portfolio\tankgame\src\skybox.cpp
+	"skybox.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+	"tgaTexture.hpp"
+	"material.hpp"
+
+1359725650 source:h:\portfolio\tankgame\src\sound.cpp
+	"sound.hpp"
+	"config.hpp"
+	<stdlib.h>
+	<stdio.h>
+
+1359648209 source:h:\portfolio\tankgame\src\speedbar.cpp
+	"speedBar.hpp"
+	"gl_includes.hpp"
+	"textBox.hpp"
+	<cmath>
+	<sstream>
+	<iomanip>
+
+1359648209 h:\portfolio\tankgame\src\speedbar.hpp
+	"drawable.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\street.cpp
+	"street.hpp"
+	"gl_includes.hpp"
+
+1359658681 source:h:\portfolio\tankgame\src\tank.cpp
+	"tank.hpp"
+	"config.hpp"
+	"parameters.hpp"
+	"gl_includes.hpp"
+	<iostream>
+	<cmath>
+
+1359648209 source:h:\portfolio\tankgame\src\textbox.cpp
+	"textBox.hpp"
+	"gl_includes.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\texture.cpp
+	"texture.hpp"
+
+1359648209 source:h:\portfolio\tankgame\src\tgatexture.cpp
+	"tgaTexture.hpp"
+	"exception.hpp"
+	"fileUtils.hpp"
+	<sstream>
+
+1359648209 source:h:\portfolio\tankgame\src\time.cpp
+	"time.hpp"
+

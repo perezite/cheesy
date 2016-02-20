@@ -1,0 +1,4 @@
+if ( Math.abs(questions[nextOne][7]) == 1 )
+{
+	document.writeln('bla');
+}

@@ -1,0 +1,6 @@
+base referer
+rect $class_ti_xml_attribute.html 15,401 117,428
+rect $class_ti_xml_base.html 71,96 153,123
+rect $class_ti_xml_node.html 71,209 153,236
+rect $struct_ti_xml_cursor.html 165,5 256,32
+rect $class_ti_xml_document.html 71,309 183,336

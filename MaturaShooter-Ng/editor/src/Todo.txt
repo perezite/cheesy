@@ -1,0 +1,19 @@
+* Objects aren't saved if they are inserted into a 'new' level
+* Objects have no group -> this should be made in-game (otherwise, I must save maps into the lvl-file)
+* Frame selection: local coords not implemented
+* Implement global vars as static class members, such that one can use a temporary
+  sourcefile for implementing the methods (due to annoying compilations times)
+
+* Handling of editor-tiles in game? - done
+* Handle x- and y-coordinates seperately when pushing from paste buffer - done 
+* Mark objects by drawing a box around them - done
+* Show coordinates of object in property subwindow - done
+* Show a grid and let objects dock at them - done
+* check exchange editor <-> game - done
+* magnetize in all directions - done
+* saving issue - done
+* Menu for creating new file - done
+* cloning - done
+* slow redrawing - eased by redrawing the property and the main window seperatly if dragging objects - done
+* insert a level header which saves the _dimensions_ of the level and adjust the window if the level is reloaded (should also contain title, background etc.) - done
+* check if all edit properties are implemented - done

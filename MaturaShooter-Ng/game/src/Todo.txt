@@ -1,0 +1,14 @@
+* Painter algo einbauen
+* Menü einbauen (Siehe Sandbox)
+* Sound einbauen
+* Asserts, catching einbauen
+
+* Tastatureingabe, damit kein kontinuierliches Schiessen mehr möglich - done
+* Slow rendering BUG ?!? -> solution: don't draw backdrop - done
+* Von File geladene Objekte haben keine Gruppe - done
+* Tiles fertig stellen - done
+* Tiles in Editor implementieren - done
+* Viewing-Layers in Editor implementieren - done
+* Trigger-System für Editor-Objekte - done
+* Objekte automatisch auf Playership zielen lassen in InitUnit - done
+* Homing Rocket: Normalisieren für rotierte Vektoren einbauen und Rotation in   richtige Richtung einbauen (Nutze angle_360_cw) - done

@@ -1,0 +1,132 @@
+graphics\block2.bmp: 577 2778
+graphics\block4.bmp: 637 2714
+graphics\block10.bmp: 606 2651
+graphics\block25.bmp: 661 2427
+graphics\block32.bmp: -1 2386
+graphics\block35.bmp: 738 2171
+graphics\block36.bmp: -1 2132
+graphics\block1.bmp: 0 2558
+graphics\block9.bmp: 0 2495
+graphics\block13.bmp: 0 2465
+graphics\block17.bmp: 417 2343
+graphics\block20.bmp: 686 2285
+graphics\block21.bmp: 714 2175
+graphics\block23.bmp: -4 2081
+graphics\block26.bmp: 0 2034
+graphics\block30.bmp: 28 2030
+graphics\block31.bmp: 91 2037
+graphics\block31.bmp: 154 2040
+graphics\block29.bmp: 218 2041
+graphics\block31.bmp: 281 2041
+graphics\block6.bmp: 545 2077
+graphics\block36.bmp: 526 2047
+graphics\block35.bmp: 465 2047
+graphics\block32.bmp: 528 1969
+graphics\block21.bmp: 477 1991
+graphics\block9.bmp: 1 2781
+graphics\block7.bmp: 1 2844
+graphics\block11.bmp: 39 2840
+graphics\wallhuggerr.bmp : 609 2503
+graphics\block19.bmp: -59 2406
+graphics\pod.bmp : 204 2286
+graphics\rusher.bmp : 529 1718
+graphics\rusher.bmp : 407 1658
+graphics\rusher.bmp : 181 1658
+graphics\rusher.bmp : 54 1725
+graphics\rusher.bmp : 301 1596
+graphics\rusher.bmp : 643 1794
+graphics\rusher.bmp : -19 1806
+graphics\block14.bmp: 640 1564
+graphics\block15.bmp: 705 1501
+graphics\block17.bmp: 448 1456
+graphics\block18.bmp: -1 1341
+graphics\block20.bmp: 113 1282
+graphics\block21.bmp: 120 1221
+graphics\PUWeapon.bmp : 31 1253
+graphics\SporeA.bmp : 393 1296
+graphics\SporeA.bmp : 355 1295
+graphics\SporeA.bmp : 337 1290
+graphics\SporeA.bmp : 326 1293
+graphics\SporeA.bmp : 304 1327
+graphics\SporeA.bmp : 372 1344
+graphics\SporeA.bmp : 377 1369
+graphics\SporeA.bmp : 362 1378
+graphics\SporeA.bmp : 316 1372
+graphics\SporeA.bmp : 294 1343
+graphics\SporeA.bmp : 269 1327
+graphics\SporeA.bmp : 265 1325
+graphics\SporeA.bmp : 243 1322
+graphics\SporeA.bmp : 237 1342
+graphics\SporeA.bmp : 249 1367
+graphics\SporeA.bmp : 267 1358
+graphics\SporeA.bmp : 269 1293
+graphics\SporeA.bmp : 278 1284
+graphics\SporeA.bmp : 261 1286
+graphics\SporeA.bmp : 242 1287
+graphics\SporeA.bmp : 234 1305
+graphics\SporeA.bmp : 296 1311
+graphics\SporeA.bmp : 351 1350
+graphics\SporeA.bmp : 365 1353
+graphics\SporeA.bmp : 392 1358
+graphics\SporeA.bmp : 392 1366
+graphics\SporeA.bmp : 392 1377
+graphics\SporeA.bmp : 345 1385
+graphics\SporeA.bmp : 442 1423
+graphics\SporeA.bmp : 416 1408
+graphics\SporeA.bmp : 426 1402
+graphics\SporeA.bmp : 433 1394
+graphics\SporeA.bmp : 395 1413
+graphics\SporeA.bmp : 383 1425
+graphics\SporeA.bmp : 354 1403
+graphics\SporeA.bmp : 239 1379
+graphics\SporeA.bmp : 206 1343
+graphics\SporeA.bmp : 216 1325
+graphics\SporeA.bmp : 213 1309
+graphics\pod.bmp : 362 1183
+graphics\GAster96.bmp : 637 715
+graphics\GAster96.bmp : 70 956
+graphics\GAster96.bmp : 209 615
+graphics\MAster32.bmp : 513 805
+graphics\MAster32.bmp : 295 873
+graphics\MAster32.bmp : 479 903
+graphics\MAster32.bmp : 735 967
+graphics\MAster64.bmp : 510 617
+graphics\MAster64.bmp : 710 544
+graphics\MAster64.bmp : 75 512
+graphics\MAster64.bmp : 36 781
+graphics\SAster32.bmp : 466 368
+graphics\SAster32.bmp : 370 451
+graphics\SAster32.bmp : 267 339
+graphics\SAster64.bmp : 501 230
+graphics\SAster64.bmp : 525 330
+graphics\SAster64.bmp : 211 259
+graphics\SAster64.bmp : 80 356
+graphics\SAster64.bmp : 264 498
+graphics\SAster64.bmp : 627 430
+graphics\SAster64.bmp : 728 353
+graphics\SAster64.bmp : 232 335
+graphics\SAster64.bmp : 526 148
+graphics\SAster64.bmp : 86 239
+graphics\SAster96.bmp : 512 445
+graphics\SAster96.bmp : 157 367
+graphics\SAster96.bmp : 440 69
+graphics\SAster96.bmp : 188 52
+graphics\SAster96.bmp : 71 92
+graphics\bg14.bmp: 611 287
+graphics\bg15.bmp: 611 258
+graphics\bg11.bmp: 660 227
+graphics\bg9.bmp: -2 222
+graphics\bg8.bmp: 673 161
+graphics\bg6.bmp: 736 100
+graphics\bg4.bmp: -1 68
+graphics\bg3.bmp: -1 6
+graphics\bg3.bmp: -4 161
+graphics\bg1.bmp: 1 295
+graphics\block35.bmp: 300 58
+graphics\block36.bmp: 362 58
+graphics\block32.bmp: 362 -15
+graphics\block21.bmp: 305 0
+graphics\block17.bmp: 543 -3
+graphics\block17.bmp: -11 -6
+graphics\block20.bmp: 501 -4
+graphics\block20.bmp: 433 -1

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+if [ "$1" == "--lensing" ]
+then
+	cd ../scripts/eval
+	python ../../bin/lib/glass/glass.py eval.py 0.032 0.018 6.0 1.0 1 1 1 1
+elif [ "$1" == "--demo-ga" ]
+then
+	cd ../scripts/lensing
+	python ../../bin/lib/glass/glass.py ga.py 
+elif [ "$1" == "--demo-metaopt" ]
+then
+	cd ../scripts/metaopt
+	python ../../bin/lib/glass/glass.py metaopt.py 	
+elif [ "$1" == "--demo-sampler" ]
+then	
+	cd ../scripts/sampler
+	python ../../bin/lib/glass/glass.py sampler.py 
+elif [ "$1" == "--version" ]
+then	
+	echo "GAGL version 0.0.2"	
+else
+	echo "Usage: ./GAGL [option]"
+	echo ""
+	echo "Options:"
+	echo "  --lensing             Let GLASS produce an example lensing" 
+	echo "                        image and plot it to screen"
+    echo "  --demo-ga             Run a demo of the genetic algorithm"
+    echo "                        in action"
+    echo "  --demo-metaopt        Run a demo of the meta optimization"
+	echo "                        procedure"
+	echo "  --demo-sampler        Run a demo of a brute-force sampling"
+	echo "                        to solve the optimization problem"
+	echo "  --version             Show version information"
+	echo ""
+	echo "Dependencies:"
+	echo "  GAGL has the following dependencies:"
+	echo "  python >= 2.6"
+	echo "  matplotlib >= 1.0"
+	echo "  numpy >= 1.4.1"
+	echo "  scipy >= 0.7.0" 
+	echo ""
+	echo "Description: GAGL is a Genetic Algorithm for Gravitational Lensing"
+	echo "  A detailed explanation together with some results generated"  
+	echo "  by the program can be found under [GAGL_path]/docs/report.pdf"
+	echo "  GAGL uses the file under [GAGL_path]/bin/resources/bigsim.txt.npz"
+	echo "  as its galaxy model."
+fi
+

@@ -1,0 +1,59 @@
+> Hallo Simon
+>
+> Ich habe ein Beispiel geschrieben, das an diese e-mail anbei ist.
+>
+> Glass braucht die folgende Programmen / Bibliotheken:
+>
+> python >= 2.6
+> matplotlib >= 1.0
+> numpy >= 1.4.1
+> scipy >= 0.7.0
+>
+> Alle sind schon auf die Physik Machine fangorn aber du musst die richtige
+> Module benutzen:
+>
+> $ module load python/2.6.2
+>
+> Ich habe schon alles da probiert. Die Input Simulation liegt in
+> ~jonathan/GAGL.
+>
+>
+> Um Glass zu kriegen:
+>
+> $ mkdir GAGL # Oder dein Arbeits Ornder.
+> $ cd GAGL
+> $ svn co https://svn.physik.uzh.ch/repos/itp/glass
+> $ cd glass
+> $ python setup.py build
+>
+> Es gibt ein Skript (glass/glass) um Glass zu nützen. Du musst die
+> Variable ROOT ändern.
+>
+> Speiche das Beispiel in GAGL und probiere es mit:
+>
+> $ ./glass/glass beispiel.py
+>
+> Du solltest die folgende Resultat und Bilder kriegen:
+>
+> Zuerst ist die Roh Daten, eine Liste von Bilden Koordinaten, Parität, und
+> (nach die erste) die Zeitverzögerung zwischen ein Bild und das vorherige
+> Bild:
+>
+> [[(0.17023176839240073+0.33492932699037498j), 'min'],
+> [(-0.061112817069037026-0.35181071672576414j), 'min', 0.46720837605661786],
+> [(0.31387804610839876-0.12092219269650248j), 'sad', 3.0938442503258146],
+> [(-0.28645695434722201+0.10556261965845608j), 'sad', 2.3934648653983635],
+> [(-0.0031222609057788707+0.0060461911781807534j), 'max', 4.0678279108231097]]
+>
+> Zweitens, die gleiche Daten, schön gedrückt:
+>
+> [['A', (  0.17023,  0.33493), 'min'],
+> ['B', ( -0.06111, -0.35181), 'min', 0.4672],
+> ['C', (  0.31388, -0.12092), 'sad', 3.0938],
+> ['D', ( -0.28646,  0.10556), 'sad', 2.3935],
+> ['E', ( -0.00312,  0.00605), 'max', 4.0678]]
+>
+> Drittens, ein Bild von die Masseverteilung mit Bilden.
+>
+
+-- 

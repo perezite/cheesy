@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxPackTest" />
+		<Option pch_mode="0" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\wxPackTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D__WXDEBUG__" />
+					<Add directory="C:\wxwin\lib\gcc_dll\msw" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="C:\wxwin\lib\gcc_dll\msw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="libwxmsw28d.a" />
+					<Add directory="C:\wxwin\lib\gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\wxPackTest" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="C:\wxwin\lib\gcc_dll\msw" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="C:\wxwin\lib\gcc_dll\msw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libwxmsw28.a" />
+					<Add directory="C:\wxwin\lib\gcc_dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-Winvalid-pch" />
+			<Add option="-include wx_pch.h" />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add option="-DWXUSINGDLL" />
+			<Add option="-DWX_PRECOMP" />
+			<Add directory="C:\wxwin\include" />
+			<Add directory="C:\wxwin\contrib\include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="C:\wxwin\include" />
+		</ResourceCompiler>
+		<Unit filename="..\..\src\GUIFrame.cpp" />
+		<Unit filename="..\..\src\GUIFrame.h" />
+		<Unit filename="..\..\src\MyProjectDialogClone.cpp" />
+		<Unit filename="..\..\src\MyProjectDialogClone.h" />
+		<Unit filename="..\..\src\MyProjectDialogNew.cpp" />
+		<Unit filename="..\..\src\MyProjectDialogNew.h" />
+		<Unit filename="..\..\src\MyProjectGUIFrame.cpp" />
+		<Unit filename="..\..\src\MyProjectGUIFrame.h" />
+		<Unit filename="..\..\src\WxWizFrame.fbp" />
+		<Unit filename="..\..\src\filereader.cpp" />
+		<Unit filename="..\..\src\filereader.h" />
+		<Unit filename="..\..\src\levelreader.cpp" />
+		<Unit filename="..\..\src\levelreader.h" />
+		<Unit filename="..\..\src\newstuff.cpp" />
+		<Unit filename="..\..\src\object.cpp" />
+		<Unit filename="..\..\src\object.h" />
+		<Unit filename="..\..\src\resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="..\..\src\testApp.cpp" />
+		<Unit filename="..\..\src\testApp.h" />
+		<Unit filename="..\..\src\wx_pch.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

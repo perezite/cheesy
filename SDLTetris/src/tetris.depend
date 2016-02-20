@@ -1,0 +1,491 @@
+# depslib dependency file v1.0
+1250550214 source:i:\compile\sdltetris\sprite.cpp
+	"Global.h"
+	"sprite.h"
+
+1212315690 i:\compile\sdltetris\global.h
+	<windows.h>
+
+1211488400 i:\compile\sdltetris\sprite.h
+	"dxinit.h"
+
+1210843550 i:\compile\sdltetris\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl.h
+	"SDL_main.h"
+	"SDL_types.h"
+	"SDL_getenv.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_timer.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_joystick.h"
+	"SDL_events.h"
+	"SDL_video.h"
+	"SDL_byteorder.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_main.h
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1090385606 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_types.h
+
+1105229582 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\begin_code.h
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\close_code.h
+
+1018535714 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_getenv.h
+	"begin_code.h"
+	"close_code.h"
+
+1100565008 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_error.h
+	"begin_code.h"
+	"close_code.h"
+
+1093028222 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_rwops.h
+	<stdio.h>
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+
+1105662296 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_timer.h
+	"SDL_main.h"
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+
+1093028222 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_audio.h
+	<stdio.h>
+	"SDL_main.h"
+	"SDL_types.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_byteorder.h"
+	"begin_code.h"
+	"close_code.h"
+
+1100300958 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_byteorder.h
+
+1113732990 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_cdrom.h
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+
+1090177506 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_joystick.h
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+
+1093028222 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_events.h
+	"SDL_types.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_active.h
+	"begin_code.h"
+	"close_code.h"
+
+1090191460 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_keyboard.h
+	"SDL_types.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_keysym.h
+
+1113732990 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_mouse.h
+	"SDL_types.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1104646276 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_video.h
+	<stdio.h>
+	"SDL_types.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_mutex.h
+	"SDL_main.h"
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+
+1073238548 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_quit.h
+
+1113732990 e:\programme\sdl-devel-1.2.9-mingw32\sdl-1.2.9\include\sdl_version.h
+	"SDL_types.h"
+	"begin_code.h"
+	"close_code.h"
+
+1250599244 source:i:\compile\sdltetris\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+
+1251580090 source:i:\compile\sdltetris\main.cpp
+	<stdlib.h>
+	<math.h>
+	"dxinit.h"
+	"sprite.h"
+	"stone.h"
+	"timer.h"
+	"game.h"
+	<iostream>
+	<fstream>
+
+1252054396 source:i:\compile\sdltetris\stone.cpp
+	"stone.h"
+	"sprite.h"
+	"game.h"
+
+1251577966 i:\compile\sdltetris\stone.h
+	"sprite.h"
+	"timer.h"
+	<SDL.h>
+	<vector>
+
+1251394990 i:\compile\sdltetris\timer.h
+	"sprite.h"
+	<SDL.h>
+	<vector>
+	<windows.h>
+
+1251394990 source:i:\compile\sdltetris\timer.cpp
+	"timer.h"
+
+1251581022 source:i:\compile\sdltetris\game.cpp
+	"game.h"
+	"stone.h"
+	<math.h>
+
+1251578754 i:\compile\sdltetris\game.h
+	"sprite.h"
+	"stone.h"
+	"timer.h"
+	"sprite.h"
+	<SDL.h>
+	<map>
+	<string>
+
+1251572890 source:h:\portfolio\sdltetris\src\main.cpp
+	<stdlib.h>
+	<math.h>
+	"dxinit.h"
+	"sprite.h"
+	"stone.h"
+	"timer.h"
+	"game.h"
+	<iostream>
+	<fstream>
+
+1210836350 h:\portfolio\sdltetris\src\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1211481200 h:\portfolio\sdltetris\src\sprite.h
+	"dxinit.h"
+
+1253361586 h:\portfolio\sdltetris\src\stone.h
+	"sprite.h"
+	"timer.h"
+	<SDL.h>
+	<vector>
+
+1253361562 h:\portfolio\sdltetris\src\timer.h
+	"sprite.h"
+	<SDL.h>
+	<vector>
+	<windows.h>
+
+1251571554 h:\portfolio\sdltetris\src\game.h
+	"sprite.h"
+	"stone.h"
+	"timer.h"
+	"sprite.h"
+	<SDL.h>
+	<map>
+	<string>
+
+1250543014 source:h:\portfolio\sdltetris\src\sprite.cpp
+	"Global.h"
+	"sprite.h"
+
+1212308490 h:\portfolio\sdltetris\src\global.h
+	<windows.h>
+
+1252047196 source:h:\portfolio\sdltetris\src\stone.cpp
+	"stone.h"
+	"sprite.h"
+	"game.h"
+
+1251387790 source:h:\portfolio\sdltetris\src\timer.cpp
+	"timer.h"
+
+1250592044 source:h:\portfolio\sdltetris\src\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1255796864 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_platform.h
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\begin_code.h
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\close_code.h
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_keysym.h
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 h:\portfolio\sdltetris\ext\sdl-1.2.14\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1253361446 source:h:\portfolio\sdltetris\src\game.cpp
+	"game.h"
+	"stone.h"
+	<math.h>
+
+1253365046 source:c:\data\code\sdltetris\src\game.cpp
+	"game.h"
+	"stone.h"
+	<math.h>
+
+1251575154 c:\data\code\sdltetris\src\game.h
+	"sprite.h"
+	"stone.h"
+	"timer.h"
+	"sprite.h"
+	<SDL.h>
+	<map>
+	<string>
+
+1211484800 c:\data\code\sdltetris\src\sprite.h
+	"dxinit.h"
+
+1210839950 c:\data\code\sdltetris\src\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1253365186 c:\data\code\sdltetris\src\stone.h
+	"sprite.h"
+	"timer.h"
+	<SDL.h>
+	<vector>
+
+1253365162 c:\data\code\sdltetris\src\timer.h
+	"sprite.h"
+	<SDL.h>
+	<vector>
+	<windows.h>
+
+1251576490 source:c:\data\code\sdltetris\src\main.cpp
+	<stdlib.h>
+	<math.h>
+	"dxinit.h"
+	"sprite.h"
+	"stone.h"
+	"timer.h"
+	"game.h"
+	<iostream>
+	<fstream>
+
+1250546614 source:c:\data\code\sdltetris\src\sprite.cpp
+	"Global.h"
+	"sprite.h"
+
+1212312090 c:\data\code\sdltetris\src\global.h
+	<windows.h>
+
+1252050796 source:c:\data\code\sdltetris\src\stone.cpp
+	"stone.h"
+	"sprite.h"
+	"game.h"
+
+1251391390 source:c:\data\code\sdltetris\src\timer.cpp
+	"timer.h"
+
+1250595644 source:c:\data\code\sdltetris\src\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+

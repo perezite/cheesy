@@ -1,0 +1,4 @@
+base referer
+rect $class_ti_xml_node.html 9,196 92,223
+rect $class_ti_xml_base.html 9,96 92,123
+rect $struct_ti_xml_cursor.html 5,5 96,32

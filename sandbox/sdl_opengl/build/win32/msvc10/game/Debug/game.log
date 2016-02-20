@@ -1,0 +1,26 @@
+﻿Der Buildvorgang wurde am 21.12.2013 14:53:34 gestartet.
+     1>Projekt "C:\data\code\sandbox\sdl_opengl\build\win32\msvc10\game\game.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         "Debug\game.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\include /I..\..\include\SDL2 /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D TIXML_USE_STL /D JVGS_MUTE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\..\src\main.cpp
+         main.cpp
+       ManifestResourceCompile:
+         Alle Ausgaben sind aktuell.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\..\..\bin\game.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\..\lib\SDL2 SDL2main.lib SDL2.lib opengl32.lib glu32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\game.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\data\code\sandbox\sdl_opengl\bin\game.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\data\code\sandbox\sdl_opengl\build\win32\msvc10\..\..\..\bin\game.lib" /MACHINE:X86 Debug\game.exe.embed.manifest.res
+         Debug\main.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\game.exe.embed.manifest" /manifest Debug\game.exe.intermediate.manifest
+         Alle Ausgaben sind aktuell.
+       LinkEmbedManifest:
+         Alle Ausgaben sind aktuell.
+         game.vcxproj -> C:\data\code\sandbox\sdl_opengl\build\win32\msvc10\..\..\..\bin\game.exe
+       FinalizeBuildStatus:
+         Die Datei "Debug\game.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\game.lastbuildstate".
+     1>Die Erstellung des Projekts "C:\data\code\sandbox\sdl_opengl\build\win32\msvc10\game\game.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:01.00

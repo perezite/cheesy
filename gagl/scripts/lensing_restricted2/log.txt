@@ -1,0 +1,37 @@
+start iteration
+
+===starting generation  1 ===
+
+best: [7.986523555818258, 1.3165277039243504] (1.8107656776)
+generation  1  before mating
+
+generation  1  after mating
+
+generation  1  after sorting and mutation
+
+===starting generation  2 ===
+
+best: [7.986523555818258, 1.3165277039243504] (1.8107656776)
+generation  2  before mating
+
+generation  2  after mating
+
+generation  2  after sorting and mutation
+
+===starting generation  3 ===
+
+best: [7.986523555818258, 1.3165277039243504] (1.8107656776)
+generation  3  before mating
+
+generation  3  after mating
+
+generation  3  after sorting and mutation
+
+===starting generation  4 ===
+
+best: [7.986523555818258, 1.3165277039243504] (1.8107656776)
+generation  4  before mating
+
+generation  4  after mating
+
+generation  4  after sorting and mutation

@@ -1,0 +1,9 @@
+base referer
+rect $class_ti_xml_attribute.html 235,80 337,107
+rect $class_ti_xml_node.html 363,80 445,107
+rect $class_ti_xml_comment.html 5,155 115,181
+rect $class_ti_xml_declaration.html 139,155 257,181
+rect $class_ti_xml_document.html 283,155 395,181
+rect $class_ti_xml_element.html 419,155 520,181
+rect $class_ti_xml_text.html 545,155 623,181
+rect $class_ti_xml_unknown.html 648,155 755,181

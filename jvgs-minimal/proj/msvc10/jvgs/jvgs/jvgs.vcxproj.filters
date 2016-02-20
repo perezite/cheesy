@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Quelldateien\core">
+      <UniqueIdentifier>{9fd2342f-f161-4f60-a500-f54d07b42b7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\tinyxml">
+      <UniqueIdentifier>{6470b3ca-5998-4f32-87df-d82e2174637f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\math">
+      <UniqueIdentifier>{1ed356cd-6cb0-49a1-ac61-c69e65ade6e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\video">
+      <UniqueIdentifier>{cd272e5a-9191-400c-9ec5-5e8bf5c9ef27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\game">
+      <UniqueIdentifier>{455aa2a4-cb56-47ec-a4b4-3ee389378772}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\input">
+      <UniqueIdentifier>{be9e89aa-bf20-4fe8-8040-5ba3ee2bce1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\sketch">
+      <UniqueIdentifier>{ff811c86-0832-4119-bd16-83b18aecd3f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\core">
+      <UniqueIdentifier>{91bfc27f-8dde-4637-a42a-be7a41418cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\tinyxml">
+      <UniqueIdentifier>{ee116bba-d8b0-40d4-afde-bf2b5c80eadb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\math">
+      <UniqueIdentifier>{04e25580-28cf-483d-b427-588675ace969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\video">
+      <UniqueIdentifier>{1b4a12e5-6486-4ff5-aa47-98480adda4f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\game">
+      <UniqueIdentifier>{39a9110d-fce7-4835-8ef9-fdf91ffec515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\input">
+      <UniqueIdentifier>{11622e3d-120d-4f8c-9e53-6d23e86dfa22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\sketch">
+      <UniqueIdentifier>{bc99f944-08b8-48c4-84b2-4bfba6a3236c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\main.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\LogManager.cpp">
+      <Filter>Quelldateien\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\PropertyMap.cpp">
+      <Filter>Quelldateien\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\TimeManager.cpp">
+      <Filter>Quelldateien\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\View.cpp">
+      <Filter>Quelldateien\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\core\XMLLoadable.cpp">
+      <Filter>Quelldateien\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\tinyxml\tinystr.cpp">
+      <Filter>Quelldateien\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\tinyxml\tinyxml.cpp">
+      <Filter>Quelldateien\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\tinyxml\tinyxmlerror.cpp">
+      <Filter>Quelldateien\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\tinyxml\tinyxmlparser.cpp">
+      <Filter>Quelldateien\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\AffineTransformationMatrix.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\BoundedObject.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\BoundingBox.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\CollisionDetector.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\LineSegment.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\MathManager.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\Matrix.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\Polygon.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\math\Vector2D.cpp">
+      <Filter>Quelldateien\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\Color.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\DataRenderer.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\FPSLogger.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\ListManager.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\Renderer.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\SketchyRenderer.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\video\VideoManager.cpp">
+      <Filter>Quelldateien\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\Affector.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\Camera.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\CollisionResponsePositioner.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\Controller.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\Entity.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\InputController.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\Level.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\game\LevelManager.cpp">
+      <Filter>Quelldateien\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\input\InputConfiguration.cpp">
+      <Filter>Quelldateien\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\input\InputManager.cpp">
+      <Filter>Quelldateien\input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\sketch\Sketch.cpp">
+      <Filter>Quelldateien\sketch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\sketch\SketchManager.cpp">
+      <Filter>Quelldateien\sketch</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\core\LogManager.h">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\core\PropertyMap.h">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\core\TimeManager.h">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\core\View.h">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\core\XMLLoadable.h">
+      <Filter>Headerdateien\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\tinyxml\tinystr.h">
+      <Filter>Headerdateien\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\tinyxml\tinyxml.h">
+      <Filter>Headerdateien\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\AffineTransformationMatrix.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\BoundedObject.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\BoundingBox.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\CollisionDetector.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\LineSegment.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\MathManager.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\Matrix.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\Polygon.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\math\Vector2D.h">
+      <Filter>Headerdateien\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\Color.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\DataRenderer.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\FPSLogger.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\ListManager.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\Renderer.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\SketchyRenderer.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\video\VideoManager.h">
+      <Filter>Headerdateien\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\Affector.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\Camera.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\CollisionResponsePositioner.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\Controller.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\Entity.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\InputController.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\Level.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\game\LevelManager.h">
+      <Filter>Headerdateien\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\input\InputConfiguration.h">
+      <Filter>Headerdateien\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\input\InputManager.h">
+      <Filter>Headerdateien\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\input\Key.h">
+      <Filter>Headerdateien\input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\sketch\Sketch.h">
+      <Filter>Headerdateien\sketch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\sketch\SketchManager.h">
+      <Filter>Headerdateien\sketch</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1 @@
+g++ main.cpp EntityObservable.cpp Ship.cpp Wingman.cpp
