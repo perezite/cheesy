@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 82ee550d2068268479ef1c79e88c5641
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: char_walk_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 300
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 300
+        width: 61
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 300
+        width: 103
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_3
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 300
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_4
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 300
+        width: 62
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 300
+        width: 103
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 149
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_7
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 149
+        width: 62
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_8
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 149
+        width: 103
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_9
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 149
+        width: 55
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_10
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 149
+        width: 63
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_11
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 149
+        width: 101
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 62
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: char_walk_13
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 62
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
