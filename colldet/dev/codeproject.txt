@@ -1,0 +1,3 @@
+Once we have found that the polygons are going to collide, we calculate the translation needed to push the polygons apart. The axis on which the projection overlapping is minimum will be the one on which the collision will take place.
+
+minimum translation distance

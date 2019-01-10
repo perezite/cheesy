@@ -1,0 +1,408 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+  <meta name="GENERATOR" content="Trellian WebPAGE">
+  <title>pfirth.co.uk</title>
+ </head><body bgcolor="#ccdaff">
+<p></p>
+<p></p>
+<p align="center"><font size="4"><strong>
+</strong><table align="center" border="0" cellpadding="3" cellspacing="0" width="100%">
+  <tbody>
+  <tr>
+    <td>
+      <p align="center"><strong><font size="4">Distance in 2D</font></strong> </p>
+      <p></p>
+      <p>I'm going to start in 2d because its much easier that way. I 
+      find&nbsp;that often when I'm trying to work out a problem, things are 
+      much easier in 2d and more often than not, moving into 3d from there is 
+      pretty easy.</p>
+      <p>&nbsp;</p>
+      <p><a href="http://physics.nist.gov/cuu/Units/units.html">SI </a>units 
+      will be used throughout.</p>
+      <p>I will define <a href="http://www.pfirth.co.uk/matrices.html">matrices </a>in bold uppercase, 
+      <a href="http://www.pfirth.co.uk/vector.html">vectors </a>in uppercase and scalars in lowercase. 
+      The <a href="http://www.pfirth.co.uk/dotproduct.html">dot product </a>will be shown as . and <a href="http://www.pfirth.co.uk/crossproduct.html">cross product </a>as x. ||A|| means the&nbsp;<a href="http://www.pfirth.co.uk/vector.html#Unit">magnitude </a>of A. When I want to express 
+      individual components of a vector, I will write A_x to mean the x 
+      component of A. I will use * to denote multiplication, but also note 
+      that&nbsp;sV might be used to show the scalar s multiplied by the vector 
+      V.</p>
+      <p>&nbsp;</p>
+      <p align="center"><font size="4"><strong><a name="Penetration"></a>Penetration 
+      distance</strong></font></p>
+      <p>&nbsp;</p>
+      <p>This is an imporant measure when writing any kind of physically based 
+      simulation. In a <em>timestepping </em>simulation (where there are 
+      discreet moments in time, i.e. every frame) it is important to know how 
+      much two shapes have penetrated each other so a correction can be made. 
+      Penetration is inevitible since objects are effectively "warping" from 
+      location to location as they move, without passing through the points 
+      inbetween.</p>
+      <p>The&nbsp;alternative would be to do <em>continuous </em>collision 
+      detection where the inbetween path is accounted for, but I'm going to 
+      concentrate on a timestepping approach for the moment since it will be the 
+      most familar to most games programmers.</p>
+      <p>&nbsp;</p>
+      <p align="center"><font size="4"><strong><a name="Circles"></a>Circles (point vs 
+      point)</strong></font></p>
+      <p align="center">&nbsp;</p>
+      <p align="left">Pretty simple to start out with. Two circles are defined as 
+      having a centre and a radius. They collide when the distance between the 
+      two centres is less than the sum of their radii:</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">||A-B|| &lt; (r1+r2)</p>
+      <p align="left">or in code:</p>
+      <p align="left">sqrt((A_x-B_x)² + (A_y-B_y)²) &lt; (r1+r2)</p>
+      <p align="left">Of course you can speed this up by not having the compute 
+      the magnitude&nbsp;||A-B|| which involves a sqrt by squaring both sides of 
+      the equation:</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">||A-B||² &lt; (r1+r2)²</p>
+      <p align="left">or in code:</p>
+      <p align="left">(A_x-B_x)² + (A_y-B_y)² &lt; (r1+r2)²</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">So to calculate a measure of the penetration we can say:</p>
+      <p align="left">p = ||A-B|| - (r1+r2)</p>
+      <p align="left">You&nbsp;can&nbsp;see that this is a simple rearangement of 
+      the collision test inequality</p>
+      <p align="left">||A-B|| &lt; (r1+r2)</p>
+      <p align="left">=</p>
+      <p align="left">||A-B|| - (r1+r2) &lt; 0</p>
+      <p align="left">All I have done is to subtract (r1+r2) from both sides of 
+      the inequality which is handily also the measure of penetration between 
+      the two circles. So, when</p>
+      <p align="left">p &lt; 0</p>
+      <p align="left">The two spheres are penetrating by p metres. We also would 
+      like the <em>penetration vector </em>so that we can correct the 
+      penetration once we discover it. This is the vector that moves both 
+      circles to the point where they just touch, correcting the penetration. 
+      Importantly it is not only just a vector that does this, it is the 
+      <em>only </em>vector which corrects the penetration by moving the minimum 
+      amount. This is important because we only want to correct the error, not 
+      introduce more by moving too much when we correct, or too little.</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">N&nbsp;= (A-B) / ||A-B||</p>
+      <p align="left">P = N*p</p>
+      <p align="left">Here we have calculated the <a href="http://www.pfirth.co.uk/vector.html#Unit">normalised </a>vector N between the two centres 
+      and the penetration vector P by multiplying our unit direction by the 
+      penetration distance.</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">At this point you may have noticed that I haven't tried to 
+      optimise this part of the calculation by using squared lengths etc. This 
+      is generally ok because we can still do the initial intersection test 
+      using&nbsp;squared maths and then once we have detected an intersection, 
+      we can go for the heavier maths since it will happen far less often.</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">You may also have noticed that during our calculations we 
+      have calculated the collision <a href="http://www.pfirth.co.uk/vector.html#Unit">normal </a>N; 
+      this is no accident and will help us out later when we come to the <a href="http://www.pfirth.co.uk/physics.html">physics </a>part.</p>
+      <p align="left">&nbsp;</p>
+      <p align="center"><applet code="collision-Dateien/DrawingWithColor1.class" align="centre" width="320" height="320">
+	</applet>
+	 </p>
+      <p align="center"><font size="4"><strong></strong></font>&nbsp;<em>Drag 
+      spheres to move them in this applet</em></p>
+      <p align="center"><font size="4"><strong></strong></font>&nbsp;</p>
+      <p align="center">&nbsp;</p>
+      <p align="center"><font size="4"><strong><a name="CircleCapsule"></a>Circles and 
+      Capsules (point vs line)</strong></font></p>
+      <p align="center">&nbsp;</p>
+      <p align="left">This is slightly trickier and relies on&nbsp;a certain 
+      amount of understanding about <a href="http://www.pfirth.co.uk/dotproduct.html#Projection">projection </a>and in particular the <a href="http://www.pfirth.co.uk/dotproduct.html">dot product </a>operator. What we actually want to 
+      calculate is the clostest distance between the centre of the circle and 
+      the line which represents the axis of the capsule. We can do this by 
+      projecting the centre of the circle onto the axis and then checking this 
+      distance to see if its smaller than the sum of the radii of the two 
+      shapes:</p>
+      <p align="left">Capsule defined by its centre point C,&nbsp;unit axis A, 
+      length m and radius r1. Circle defined by its centre H and radius r2:</p>
+      <p align="left">Get capsule end points:</p>
+      <p align="left">P0 = C - A*(m/2)</p>
+      <p align="left">P1 = C + A*(m/2)</p>
+      <p align="left">Get vector from endpoint to circle:</p>
+      <p align="left">D =&nbsp;H - P0</p>
+      <p align="left">Project vector onto axis (and clamp against 0 and 
+      length):</p>
+      <p align="left">d = D . A </p>
+      <p align="left">(0 &lt; d &lt; m)</p>
+      <p align="left">Get point on axis:</p>
+      <p align="left">R&nbsp;= P0 + A*d</p>
+      <p align="left">Distance from point on axis to circle:</p>
+      <p align="left">b = ||H-R||</p>
+      <p align="left">&nbsp;</p>
+      <p align="left">You should now recognise this as the circle vs circle test 
+      above. The test for intersection is therefore:</p>
+      <p align="left">||H-R|| &lt; (r1+r2)</p>
+      <p align="left">We can find the measure of penetration in the same way as 
+      <font face="System">before</font>:</p>
+      <p align="left">p = ||H-R|| - (r1+r2)</p>
+      <p align="left">The circle and capsule penetrate by p metres and we can find 
+      the contact normal:</p>
+      <p align="left">N = (H-R) / ||H-R||</p>
+      <p align="center">&nbsp;</p>
+      <p align="center"><applet code="collision-Dateien/CapsuleCircle.class" align="centre" width="320" height="320">
+	</applet>
+	 </p>
+      <p align="center"><em>Drag capsule end points and circle to move 
+      them</em></p>
+      <p align="center">&nbsp;</p>
+      <p align="center">&nbsp;</p>
+      <p align="center"><font size="4" face="Ariel"><strong><a name="CapsuleCapsule"></a>Capsule and capsule (line vs 
+      line)</strong></font></p>
+      <p align="center"></p>
+      <p>&nbsp;</p>
+      <p>When I first wrote this section I wrongly suggested that capsule vs 
+      capsule was a mere extension of the capsule vs&nbsp;circle function above 
+      (by projecting the end points of one capsule onto the axis of the other 
+      [and visa versa] and taking the smallest of the distances between 
+      projected points and end points). This doesn't work in the case where the 
+      two capsules overlap; the distance from end points to the projections can 
+      be greater than the sum of the radii of the two capsules. Also, doing the 
+      test this way does not extend at all well into 3d. </p>
+      <p>What we need to do is to consider the Minkowski difference of the two 
+      line segments which make up the capsules axis. Since I am about to 
+      introduce this subject in the next&nbsp;section (Polyhedra) I will assume 
+      you have skipped ahead and familiarised yourself with this powerful 
+      operator.</p>
+      <p>Essentially, it comes down to finding the closest distance 
+      from&nbsp;the origin to the surface of the difference, be that 
+      positive&nbsp;or negative distance. Start by checking for overlap in the 
+      line segments by testing the origin for containment within the difference 
+      of the line segments. If the origin penetrates the difference, find the 
+      closest point and therefore the contact normal. To resolve the 
+      penetration, move either capsule in the direction of the contact normal by 
+      the penetration distance + the sum of radii of the capsules.</p>
+      <p>If there is a positive distance to any of the edge of the difference 
+      you will need to find the minimum of clamped distances to each edge of the 
+      difference from the origin. When I say clamped, I mean that the projection 
+      of the origin onto each edge should be clamped at the boundaries of the 
+      edge. If this distance is less than the sum of the radii, then there is 
+      penetration and the penetration direction is the direction from the origin 
+      to the point on the closest edge.</p>
+      <p align="center">&nbsp;</p>
+      <p align="center"></p>
+      <p align="center"><applet code="collision-Dateien/MinkowskiLines.class" align="centre" width="320" height="320">
+	</applet>
+	 </p>
+      <p align="center"><em>Drag capsules around, grab vertices to rotate</em></p>
+      <p>In the applet the capsules are shown along with the Minkowski 
+      difference of the axis which make up the capsules. The line from the 
+      origin to the surface of the difference is the contact normal direction 
+      and its length is the distance between capsules. I have made it change 
+      colour when the length is greater than the sum of the radii of the 
+      capsules and also when the line segments intersect.</p>
+      <p>&nbsp;</p>
+      <p align="center"><font size="4"><strong><a name="Polyhedra"></a>Polyhedra</strong></font></p>
+      <p>&nbsp;</p>
+      <p>Now we get to the interesting stuff. How do you find the penetration 
+      distance (or even the positive distance) between two convex polyhedra? Of 
+      course, in 2d polyhedra are just polygons. So we can start with this and 
+      move up into 3d once we have a basis to work from.</p>
+      <p>&nbsp;</p>
+      <p><font face="Arial"><u>Features</u><font face="Times New Roman"></font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">In 2d, features of a 
+      polygon are vertices and faces (edges). The minimum distance between two 
+      polygons is the smallest of a set of distances between features of each 
+      polygon. That is, the minimum distance can be expressed as the distance 
+      between a pair of features. In 2d, with objects A and B its either the 
+      distance between a vertex of A and a face of B or a face of A and a vertex 
+      of B.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">You may have noticed that 
+      actually I've already been using the concept of features in all my tests 
+      so far, so it doesn't only apply to polyhedra.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman"></font></font>&nbsp;</p>
+      <p><font face="Arial"><u>Minkowski difference</u></font></p>
+      <p><font face="Arial"><font face="Times New Roman">&nbsp;Now that we know 
+      that the minimum distance can be expressed as the smallest from a set of 
+      distances between feature pairs from two objects, we could just go ahead 
+      and compute each distance and pick the minimum as the actual distance 
+      between polygons taking care, of course, to clamp our projections onto 
+      faces against the 0 and 1 of the extents of the face (remember that a face 
+      is an edge in 2d).</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">This will work fine as 
+      long as the two polygons don't intersect. The problem is that the closest 
+      two features can be is 0, i.e. they intersect. But we actually need a 
+      measure of penetration.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">We can achieve this by 
+      introducing the <em><a href="http://www.pfirth.co.uk/minkowski.html">Minkowski Difference 
+      </a></em>operation for convex polyhedra. The Minkowski difference of two 
+      polyhedra is simply every vertex of one object subtracted from every 
+      vertex of the other. We are only interested in the convex hull of the 
+      resulting difference object.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">If you imagine one 
+      polygon shrinking down to become a point whilest the other grows to 
+      accommodate the features of the shrunken one, you begin to get an 
+      intuition for what the Minkowski difference looks like. It has the 
+      interesting property that when the two original polygons intersect, the 
+      difference contains the&nbsp;origin. When they just touch, the origin is 
+      just touching a feature of the difference. Moreover, the shortest distance 
+      from the origin to a feature of the difference gives you the contact 
+      normal and also something called the <em>Minimum Translational Distance 
+      </em>which is the globally shortest distance you can move either shape 
+      from penetration until they both just touch.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">The MTD is the measure of 
+      penetration I was talking about above. So how do we go about computing the 
+      MTD? Well, in 2d it's pretty easy and not too slow (only linear in the 
+      number of faces of both polygons), but it gets more tricky in 3d because 
+      you then have edges to worry about.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">The brute force method is 
+      what I'm going to start out with which basically involves explicitly 
+      computing the convex hull of the Minkowski difference of the two 
+      polygons&nbsp;whilest keeping track of how close each face is to the 
+      origin.</font></font><font face="Arial"><font face="Times New Roman"></font></font></p><font face="Arial"><font face="Times New Roman"></font></font>
+      <p><font face="Arial"><u>Convex hull of the Minkowski 
+      difference</u></font></p>
+      <p><font face="Arial"><font face="Times New Roman">We only care about the 
+      convex hull of the Minkowski difference because only this will give us the 
+      correct MTD. We must be able to find a way to only create faces which are 
+      part of the convex hull. Fortunately for us there is a nice way of doing 
+      this, using the concept of <em>supporting vertices</em>. A supporting 
+      vertex is simply a vertex which is "most in the direction of" a given 
+      direction vector. Mathematically, this can be found as the vertex which 
+      has the greatest dot product with a given direction 
+      vector.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">For general polygons this 
+      just amounts to a search through all vertices, but it can be sped up 
+      either by using some kind of hierarchy (<em><a href="http://www.cs.princeton.edu/%7Edpd/Papers/DobkinKirkpatrick.pdf">Dobkin 
+      and Kirkpatrick </a></em>developed a hierarchy giving a <a href="http://www.cs.strath.ac.uk/%7Emdd/teaching/alg&amp;comp/big_oh.html">O(log 
+      n) </a>search time), or by exploiting temporal coherence (i.e. keeping 
+      track of the last supporting vertex) and using a technique known as hill 
+      climbing to only check neighboring vertices to see if a new support point 
+      would be closer than the last.</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">For cubes and quadrics 
+      such as cones and cylinders constant cost supporting mapping functions 
+      exist (see <em><a href="http://citeseer.ist.psu.edu/rd/79941070%2C409142%2C1%2C0.25%2CDownload/http://citeseer.ist.psu.edu/cache/papers/cs/20333/http:zSzzSzwww.win.tue.nlzSzcszSzttzSzginozSzsolidzSzjgt98convex.pdf/vandenbergen99fast.pdf">A 
+      Fast and Robust GJK Implementation for Collision Detection of Convex 
+      Objects</a> </em>by <em>Gino Van Den Bergen</em>). Since we are in 2d, we 
+      will use the constant cost support mapping for a square:</font></font></p>
+      <p>&nbsp;</p>
+      <p>Half extents of the square in a vector E</p>
+      <p><font face="Arial"><font face="Times New Roman">Rotation matrix 
+      <strong>R</strong></font></font></p>
+      <p>Position of object P</p>
+      <p><font face="Arial"><font face="Times New Roman">Supporting direction 
+      D</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">Transform direction <a href="http://www.pfirth.co.uk/dotproduct.html#intospace">into the space </a>of the 
+      square:</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">D' = 
+      <strong>R*</strong>D</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">Compute local space 
+      supporting direction:</font></font></p>
+      <p><font face="Arial"><font face="Times New Roman">S_x = D'_x &lt;0 ? -E_x : 
+      E_x</font></font></p><font face="Arial"><font face="Times New Roman">
+      </font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">S_y = D'_y &lt;0 ? -E_y : 
+      E_y</font></font></font></font></p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">
+      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">Transform into world 
+      space and return S:</font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">S' = S*<strong>R 
+      </strong>+ P</font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"></font></font>&nbsp;</font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">Now for two polygons A 
+      and B we can run through edges of A, finding the supporting vertex of B in 
+      the direction of the edge "normal" of A and then using the Minkowski 
+      difference we can create a face in the Minkowski difference 
+      set:</font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">for (i=0; i&lt;A.num_edges; 
+      i++)</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">{</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">&nbsp;vector support_vertex = 
+      B.get_supporting_vertex( -A.edges[i].perp() );</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">&nbsp;edge&nbsp;minkowski_edge(A.edges[i].start - 
+      support_vertex</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;A.edges[i].end - support_vertex);</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">}</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">&nbsp;</font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">Doing the same for edges 
+      of B and supporting vertices of A will give us the remaining faces in the 
+      Minkowski difference:</font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"></font></font>&nbsp;</font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"></font></font>&nbsp;</font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">for (i=0; i&lt;B.num_edges; 
+      i++)</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">{</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">&nbsp;vector support_vertex = 
+      A.get_supporting_vertex( -B.edges[i].perp() );</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">&nbsp;edge&nbsp;minkowski_edge(B.edges[i].start - 
+      support_vertex</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.edges[i].end
+- support_vertex);</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font size="2" face="Courier New">}</font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Courier New"><font face="Arial"><font face="Times New Roman">You may have noticed that we actually use the 
+      inverted 2d normal in our search for supporting vertices; this is because 
+      we always want do the difference operator on features which are as far 
+      apart as possible in order to maintain our constraint that the resulting 
+      features lie on the convex hull of the Minkowski 
+      difference.</font></font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">So once this has been done we end up with a Minkowski difference object 
+      which is composed of vertex-face difference pairs of both objects. I just 
+      want to re-emphisise that point: <strong>every face in the difference 
+      represents a pair of features</strong>. So if we can find the face closest 
+      to the origin, we have found the pair of features which are closest in 
+      each object.</font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p align="center"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">&nbsp;</font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font><p align="center"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"></font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font></font></font><p align="center"><applet code="collision-Dateien/Minkowski.class" align="center" width="320" height="320">
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">	</font></font></font></font></font></font></applet>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">	 </font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font></font></font><p align="center"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><em>Drag the boxes to move them around</em></font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font></font></font><p align="center"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">&nbsp;</font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font></font></font><p align="left"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">If we project the origin onto each face of the Minkowski 
+      difference and keep track of the biggest negative distance (and the point 
+      projected onto the face) we have the contact normal and the MTD. The 
+      beauty of this is that because when the two polygons overlap, the 
+      Minkowski difference contains the origin and because it is itself convex, 
+      we only need to worry about distance to infinite plane (infinite edge in 
+      2d) in our calculations - something which is not true if we need a 
+      positive distance measure.</font></font></font></font></font></font></p>
+<font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">      </font></font></font></font></font></font><p align="left"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman"><font face="Arial"><font face="Times New Roman">Of course, if any of the distances to the infinite planes 
+      are positive then we can exit straight away as we have found a separating 
+      axis between the two objects, this greatly speeds up the calculation. 
+      Remember, our MTD is only accurate for negative distances, but in general 
+      you only care about the distance between two objects if they are colliding 
+      in which case the distance is negative 
+      anyway.</font></font></font></font></font></font></p></td>
+    <td><p>
+           <script type="text/javascript"><!--
+google_ad_client = "pub-3687908465367415";
+/* 120x600, created 4/23/08 */
+google_ad_slot = "6533277925";
+google_ad_width = 120;
+google_ad_height = 600;
+google_cpa_choice = ""; // on file
+//-->
+</script>
+            
+<script type="text/javascript" src="collision-Dateien/show_ads.js">
+</script><script src="collision-Dateien/expansion_embed.js"></script><script src="collision-Dateien/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 600px; position: relative; visibility: visible; width: 120px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 600px; position: relative; visibility: visible; width: 120px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="collision-Dateien/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="120" frameborder="0" height="600"></iframe></ins></ins>
+      </p>
+      <p>
+      <script type="text/javascript"><!--
+google_ad_client = "pub-3687908465367415";
+/* 120x600, created 4/23/08 */
+google_ad_slot = "6594278803";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="collision-Dateien/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 600px; position: relative; visibility: visible; width: 120px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 600px; position: relative; visibility: visible; width: 120px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame2" marginheight="0" marginwidth="0" name="google_ads_frame" src="collision-Dateien/ads_002.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="120" frameborder="0" height="600"></iframe></ins></ins>
+
+      </p>
+      <p>
+      <script type="text/javascript"><!--
+google_ad_client = "pub-3687908465367415";
+/* 120x600, created 4/23/08 */
+google_ad_slot = "7112957618";
+google_ad_width = 120;
+google_ad_height = 600;
+google_cpa_choice = ""; // on file
+//-->
+</script>
+<script type="text/javascript" src="collision-Dateien/show_ads.js">
+</script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 600px; position: relative; visibility: visible; width: 120px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 600px; position: relative; visibility: visible; width: 120px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame3" marginheight="0" marginwidth="0" name="google_ads_frame" src="collision-Dateien/ads_003.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="120" frameborder="0" height="600"></iframe></ins></ins>
+      </p></td></tr>
+  <tr>
+    <td></td>
+    <td></td></tr></tbody></table><strong></strong></font></p>
+	 </body></html>

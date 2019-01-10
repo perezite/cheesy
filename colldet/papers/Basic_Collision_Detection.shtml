@@ -1,0 +1,324 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>flipcode - Basic Collision Detection</title>
+<style type="text/css">
+
+
+a.menulink:link    {color: #b9ffd0; }
+a.menulink:visited {color: #b9ffd0; }
+a.menulink:active  {color: #b9ffd0; }
+
+a.menulinkempty:link    {color: #b9ffd0; }
+a.menulinkempty:visited {color: #b9ffd0; }
+a.menulinkempty:active  {color: #b9ffd0; }
+a.menulinkempty:link, a.menulinkempty:visited, a.menulinkempty:active {text-decoration: none}
+
+a.orangelink:link    { color:#FFAB04; }
+a.orangelink:visited { color:#FFAB04; }
+a.orangelink:active  { color:#FFAB04; }
+
+a.palegreen:link    {color: #b9ffd0; }
+a.palegreen:visited {color: #b9ffd0; }
+a.palegreen:active  {color: #b9ffd0; }
+
+a.bluelink:link    { color:#03F0FF; }
+a.bluelink:visited { color:#03F0FF; }
+a.bluelink:active  { color:#03F0FF; }
+
+a.softyellow:link     { color:#FFFCA9; }
+a.softyellow:visited  { color:#FFFCA9; }
+a.softyellow:active   { color:#FFFCA9; }
+
+a.nounderline:link        {color: #FFFCA9; }
+a.nounderline:visited     {color: #FFFCA9; }
+a.nounderline:active      {color: #FFFCA9; }
+a.nounderline:link, a.nounderline:visited, a.nounderline:active {text-decoration: none}
+
+<!--
+#code_comment { font-family:Courier,Courier New; font-size:12px; color:#007f00; }
+#code_text    { font-family:Courier,Courier New; font-size:12px; color:#000000; }
+#code_keyword { font-family:Courier,Courier New; font-size:12px; color:#0000FF; }
+-->
+
+</style>
+</head><body text="#ffffff" vlink="#fffca9" alink="#fffca9" bgcolor="#000000" link="#fffca9">
+<center>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3512250068614659";
+//728x90, created 1/8/08
+google_ad_slot = "8394943283";
+google_ad_width = 728;
+google_ad_height = 90;
+//--></script>
+<script type="text/javascript" src="Basic_Collision_Detection-Dateien/show_ads.js">
+</script><script src="Basic_Collision_Detection-Dateien/expansion_embed.js"></script><script src="Basic_Collision_Detection-Dateien/test_domain.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: inline-table; height: 90px; position: relative; visibility: visible; width: 728px;"><ins style="border: medium none ; margin: 0pt; padding: 0pt; display: block; height: 90px; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" id="google_ads_frame1" marginheight="0" marginwidth="0" name="google_ads_frame" src="Basic_Collision_Detection-Dateien/ads.htm" style="left: 0pt; position: absolute; top: 0pt;" vspace="0" scrolling="no" width="728" frameborder="0" height="90"></iframe></ins></ins>
+<br>
+
+<br><center><table width="80%" border="0" cellpadding="2" cellspacing="0"><tbody><tr><td valign="center" width="100" background="Basic_Collision_Detection-Dateien/comments_bar2.jpg" bgcolor="#333333"><font size="1">&nbsp;</font></td></tr></tbody></table></center><br>
+<center>
+<table width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<font size="3" color="#ffffff" face="Verdana, Helvetica"><b>Basic Collision Detection</b><br>
+<font size="2">by <!--GO AWAY SPAM!!!--><script language="javascript">document.write('<a href=\"mailto:' + ''    
++ '' + '' + ''    
++''    
++''    
++''    
++''    
++''    
++ 'kurt' + ''    
++ '@' + 'flipcode' + ''    
++''    
++''    
++''    
++''    
++''    
++ '.' + ''    
++''    
++''    
++''    
++''    
++ 'com\">' + 'Kurt Miller' + '</a>')</script><a href="mailto:kurt@flipcode.com">Kurt Miller</a> (21 January 2000)</font>
+</font>
+<br><br><br>
+</td>
+<td valign="top" align="right"><font size="2" face="Verdana, Helvetica"><a href="http://www.flipcode.com/archives/articles.shtml">Return to The Archives</a>
+</font></td>
+</tr></tbody></table>
+</center><center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="3" color="#ffffff" face="Verdana, Helvetica, Arial, Times New Roman"><b>
+
+Introduction
+<font size="1"><br><img src="Basic_Collision_Detection-Dateien/line_grey.png"><br><br></font></b></font></td></tr></tbody></table>
+</center>
+<center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman">
+
+I've seen a few tutorials on basic collision detection around the net, but most of them
+I've read are either pretty confusing or somewhat incomplete.   I've attempted here to write a tutorial
+that anyone with a basic understanding of 3D concepts and linear algebra should be
+able to pick up on quickly.  If you're already familiar with collision detection, there's no real reason to read
+further.   I'm not presenting anything new here, just stating the basics and suggesting
+a few possibly "better" ways to do a step or two. </font></td></tr></tbody></table>
+</center><br><br><center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="3" color="#ffffff" face="Verdana, Helvetica, Arial, Times New Roman"><b>
+
+Collision Detection
+<font size="1"><br><img src="Basic_Collision_Detection-Dateien/line_grey.png"><br><br></font></b></font></td></tr></tbody></table>
+</center>
+<center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman">
+
+Lets start with what we're trying
+to do in the first place.   So you've got your engine up and running, but you can
+walk through walls and things like this.   That's not very cool, so you want to detect when your viewer
+has hit a part of the world and then respond (for example by not letting him move there).
+That's our goal, and at its simplest, its indeed very simple to achieve.   
+Assume we're talking about a camera that
+is going to move to position: "destination".    To perform basic collision detection, we want do the following:
+</font><blockquote>
+<font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman"><li>Determine if "destination" will cross the "plane" of any polygon in the portion of the world we're checking against.
+</li><li>Find out where exactly the intersection would be on that plane
+and determine if that point of intersection is actually within the
+boundaries of the polygon.
+</li></font></blockquote>
+<font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman">The good thing is that you move on to the next step if and only if the first step checks out.
+For example if your "destination" doesn't cross any planes, you don't need to do anything with
+the intersection point because there is no intersection.  This may cut down calculation time
+quite a bit since your viewer won't be colliding with very many polygons at once.<br><br>Now, I won't insult you.  If you're ready to add collision detection to your engine that you've
+already got up and running, I'm assuming you're familiar with planes in 3-space.  If you're
+not too sure about planes and their respective equations, you might want to find some other
+references.   I won't regurgitate the information here.   I'm sorry.<br><br>Just so we're on the same page, when I speak of planes, I'm talking about a normal vector and
+scalar distance (taken right from its equation).   <br><br>To avoid mentioning it later, I am in fact only
+dealing with convex polygons. For every polygon, be sure you've
+calculated its plane normal and distance.   To do step 1, lets assume you have "position" and "destination".
+As before, "destination" is where your viewer wants to move to (for example after someone hits
+the "forward" key) and "position" is where your camera currently is.   To determine if
+your destination will cross a polygon's plane, simply do the following (psuedo code):<br><br></font><center><div style="border: 1px solid rgb(192, 192, 192); overflow: auto; width: 100%; background-color: rgb(255, 255, 255);"><table width="100%" bgcolor="#ffffff" border="0" cellpadding="12" cellspacing="0"><tbody><tr><td width="100%" bgcolor="#ffffff"><pre><font color="#000000" face="Courier, Courier New">
+  <font color="#0000ff">int</font> ClassifyPoint( CPlane3D *plane, CPoint3D *destPt )
+  {
+        scalar p = DotProduct( plane-&gt;normal, destPt ) + plane-&gt;distance;<br><br>        <font color="#0000ff">if</font>( p &gt; 0.0f ) <font color="#0000ff">return</font> PLANE_FRONT;
+        <font color="#0000ff">else</font>
+        <font color="#0000ff">if</font>( p &lt; 0.0f ) <font color="#0000ff">return</font> PLANE_BACK;<br><br>        <font color="#0000ff">return</font> PLANE_COINCIDE;
+  }
+ </font></pre></td></tr></tbody></table></div></center><font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman"><br><br>For our purposes, PLANE_[type] are just integer constants to distinguish between
+sides of the plane.   It should be obvious now that for each polygon's plane in your data set,
+you can run <i>ClassifyPoint</i> with "position" and again with "destination".  If
+they return different values from each other, you've run into (or passed) a polygon's plane.
+This means the point where your camera is, and the point where your camera wants to move to,
+are not on the same side of the plane you're checking.   Take a moment to visualize
+that if you're not following so far.  That's at the very heart of collision detection.<br><br>Now, this <b>does not mean</b> you've collided with a polygon.   It just means your destination would pass
+a polygon's <b>plane</b>.  Remember that a hyperplane is infinite, so just because you've
+crossed the plane, doesn't mean you're within the finite boundaries of the actual polygon
+which is "lying on" the plane.   Now we need to check if it actually hit the polygon.   That's
+where the next step come in.  <br><br>Next up, we need to find the intersection point.   This isn't a very difficult task.
+You have the start and end points of a "line" in 3-space (your "position" and "destination"),
+so subtract the start (position) from the end (destination) to get a direction vector
+that we'll call "ray".  ray = destination minus position.   Now, remember your linear algebra.  
+A line in 3-space can be defined as follows:<br><br></font><center><div style="border: 1px solid rgb(192, 192, 192); overflow: auto; width: 100%; background-color: rgb(255, 255, 255);"><table width="100%" bgcolor="#ffffff" border="0" cellpadding="12" cellspacing="0"><tbody><tr><td width="100%" bgcolor="#ffffff"><pre><font color="#000000" face="Courier, Courier New">
+  lx = start.x + (ray.x * t)
+  ly = start.y + (ray.y * t)
+  lz = start.z + (ray.z * t)
+ </font></pre></td></tr></tbody></table></div></center><font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman"><br><br>Where substituting a value for t will get you any point along the line.  See the connection?
+Since we want to figure out what t is, given everything else, we simply need to
+plug all of this into the plane's equation, which we can simplify into dot products and
+end up with the following:<br><br></font><center><div style="border: 1px solid rgb(192, 192, 192); overflow: auto; width: 100%; background-color: rgb(255, 255, 255);"><table width="100%" bgcolor="#ffffff" border="0" cellpadding="12" cellspacing="0"><tbody><tr><td width="100%" bgcolor="#ffffff"><pre><font color="#000000" face="Courier, Courier New">
+  t = - ( DotProduct( plane-&gt;normal, start) + plane-&gt;distance )   /
+          DotProduct( plane-&gt;normal, ray)
+        
+  CPoint3D intersect = start + (ray * t);
+ </font></pre></td></tr></tbody></table></div></center><font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman"><br><br>One quick word of warning.   You should actually check the denominator when calculating t
+above.   If its zero, you of course don't want to divide by zero, but that would also indicate
+that the normal and the ray are orthogonal.   Visualize that (remember that the normal is orthogonal
+to the plane we're working with) and you will realize that
+there won't be any single unique intersection point to work with, and thus we can't continue.
+But assuming the denominator isn't zero, we should now have the intersection point, which is
+where the viewer collided with the plane.<br><br>There's one final thing to do which is to check if this intersection point
+is actually ON the polygon, within its boundaries (not just on its infinite plane).
+Remember, we're talking convex polygons only (ha!  I repeated it anyway)!<br><br>This last step is actually one that can be done many ways.  Keep in mind that at
+this point, we KNOW the point <b>is</b> on the plane, and we even know exactly
+where.   That's important.    Here are a few ways to check if the point is on the polygon:<br><br>One method to do the test is to <i>create a plane for
+each edge of the polygon</i>, with their normals all pointing in (ie, towards the center
+of the polygon) or out.   Then you
+would run <i>ClassifyPoint</i> for the point in question with each of these
+new planes.   If all of the points were on the "inside", that means the point is within
+the polygon's boundaries.   That will work, but I'd rather not do so much work.<br><br>Another method, which even works for polygons that aren't neccesarily convex, can be found
+on the web pages of Paul Bourke.  <a href="http://www.swin.edu.au/astronomy/pbourke/geometry/insidepoly/">This document</a>,
+explains a method for determining if a point lies within the boundaries of a 2D polygon.   I haven't tried this one.<br><br>Another
+idea, which I first read about in a book called "3D Game Programming
+With C++", is pretty simple. Take a look at the following image:<br><br><img src="Basic_Collision_Detection-Dateien/article_basiccollisions.jpg" width="171" align="left" height="201"><br><br>If you take a convex polygon such as the one shown
+here, and if your point P
+(our intersection point) is in fact on the polygon, you'll notice that the sum of the
+angles formed by creating vectors from P to each pair of vertices in order as you travel
+"around" the polygon, will in fact equal 2pi radians, also known as 360 degrees.  Calculate
+theta for the triangle formed by vectors made from each sequential pair of verts and P, and
+then add them to the current sum.  If it equals 2pi (or is <b>very close</b>... keep in mind variable
+precision), then you can consider the point <b>on the polygon</b>.  Calculating the angles is very easy
+if you remember your linear algebra.  Think about the definition of the dot product and you'll realize
+that the angle can be worked out by normalizing the 2 vectors (from p to 2 vertices), and taking the
+inverse cosine of the dot product between those vectors.<br><br>The result is in radians, so when you sum up all of the angles, you'll want to check if you end up with 2pi.
+Note that the vectors do have to be normalized in order to calculate the angles.  That's one
+major drawback of this method (computing the magnitudes), but its not too bad.
+The other drawback, which I mentioned above is that with floating point precision, this method
+is NOT ultra-precise.   I have tried this in my collision routines, and it does work rather nicely,
+but if you seek precision (and incredible speed), you'll either need to come up with a clever kludge
+or consider using another method.<br><br>So, what other methods are there to find out if you've hit a polygon?   If we're talking triangles, here's a
+link to a page with source code by Tomas M�ller and Ben Trumbore: <a href="http://www.acm.org/jgt/papers/MollerTrumbore97/">Fast, Minimum Storage Ray-Triangle Intersection</a>,
+which presents a method for checking for ray/tri intersections, even without knowing the plane equation.
+Listed on the page, there's also source code to <a href="http://www.acm.org/jgt/papers/MollerTrumbore97/badouel_code.html">Badouel's algorithm</a>,
+which is a fast method if you do have the plane equation (which, I'm guessing you do).
+Btw, thanks to the various people I've talked to about this and who mentioned these links to me, most notably Hasty.
+You may also want to check out the <a href="http://www.neutralzone.org/home/faqsys/gems.html">Graphics Gems</a>.
+My point is that there are a lot of ways to run this test, so you just need to pick one that fits what you're doing.<br><br>Anyway, after all of this work, if your point in polygon routine returns true, you can now
+conclude that your viewer's movement
+would actually cause a collision with this polygon.   That's all there is to it!
+Of course now you have to actually do something about it.   This introduces the whole subject of
+"collision response", which I will not cover in much depth at all.   At the very simplest, you
+can just <b>not</b>
+change the viewer's "position" to "destination" if a collision is detected.   That will
+cause the viewer to suddenly STOP when he collides with world geometry.  This
+may feel awkward since most of you have probably played games like
+Quake where you slide along a wall if you collide with it rather than just 
+stopping and manually turning directions.     To get a sliding sort of effect, you can push
+the viewer back in the direction of the polygon's normal by a certain amount.  Consider
+the effect of that.   Imagine, for example, the viewer hitting the polygon at a 45 degree angle to the
+polygon's normal, then being pushed back a little along the normal.   You'll still be able to move along
+the general direction of the surface from your new position, which results in another collision-pushback, which
+further results in "sliding".   Just make sure you check your new point through the collision detection
+scheme again.
+Collision response however, is a topic large enough that I think it would need its own tutorial (but
+not from me! :).</font></td></tr></tbody></table>
+</center><br><br><center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="3" color="#ffffff" face="Verdana, Helvetica, Arial, Times New Roman"><b>
+
+Other Things To Consider
+<font size="1"><br><img src="Basic_Collision_Detection-Dateien/line_grey.png"><br><br></font></b></font></td></tr></tbody></table>
+</center>
+<center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman">
+
+I neglected various things (on purpose) that you may want to consider now that you know
+a method of doing collision detection.<br><br><li><b>Limiting The Potential Polygons</b> - Obviously, the more polygons you have to
+check for collisions, the more calculations you have to do, and thus the slower your
+engine runs!  But do you really need to check if you've collided with polygons that
+are ten rooms away??   Of course not.   There are many ways to lower the amount of
+polygons you have to check.   Suppose that parts of your world have bounding volumes.
+If the viewer doesn't pass a plane of the volume, obviously you don't have to check
+the contents of the volume.   Extend that idea a bit, and what might we get?   You guessed it!
+<b>Octrees</b>.   There are some very cool speed-ups you can do with octree-enhanced collision detection,
+which can quickly eliminate large portions of the world that you would normally
+check.  At its simplest, just keep in mind that if you don't collide with a particular octree node, you
+obviously haven't collided with any of its children.<br><br>Another thing to consider is the type of engine you're running.   If you're doing something
+like a portal engine or a leaf-based bsp system with node-node connectivity, you can make use
+of the potentially visible set to only check against polygons that are in fact potentially visible
+and thus (not neccesarily) potentially collidable.   That'll speed things up quite a bit.
+If you're running portals, you can check local sectors for example.<br><br></li><li><b>Viewer Bounding Volume</b> - You may have noticed that I've been treating the
+viewer as just a point in space.   That's definitely not the case in most applications.
+A simple fix is to slap a "bounding volume" around the viewer, for example as commonly used,
+a sphere.   This way when you're checking if you've collided against a plane, just be sure
+to compensate for your sphere's radius.   Everything else shouldn't need to be changed
+too much.   This will prevent you from getting RIGHT UP to walls.  All of the collision
+principles remain the same though.<br><br></li><li><b>Other Uses</b> - Oh yes, you didn't do all of this work just for viewer / world collision
+detections.   You can use this exact same system for anything else.   For example, suppose you're
+generating lightmaps for your world and want to include shadows.   You need to check if the light
+point actually reaches the destination lumel in world space, which means you need to check if
+that line is blocked by any other polygon in the data set.   Sounds like collision detection
+to me!  You'll find that it works exactly the same.   For more on lightmaps, <a href="http://www.flipcode.com/tutorials/tut_lightmaps.shtml">try here</a>.</li></font></td></tr></tbody></table>
+</center><br><br><center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="3" color="#ffffff" face="Verdana, Helvetica, Arial, Times New Roman"><b>
+
+Closing
+<font size="1"><br><img src="Basic_Collision_Detection-Dateien/line_grey.png"><br><br></font></b></font></td></tr></tbody></table>
+</center>
+<center>
+<table style="table-layout: fixed;" width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td width="100%">
+<font size="2" color="#ffe291" face="Verdana, Helvetica, Arial, Times New Roman">
+
+There you have it.   Basic collision detection.  I hope I explained it well and without
+any mistakes.  This information should be accurate as I do have
+it up and running well, but once again, if you spot any errors then <a href="mailto:kurt@flipcode.com">let me know</a>.
+I'd also like to hear what you think of this tutorial and if
+you actually learned anything useful from it.   Til next time... I leave you with a quote...<br><br>"... if work is interpreted to be a definite performance in a specified time according to a rigid rule,
+then I may be the worst of idlers." 
+<br>- Nikola Tesla / The Forgotten Father Of Technology</font></td></tr></tbody></table>
+</center><center>
+<table width="80%" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<td>
+<font size="2" color="#ffffff" face="Verdana">
+<br>
+
+
+</font>
+</td>
+</tr>
+</tbody></table>
+</center>
+<center><table width="80%" border="0" cellpadding="2" cellspacing="0"><tbody><tr><td valign="center" width="100" background="Basic_Collision_Detection-Dateien/comments_bar2.jpg" bgcolor="#333333"><font size="1">&nbsp;</font></td></tr></tbody></table></center><br>
+<center><font size="1" face="Arial, Helvetica"><font size="1" face="Helvetica,Tahoma,Verdana">Copyright 1999-2008 (C) FLIPCODE.COM and/or the original content author(s).  All rights reserved.</font> <center><font size="1" face="Helvetica,Tahoma,Verdana">Please read our <a href="http://www.flipcode.com/archives/terms.shtml">Terms</a>, <a href="http://www.flipcode.com/archives/terms.shtml">Conditions</a>, and <a href="http://www.flipcode.com/archives/terms.shtml">Privacy information</a>.</font></center></font></center>
+<br>
+</center></body></html>

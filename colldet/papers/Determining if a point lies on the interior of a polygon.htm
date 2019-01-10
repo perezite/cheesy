@@ -1,0 +1,294 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<link rel="StyleSheet" href="Determining%20if%20a%20point%20lies%20on%20the%20interior%20of%20a%20polygon-Dateien/pdbstyle.css" type="text/css" media="all">
+<title>Determining if a point lies on the interior of a polygon</title>
+</head><body bgcolor="#ffffff">
+<center><table width="100%"><tbody><tr><td>
+
+<center>
+<h1>Determining if a point lies on the interior of a polygon</h1>
+Written by <a href="http://local.wasp.uwa.edu.au/%7Epbourke//geometry/">Paul Bourke</a><br>
+November 1987<p>
+</p></center>
+
+<p></p><hr><p>
+
+<b>Solution 1 (2D)</b><br>
+</p><p align="justify">
+The following is a simple solution to the problem often encountered in computer
+graphics, determining whether or not a point (x,y) lies inside or outside a 2D
+polygonally bounded plane. This is necessary for example in applications such
+as polygon filling on raster devices. hatching in drafting software, and
+determining the intersection of multiple polygons.
+</p>
+
+<p align="justify">
+Consider a polygon made up of N vertices 
+(x<sub>i</sub>,y<sub>i</sub>) where i ranges from 0 to N-1.
+The last vertex 
+(x<sub>N</sub>,y<sub>N</sub>) 
+is assumed to be the same as the first vertex (x<sub>0</sub>,y<sub>0</sub>),
+that is, the polygon is closed. To determine the status of a point 
+(x<sub>p</sub>,y<sub>p</sub>)
+consider a horizontal ray emanating from 
+(x<sub>p</sub>,y<sub>p</sub>) and to the right. If the
+number of times this ray intersects the line segments making up the polygon is
+even then the point is outside the polygon. Whereas if the number of
+intersections is odd then the point (x<sub>p</sub>,y<sub>p</sub>) 
+lies inside the polygon. The
+following shows the ray for some sample points and should make the technique
+clear.
+</p>
+
+<center><img src="Determining%20if%20a%20point%20lies%20on%20the%20interior%20of%20a%20polygon-Dateien/insidepoly1.gif" width="317" height="196"></center><p>
+
+</p><p align="justify">
+Note: for the purposes of this discussion 0 will be considered even, the test
+for even or odd will be based on modulus 2, that is, if the number of
+intersections modulus 2 is 0 then the number is even, if it is 1 then it is
+odd.
+</p>
+<p align="justify">
+The only trick is what happens in the special cases when an edge or vertex of
+the polygon lies on the ray from (x<sub>p</sub>,y<sub>p</sub>). 
+The possible situations are illustrated below.
+</p>
+
+<center><img src="Determining%20if%20a%20point%20lies%20on%20the%20interior%20of%20a%20polygon-Dateien/insidepoly2.gif" width="343" height="144"></center><p>
+
+</p><p align="justify">
+The thick lines above are not considered as valid intersections, the thin lines
+do count as intersections. Ignoring the case of an edge lying along the ray or
+an edge ending on the ray ensures that the endpoints are only counted once.</p><p>
+Note that this algorithm also works for polygons with holes as illustrated
+below
+</p>
+
+<center><img src="Determining%20if%20a%20point%20lies%20on%20the%20interior%20of%20a%20polygon-Dateien/insidepoly3.gif" width="281" height="180"></center><p>
+
+</p><p align="justify">
+The following C function returns INSIDE or OUTSIDE indicating the status of a
+point P with respect to a polygon with N points.
+</p>
+<pre>#define MIN(x,y) (x &lt; y ? x : y)
+#define MAX(x,y) (x &gt; y ? x : y)
+#define INSIDE 0
+#define OUTSIDE 1
+
+typedef struct {
+   double x,y;
+} Point;
+
+int InsidePolygon(Point *polygon,int N,Point p)
+{
+  int counter = 0;
+  int i;
+  double xinters;
+  Point p1,p2;
+
+  p1 = polygon[0];
+  for (i=1;i&lt;=N;i++) {
+    p2 = polygon[i % N];
+    if (p.y &gt; MIN(p1.y,p2.y)) {
+      if (p.y &lt;= MAX(p1.y,p2.y)) {
+        if (p.x &lt;= MAX(p1.x,p2.x)) {
+          if (p1.y != p2.y) {
+            xinters = (p.y-p1.y)*(p2.x-p1.x)/(p2.y-p1.y)+p1.x;
+            if (p1.x == p2.x || p.x &lt;= xinters)
+              counter++;
+          }
+        }
+      }
+    }
+    p1 = p2;
+  }
+
+  if (counter % 2 == 0)
+    return(OUTSIDE);
+  else
+    return(INSIDE);
+}</pre>
+
+<p align="justify">
+The following code is by Randolph Franklin, it returns 1 for interior
+points and 0 for exterior points.
+</p>
+<pre>    int pnpoly(int npol, float *xp, float *yp, float x, float y)
+    {
+      int i, j, c = 0;
+      for (i = 0, j = npol-1; i &lt; npol; j = i++) {
+        if ((((yp[i] &lt;= y) &amp;&amp; (y &lt; yp[j])) ||
+             ((yp[j] &lt;= y) &amp;&amp; (y &lt; yp[i]))) &amp;&amp;
+            (x &lt; (xp[j] - xp[i]) * (y - yp[i]) / (yp[j] - yp[i]) + xp[i]))
+          c = !c;
+      }
+      return c;
+    }
+</pre>
+
+<p align="justify">
+Contribution by Alexander Motrichuk -
+<a href="http://local.wasp.uwa.edu.au/%7Epbourke//geometry/insidepoly/InsidePolygonWithBounds.cpp">InsidePolygonWithBounds.cpp</a>.<br>
+Quote:
+"For most of the algorithms above there is a pathological case if the point being 
+queried lies exactly on a vertex. The easiest way to cope with this is to test 
+that as a separate process and make your own decision as to 
+whether you want to consider them inside or outside."
+</p>
+
+<b>Solution 2 (2D)</b><br>
+<p align="justify">
+Another solution forwarded by Philippe Reverdy is to compute the 
+sum of the angles made between the test point and each pair of points
+making up the polygon. If this sum is 2pi then the point is an interior
+point, if 0 then the point is an exterior point. This also works for
+polygons with holes given the polygon is defined with a path made up of
+coincident edges into
+and out of the hole as is common practice in many CAD packages.
+</p>
+The inside/outside test might then be defined in C as
+<pre>typedef struct {
+   int h,v;
+} Point;
+
+int InsidePolygon(Point *polygon,int n,Point p)
+{
+   int i;
+   double angle=0;
+   Point p1,p2;
+
+   for (i=0;i&lt;n;i++) {
+      p1.h = polygon[i].h - p.h;
+      p1.v = polygon[i].v - p.v;
+      p2.h = polygon[(i+1)%n].h - p.h;
+      p2.v = polygon[(i+1)%n].v - p.v;
+      angle += Angle2D(p1.h,p1.v,p2.h,p2.v);
+   }
+
+   if (ABS(angle) &lt; PI)
+      return(FALSE);
+   else
+      return(TRUE);
+}
+
+/*
+   Return the angle between two vectors on a plane
+   The angle is from vector 1 to vector 2, positive anticlockwise
+   The result is between -pi -&gt; pi
+*/
+double Angle2D(double x1, double y1, double x2, double y2)
+{
+   double dtheta,theta1,theta2;
+
+   theta1 = atan2(y1,x1);
+   theta2 = atan2(y2,x2);
+   dtheta = theta2 - theta1;
+   while (dtheta &gt; PI)
+      dtheta -= TWOPI;
+   while (dtheta &lt; -PI)
+      dtheta += TWOPI;
+
+   return(dtheta);
+}
+</pre>
+<p>
+
+<b>Solution 3 (2D)</b><br>
+</p><p align="justify">
+There are other solutions to this problem for polygons with special attributes. 
+If the polygon is convex then one
+can consider the polygon as a "path" from the first vertex. A point is on the
+interior of this polygons if it is always on the same side of all the line
+segments making up the path.
+</p>
+<p align="justify">
+Given a line segment between P<sub>0</sub> (x<sub>0</sub>,y<sub>0</sub>) 
+and P<sub>1</sub> (x<sub>1</sub>,y<sub>1</sub>), 
+another point P (x,y) has the following relationship to the line segment.
+</p>
+Compute <br>
+<center>
+(y - y<sub>0</sub>) (x<sub>1</sub> - x<sub>0</sub>) - 
+(x - x<sub>0</sub>) (y<sub>1</sub> - y<sub>0</sub>)<p>
+</p></center>
+<p align="justify">
+if it is less than 0 then P is to the right of the line segment, 
+if greater than 0 it is to the left, if equal to 0 then it lies 
+on the line segment.
+</p>
+
+<center><img src="Determining%20if%20a%20point%20lies%20on%20the%20interior%20of%20a%20polygon-Dateien/insidepoly4.gif" width="388" height="203"></center>
+
+<b>Solution 4 (3D)</b><p>
+<table callspacing="0" width="100%" cellpadding="0"><tbody><tr><td valign="top">
+<p align="justify">
+This solution was motivated by solution 2 and correspondence with 
+Reinier van Vliet and Remco Lam. 
+To determine whether a point is on the interior
+of a convex polygon in 3D one might be tempted to first determine
+whether the point is on the plane, then determine it's interior
+status. Both of these can be accomplished at once by computing the 
+sum of the angles between the test point (q below) 
+and every pair of edge points p[i]-&gt;p[i+1]. This sum will only be
+2pi if both the point is on the plane of the polygon AND on the
+interior. The angle sum will tend to 0 the further away from the
+polygon point q becomes. 
+</p>
+</td><td valign="top">
+<center><img src="Determining%20if%20a%20point%20lies%20on%20the%20interior%20of%20a%20polygon-Dateien/insidepoly5.gif" width="320" height="276"></center>
+</td></tr></tbody></table>
+
+</p><p align="justify">
+The following code snippet returns the angle sum between the
+test point q and all the vertex pairs. Note that the angle sum
+is returned in radians.
+</p>
+
+<pre>typedef struct {
+   double x,y,z;
+} XYZ;
+#define EPSILON  0.0000001
+#define MODULUS(p) (sqrt(p.x*p.x + p.y*p.y + p.z*p.z))
+#define TWOPI 6.283185307179586476925287
+#define RTOD 57.2957795
+
+double CalcAngleSum(XYZ q,XYZ *p,int n)
+{
+   int i;
+   double m1,m2;
+   double anglesum=0,costheta;
+   XYZ p1,p2;
+
+   for (i=0;i&lt;n;i++) {
+
+      p1.x = p[i].x - q.x;
+      p1.y = p[i].y - q.y;
+      p1.z = p[i].z - q.z;
+      p2.x = p[(i+1)%n].x - q.x;
+      p2.y = p[(i+1)%n].y - q.y;
+      p2.z = p[(i+1)%n].z - q.z;
+
+      m1 = MODULUS(p1);
+      m2 = MODULUS(p2);
+      if (m1*m2 &lt;= EPSILON)
+         return(TWOPI); /* We are on a node, consider this inside */
+      else
+         costheta = (p1.x*p2.x + p1.y*p2.y + p1.z*p2.z) / (m1*m2);
+
+      anglesum += acos(costheta);
+   }
+   return(anglesum);
+}
+</pre>
+
+<b>Note</b><br>
+<p align="justify">
+For most of the algorithms above there is a pathological case if the
+point being queries lies exactly on a vertex. The easiest way to cope
+with this is to test that as a separate process and make your own
+decision as to whether you want to consider them inside or outside.
+</p>
+
+</td></tr></tbody></table></center>
+</body></html>

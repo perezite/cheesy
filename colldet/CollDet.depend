@@ -1,0 +1,318 @@
+# depslib dependency file v1.0
+1253120439 source:d:\projekte\colldet\font.cpp
+	<algorithm>
+	"font.h"
+
+1253116839 d:\projekte\colldet\font.h
+	"sprite.h"
+	"timer.h"
+	<string>
+	<vector>
+
+1211484799 d:\projekte\colldet\sprite.h
+	"dxinit.h"
+
+1210839949 d:\projekte\colldet\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_platform.h
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\begin_code.h
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\close_code.h
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_keysym.h
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1184933162 d:\filez\libraries\sdl-1.2.12\include\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255012051 d:\projekte\colldet\timer.h
+	<SDL.h>
+	<vector>
+	<windows.h>
+
+1256312873 source:d:\projekte\colldet\main.cpp
+	<stdlib.h>
+	"dxinit.h"
+	"font.h"
+	"physicalmodel.hpp"
+	<SDL_draw.h>
+	<iostream>
+	<fstream>
+
+1210844036 source:d:\projekte\colldet\sprite.cpp
+	"Global.h"
+	"sprite.h"
+
+1255015693 d:\projekte\colldet\global.h
+	<windows.h>
+
+1252759692 source:d:\projekte\colldet\timer.cpp
+	"timer.h"
+
+1253030459 source:d:\projekte\colldet\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+
+1258146229 source:d:\projekte\colldet\physicalmodel.cpp
+	"physicalmodel.hpp"
+	<SDL_draw.h>
+	<windows.h>
+	<algorithm>
+
+1256584773 d:\projekte\colldet\physicalmodel.hpp
+	"physmath.hpp"
+	<vector>
+	<SDL.h>
+
+1029321608 d:\filez\libraries\sdl_draw\include\sdl_draw.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1254169178 d:\projekte\colldet\physmath.hpp
+	<math.h>
+	<vector>
+
+1254162091 source:d:\projekte\colldet\physmath.cpp
+	"physmath.hpp"
+
+1256674823 source:d:\projekte\colldet\renderer.cpp
+	"renderer.h"
+
+1256675085 d:\projekte\colldet\renderer.h
+	"singleton.h"
+
+1255453257 d:\projekte\colldet\singleton.h
+	<iostream>
+
+1253030459 source:z:\common\infrastructure\backup\uzh\code\colldet2\dxinit.cpp
+	"dxinit.h"
+	<windows.h>
+
+1210839949 z:\common\infrastructure\backup\uzh\code\colldet2\dxinit.h
+	<windows.h>
+	<SDL.h>
+
+1256312873 source:z:\common\infrastructure\backup\uzh\code\colldet2\main.cpp
+	<stdlib.h>
+	"dxinit.h"
+	"font.h"
+	"physicalmodel.hpp"
+	<SDL_draw.h>
+	<iostream>
+	<fstream>
+
+1253116839 z:\common\infrastructure\backup\uzh\code\colldet2\font.h
+	"sprite.h"
+	"timer.h"
+	<string>
+	<vector>
+
+1211484799 z:\common\infrastructure\backup\uzh\code\colldet2\sprite.h
+	"dxinit.h"
+
+1255012051 z:\common\infrastructure\backup\uzh\code\colldet2\timer.h
+	<SDL.h>
+	<vector>
+	<windows.h>
+
+1256581173 z:\common\infrastructure\backup\uzh\code\colldet2\physicalmodel.hpp
+	"physmath.hpp"
+	<vector>
+	<SDL.h>
+
+1254169178 z:\common\infrastructure\backup\uzh\code\colldet2\physmath.hpp
+	<math.h>
+	<vector>
+
+1258730873 source:z:\common\infrastructure\backup\uzh\code\colldet2\physicalmodel.cpp
+	"physicalmodel.hpp"
+	<SDL_draw.h>
+	<windows.h>
+	<algorithm>
+
+1254162091 source:z:\common\infrastructure\backup\uzh\code\colldet2\physmath.cpp
+	"physmath.hpp"
+
+1256671223 source:z:\common\infrastructure\backup\uzh\code\colldet2\renderer.cpp
+	"renderer.h"
+
+1256671485 z:\common\infrastructure\backup\uzh\code\colldet2\renderer.h
+	"singleton.h"
+
+1255453257 z:\common\infrastructure\backup\uzh\code\colldet2\singleton.h
+	<iostream>
+
+1252759692 source:z:\common\infrastructure\backup\uzh\code\colldet2\timer.cpp
+	"timer.h"
+
