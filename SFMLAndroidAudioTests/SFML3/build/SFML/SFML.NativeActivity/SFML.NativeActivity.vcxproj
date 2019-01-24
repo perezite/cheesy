@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\SFML\Audio\ALCheck.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\AlResource.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\AudioDevice.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\InputSoundFile.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\Listener.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\Music.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\OutputSoundFile.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\Sound.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundBuffer.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundBufferRecorder.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileFactory.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileReaderFlac.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileReaderOgg.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileReaderWav.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileWriterFlac.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileWriterOgg.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileWriterWav.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundRecorder.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundSource.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundStream.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Android\Activity.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Android\NativeActivity.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Android\ResourceStream.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Clock.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Err.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\FileInputStream.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Lock.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\MemoryInputStream.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Mutex.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Sleep.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\String.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Thread.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\ThreadLocal.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Time.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\ClockImpl.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\MutexImpl.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\SleepImpl.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\ThreadImpl.cpp" />
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\ThreadLocalImpl.cpp" />
+    <ClCompile Include="android_native_app_glue.c" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\SFML\Audio\ALCheck.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\AudioDevice.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileReaderFlac.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileReaderOgg.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileReaderWav.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileWriterFlac.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileWriterOgg.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileWriterWav.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Android\Activity.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Android\ResourceStream.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\ClockImpl.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\MutexImpl.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\SleepImpl.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\ThreadImpl.hpp" />
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\ThreadLocalImpl.hpp" />
+    <ClInclude Include="android_native_app_glue.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{a86a1006-e40c-447b-a365-1bc098fc1325}</ProjectGuid>
+    <Keyword>Android</Keyword>
+    <RootNamespace>SFML</RootNamespace>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <ApplicationType>Android</ApplicationType>
+    <ApplicationTypeRevision>2.0</ApplicationTypeRevision>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_3_8</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>Clang_3_8</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(SolutionDir)External\Common;$(SolutionDir)..\extlibs\headers;$(SolutionDir)..\extlibs\headers\AL;$(SolutionDir)..\extlibs\headers\freetype2;$(SolutionDir)..\extlibs\headers\ogg;$(SolutionDir)..\extlibs\headers\stb_image;$(SolutionDir)..\extlibs\headers\vorbis;%(AdditionalIncludeDirectories);$(SolutionDir)..\extlibs\headers;$(SolutionDir)..\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>m;FLAC;FLAC++;freetype;vorbisfile;vorbisenc;vorbis;ogg;openal;%(LibraryDependencies);GLESv1_CM;EGL</LibraryDependencies>
+      <AdditionalLibraryDirectories>D:\Indie\Development\Simulo\templates\SFML3\extlibs\libs-android\$(TargetArchAbi);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <AdditionalIncludeDirectories>$(SolutionDir)External\Common;$(SolutionDir)..\extlibs\headers;$(SolutionDir)..\extlibs\headers\AL;$(SolutionDir)..\extlibs\headers\freetype2;$(SolutionDir)..\extlibs\headers\ogg;$(SolutionDir)..\extlibs\headers\stb_image;$(SolutionDir)..\extlibs\headers\vorbis;$(Sysroot)\usr\include;$(StlIncludeDirectories);%(AdditionalIncludeDirectories);$(SolutionDir)..\src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>m;FLAC;FLAC++;freetype;vorbisfile;vorbisenc;vorbis;ogg;openal;%(LibraryDependencies);GLESv1_CM;EGL</LibraryDependencies>
+      <AdditionalLibraryDirectories>D:\Indie\Development\Simulo\templates\SFML3\extlibs\libs-android\$(TargetArchAbi);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

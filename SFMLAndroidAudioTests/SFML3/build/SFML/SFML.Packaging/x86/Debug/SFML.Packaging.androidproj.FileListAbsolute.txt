@@ -1,0 +1,14 @@
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\SFML.apk.recipe
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\SFML.apk.recipe.merged
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\FileStringReplace.incremental
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\SFML.apk
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\SFML.lastsuccessfuldeploy
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\libs\x86\libSFML.so
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\libs\x86\gdbserver
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\libs\x86\libgnustl_static.a
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\libs\armeabi-v7a\libopenal.so
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\libs\x86\libopenal.so
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\res\values\strings.xml
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\AndroidManifest.xml
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\project.properties
+D:\Indie\Development\Simulo\templates\SFML3\build\SFML\SFML.Packaging\x86\Debug\Package\build.xml

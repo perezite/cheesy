@@ -1,0 +1,12 @@
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\SFML.apk.recipe
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\SFML.apk.recipe.merged
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\libs\armeabi-v7a\libSFML.so
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\libs\armeabi-v7a\gdbserver
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\libs\armeabi-v7a\libgnustl_static.a
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\res\values\strings.xml
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\AndroidManifest.xml
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\project.properties
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\Package\build.xml
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\FileStringReplace.incremental
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\SFML.apk
+D:\Indie\Development\Simulo\templates\SFML2\build\SFML\SFML.Packaging\ARM\Debug\SFML.lastsuccessfuldeploy

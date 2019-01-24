@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\SFML\System\Clock.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Err.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\FileInputStream.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Lock.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\MemoryInputStream.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Mutex.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Sleep.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\String.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Thread.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\ThreadLocal.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Time.cpp">
+      <Filter>SFML\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Android\Activity.cpp">
+      <Filter>SFML\System\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Android\NativeActivity.cpp">
+      <Filter>SFML\System\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Android\ResourceStream.cpp">
+      <Filter>SFML\System\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\ClockImpl.cpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\MutexImpl.cpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\SleepImpl.cpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\ThreadImpl.cpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\System\Unix\ThreadLocalImpl.cpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\ALCheck.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\AlResource.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\AudioDevice.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\InputSoundFile.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\Listener.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\Music.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\OutputSoundFile.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\Sound.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundBuffer.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundBufferRecorder.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileFactory.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileReaderFlac.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileReaderOgg.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileReaderWav.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileWriterFlac.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileWriterOgg.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundFileWriterWav.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundRecorder.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundSource.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\SFML\Audio\SoundStream.cpp">
+      <Filter>SFML\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="android_native_app_glue.c" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SFML">
+      <UniqueIdentifier>{fb99e12e-a8f7-4c3b-b553-422992398313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SFML\System">
+      <UniqueIdentifier>{ea3f1207-f3b6-4fc9-af0a-c6189ef7c976}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SFML\System\Android">
+      <UniqueIdentifier>{a89fa0a9-6715-4f5a-918c-bdb7c281e020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SFML\System\Unix">
+      <UniqueIdentifier>{2cae8cca-45a8-4a89-9525-d57162fcefbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SFML\Audio">
+      <UniqueIdentifier>{df82b532-4385-4bb6-897e-a6c3317b39ea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\src\SFML\System\Android\Activity.hpp">
+      <Filter>SFML\System\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\System\Android\ResourceStream.hpp">
+      <Filter>SFML\System\Android</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\ClockImpl.hpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\MutexImpl.hpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\SleepImpl.hpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\ThreadImpl.hpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\System\Unix\ThreadLocalImpl.hpp">
+      <Filter>SFML\System\Unix</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\ALCheck.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\AudioDevice.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileReaderFlac.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileReaderOgg.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileReaderWav.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileWriterFlac.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileWriterOgg.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\SFML\Audio\SoundFileWriterWav.hpp">
+      <Filter>SFML\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="android_native_app_glue.h" />
+  </ItemGroup>
+</Project>
