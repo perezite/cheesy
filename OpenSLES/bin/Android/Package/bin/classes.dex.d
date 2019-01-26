@@ -1,0 +1,26 @@
+D:\testing\OpenSLES\bin\Android\Package\bin\classes.dex : \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\BuildConfig.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\DummyEdit.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\R$attr.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\R$drawable.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\R$layout.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\R$string.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\R.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$1.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$2.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$3.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$4.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$5.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$6.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$SDLCommandHandler.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity$ShowTextInputTask.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLActivity.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLGenericMotionListener_API12.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLInputConnection.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLJoystickHandler.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$RangeComparator.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$SDLJoystick.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLJoystickHandler_API12.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLMain.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLSurface$1.class \
+D:\testing\OpenSLES\bin\Android\Package\bin\classes\org\libsdl\app\SDLSurface.class \
