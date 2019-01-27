@@ -12,3 +12,10 @@ D:\testing\OpenSLES\bin\Android\Package\libs\armeabi-v7a\libmain.so
 D:\testing\OpenSLES\bin\Android\Application.apk
 D:\testing\OpenSLES\bin\Android\Application.lastsuccessfuldeploy
 D:\testing\OpenSLES\build\Packaging\Android\ARM\Debug\FileStringReplace.incremental
+D:\Indie\Development\Simulo\cheesy\OpenSLES\bin\Android\Application.apk.recipe
+D:\Indie\Development\Simulo\cheesy\OpenSLES\bin\Android\Application.apk.recipe.merged
+D:\Indie\Development\Simulo\cheesy\OpenSLES\bin\Android\Application.apk
+D:\Indie\Development\Simulo\cheesy\OpenSLES\bin\Android\Application.lastsuccessfuldeploy
+D:\Indie\Development\Simulo\cheesy\OpenSLES\build\Packaging\Android\ARM\Debug\FileStringReplace.incremental
+D:\Indie\Development\Simulo\cheesy\OpenSLES\bin\Android\Package\src\org\libsdl\app\SDLActivity.java
+D:\Indie\Development\Simulo\cheesy\OpenSLES\bin\Android\Package\project.properties

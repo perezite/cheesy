@@ -7,5 +7,5 @@
   <Platform />
   <AndroidArchitecture />
   <!--links to other recipe files-->
-  <RecipeFiles>D:\testing\OpenSLES\build\ARM\Debug\libmain.so.recipe</RecipeFiles>
+  <RecipeFiles>D:\Indie\Development\Simulo\cheesy\OpenSLES\build\ARM\Debug\libmain.so.recipe</RecipeFiles>
 </project>
