@@ -16,7 +16,11 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
     int sound2Id = -1;
 
     MediaPlayer player1;
+    MediaPlayer player2;
+    MediaPlayer player3;
     boolean isPlayer1Prepared = false;
+    boolean isPlayer2Prepared = false;
+    boolean isPlayer3Prepared = false;
 
     protected void initializeSound() {
         soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
@@ -32,19 +36,31 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
         }
     }
 
-    protected void initializeMusic() {
+    protected void createMusic(String assetPath, MediaPlayer player) {
         try {
-            player1 = new MediaPlayer();
             AssetManager assetManager = this.getAssets();
-            AssetFileDescriptor assetDescriptor = assetManager.openFd("ukulele.ogg");
-            player1.setDataSource(assetDescriptor.getFileDescriptor(),
+            AssetFileDescriptor assetDescriptor = assetManager.openFd(assetPath);
+            player.setDataSource(assetDescriptor.getFileDescriptor(),
                     assetDescriptor.getStartOffset(), assetDescriptor.getLength());
-            player1.prepare();
-            isPlayer1Prepared = true;
-            player1.setOnCompletionListener(this);
+            player.prepare();
+            player.setOnCompletionListener(this);
         } catch (Exception e) {
             Toast.makeText(this, "failed to load music file", Toast.LENGTH_LONG).show();
         }
+    }
+
+    protected void initializeMusic() {
+        player1 = new MediaPlayer();
+        createMusic("ukulele.ogg", player1);
+        isPlayer1Prepared = true;
+
+        player2 = new MediaPlayer();
+        createMusic("idea.wav", player2);
+        isPlayer2Prepared = true;
+
+        player3 = new MediaPlayer();
+        createMusic("losing.wav", player3);
+        isPlayer3Prepared = true;
     }
 
     @Override
@@ -55,6 +71,20 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         initializeSound();
         initializeMusic();
+    }
+
+    protected void playMusic(MediaPlayer player, boolean isPrepared) {
+        if (player.isPlaying())
+            return;
+        try {
+            synchronized (this) {
+                if (!isPrepared)
+                    player.prepare();
+                player.start();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "playing music failed", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void playSound1(View view) {
@@ -70,17 +100,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
     }
 
     public void playMusic1(View view) {
-        if (player1.isPlaying())
-            return;
-        try {
-            synchronized (this) {
-                if (!isPlayer1Prepared)
-                    player1.prepare();
-                player1.start();
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "playing music failed", Toast.LENGTH_LONG).show();
-        }
+        playMusic(player1, isPlayer1Prepared);
     }
 
     public void stopMusic1(View view) {
@@ -90,10 +110,41 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
         }
     }
 
+    public void playMusic2(View view) {
+        playMusic(player2, isPlayer2Prepared);
+    }
+
+    public void stopMusic2(View view) {
+        player2.stop();
+        synchronized (this) {
+            isPlayer2Prepared = false;
+        }
+    }
+
+    public void playMusic3(View view) {
+        player3.setLooping(true);
+        playMusic(player3, isPlayer3Prepared);
+    }
+
+    public void stopMusic3(View view) {
+        player3.stop();
+        synchronized (this) {
+            isPlayer3Prepared = false;
+        }
+    }
+
     public void onCompletion(MediaPlayer player) {
         if (player == player1) {
             synchronized (this) {
                 isPlayer1Prepared = false;
+            }
+        } else if (player == player2) {
+            synchronized (this) {
+                isPlayer2Prepared = false;
+            }
+        } else if (player == player3) {
+            synchronized (this) {
+                isPlayer3Prepared = false;
             }
         }
     }
