@@ -7,6 +7,7 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,6 +22,47 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
     boolean isPlayer1Prepared = false;
     boolean isPlayer2Prepared = false;
     boolean isPlayer3Prepared = false;
+
+    boolean isPlayer2Fading = false;
+    float player2Volume = 1f;
+    boolean isPlayer2VolumeIncreasing = false;
+
+    Thread updateThread = null;
+    long lastUpdate = System.currentTimeMillis();
+
+    private Runnable updateRunner = new Runnable() {
+        public void run() {
+            while (true) {
+                update();
+            }
+        }
+    };
+
+    protected void update() {
+        long deltaMillis = System.currentTimeMillis() - lastUpdate;
+        lastUpdate = System.currentTimeMillis();
+
+        if (isPlayer2Fading) {
+            float deltaSeconds = deltaMillis / 1000f;
+            float deltaVolume = deltaSeconds / 5f;
+
+            if (player2Volume <= 0f) {
+                isPlayer2VolumeIncreasing = true;
+                player2Volume = 0f;
+            } else if (player2Volume >= 1f) {
+                isPlayer2VolumeIncreasing = false;
+                player2Volume = 1f;
+            }
+
+            player2Volume += isPlayer2VolumeIncreasing ? deltaVolume : -deltaVolume;
+
+            synchronized (this) {
+                if (isPlayer2Prepared)
+                    player2.setVolume(player2Volume, player2Volume);
+            }
+            Log.e("Prez", Float.toString(player2Volume));
+        }
+    }
 
     protected void initializeSound() {
         soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
@@ -71,6 +113,9 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         initializeSound();
         initializeMusic();
+
+        updateThread = new Thread(updateRunner);
+        updateThread.start();
     }
 
     protected void playMusic(MediaPlayer player, boolean isPrepared) {
@@ -112,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
 
     public void playMusic2(View view) {
         playMusic(player2, isPlayer2Prepared);
+        player2.setVolume(1, 1);
     }
 
     public void stopMusic2(View view) {
@@ -121,9 +167,14 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
         }
     }
 
+    public void fadeMusic2(View view) {
+        isPlayer2Fading = true;
+    }
+
     public void playMusic3(View view) {
         player3.setLooping(true);
         playMusic(player3, isPlayer3Prepared);
+        // player3.setVolume();
     }
 
     public void stopMusic3(View view) {
