@@ -9,7 +9,7 @@ import android.media.SoundPool;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -22,9 +22,6 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = new TextView(this);
-        textView.setOnTouchListener(this);
-        setContentView(textView);
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
         soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
 
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener {
             AssetFileDescriptor descriptor = assetManager.openFd("ding.ogg");
             explosionId = soundPool.load(descriptor, 1);
         } catch (IOException e) {
-            textView.setText("Couldn't load sound effect from asset, " + e.getMessage());
+            Toast.makeText(this, "failed to load sound file", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -44,5 +41,14 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener {
             }
         }
         return true;
+    }
+
+    public void playSound(View view) {
+        if (explosionId != -1) {
+            soundPool.play(explosionId, 1, 1, 0, 0, 1);
+        }
+    }
+
+    public void playMusic(View view) {
     }
 }
