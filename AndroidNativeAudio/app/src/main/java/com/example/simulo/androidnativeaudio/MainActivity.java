@@ -7,7 +7,6 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
                 if (isPlayer2Prepared)
                     player2.setVolume(player2Volume, player2Volume);
             }
-            Log.e("Prez", Float.toString(player2Volume));
+            // Log.e("Prez", Float.toString(player2Volume));
         }
     }
 
