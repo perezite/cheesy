@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Music {
     static Activity ParentActivity;
-    static List<MusicPlayer> players = new ArrayList<>();
+    static List<MusicPlayer> players = new ArrayList<MusicPlayer>();
 
     static void init(Activity activity) {
         ParentActivity = activity;
@@ -16,7 +16,6 @@ public class Music {
     public static int loadAsync(String assetPath)
     {
         int musicId;
-
         try {
             MusicPlayer player = new MusicPlayer(assetPath, ParentActivity);
             player.loadAsync();
@@ -30,7 +29,11 @@ public class Music {
     }
 
     public static boolean isLoadCompleted(int musicId) {
-        return players.get(musicId).isLoadCompleted();
+        try {
+            return players.get(musicId).isLoadCompleted();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static int play(int musicId) {

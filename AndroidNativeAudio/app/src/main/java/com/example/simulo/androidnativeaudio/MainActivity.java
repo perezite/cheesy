@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         Audio.init(this);
 
-        sound1Id = Sound.create("ding.ogg");
-        sound2Id = Sound.create("losing.wav");
+        sound1Id = Sound.loadAsync("ding.ogg");
+        sound2Id = Sound.loadAsync("losing.wav");
 
         music1Id = Music.loadAsync("ukulele.ogg");
         music2Id = Music.loadAsync("idea.wav");
@@ -77,11 +77,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playSound1(View view) {
-        Sound.play(sound1Id);
+        if (Sound.isLoadCompleted(sound1Id))
+            Sound.play(sound1Id);
     }
 
     public void playSound2(View view) {
-        Sound.play(sound2Id);
+        if (Sound.isLoadCompleted(sound2Id))
+            Sound.play(sound2Id);
     }
 
     public void playMusic1(View view) {
@@ -90,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void stopMusic1(View view) {
-        if (Music.isLoadCompleted(music2Id))
+        if (Music.isLoadCompleted(music1Id))
             Music.stop(music1Id);
     }
 
