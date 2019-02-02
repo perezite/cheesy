@@ -1,6 +1,5 @@
 package com.example.simulo.androidnativeaudio;
 
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -61,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
         sound1Id = Sound.create("ding.ogg");
         sound2Id = Sound.create("losing.wav");
 
-        music1Id = Music.create("ukulele.ogg");
-        music2Id = Music.create("idea.wav");
-        music3Id = Music.create("losing.wav");
+        music1Id = Music.loadAsync("ukulele.ogg");
+        music2Id = Music.loadAsync("idea.wav");
+        music3Id = Music.loadAsync("losing.wav");
 
         updateThread = new Thread(updateRunner);
         updateThread.start();
@@ -86,19 +85,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playMusic1(View view) {
-        Music.play(music1Id);
+        if (Music.isLoadCompleted(music1Id))
+            Music.play(music1Id);
     }
 
     public void stopMusic1(View view) {
-        Music.stop(music1Id);
+        if (Music.isLoadCompleted(music2Id))
+            Music.stop(music1Id);
     }
 
     public void playMusic2(View view) {
-        Music.play(music2Id);
+        if (Music.isLoadCompleted(music2Id))
+            Music.play(music2Id);
     }
 
     public void stopMusic2(View view) {
-        Music.stop(music2Id);
+        if (Music.isLoadCompleted(music2Id))
+            Music.stop(music2Id);
     }
 
     public void fadeMusic2(View view) {
@@ -106,11 +109,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playMusic3(View view) {
-        Music.setLooping(music3Id, true);
-        Music.play(music3Id);
+        if (Music.isLoadCompleted(music3Id)) {
+            Music.setLooping(music3Id, true);
+            Music.play(music3Id);
+        }
     }
 
     public void stopMusic3(View view) {
-        Music.stop(music3Id);
+        if (Music.isLoadCompleted(music3Id))
+            Music.stop(music3Id);
     }
 }

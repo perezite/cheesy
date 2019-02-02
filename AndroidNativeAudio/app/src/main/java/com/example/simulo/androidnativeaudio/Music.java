@@ -13,12 +13,13 @@ public class Music {
         ParentActivity = activity;
     }
 
-    public static int create(String assetPath)
+    public static int loadAsync(String assetPath)
     {
         int musicId;
 
         try {
             MusicPlayer player = new MusicPlayer(assetPath, ParentActivity);
+            player.loadAsync();
             players.add(player);
             musicId = players.indexOf(player);
         } catch (Exception e) {
@@ -26,6 +27,10 @@ public class Music {
         }
 
         return musicId;
+    }
+
+    public static boolean isLoadCompleted(int musicId) {
+        return players.get(musicId).isLoadCompleted();
     }
 
     public static int play(int musicId) {
