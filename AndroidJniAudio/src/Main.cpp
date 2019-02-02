@@ -39,64 +39,105 @@ void androidTest()
 	#endif
 }
 
-void androidTest2()
+#ifdef __ANDROID__
+	JNIEnv* jni;
+	jclass soundClass;
+	jclass musicClass;
+	jmethodID createSoundMethod;
+	jmethodID playSoundMethod;
+
+	jint soundId;
+#endif
+
+void prepareAndroid()
 {
 	#ifdef __ANDROID__
-		auto jni = getJavaNativeInterface();
-		jclass theClass = jni->FindClass("org/libsdl/app/Sound");
+		jni = getJavaNativeInterface();
+		soundClass = jni->FindClass("org/libsdl/app/Sound");
+		musicClass = jni->FindClass("org/libsdl/app/Music");
+		createSoundMethod = jni->GetStaticMethodID(soundClass, "create", "(Ljava/lang/String;)I");
+		playSoundMethod = jni->GetStaticMethodID(soundClass, "play", "(I)I");
+	#endif
+}
 
-		jmethodID create = jni->GetStaticMethodID(theClass, "create", "(Ljava/lang/String;)I");
-		jint createJavaResult = jni->CallStaticIntMethod(theClass, create, (jstring)jni->NewStringUTF("ding.ogg"));
-		int createResult = (int)createJavaResult;
+void prepareAndroidSound()
+{
+	#ifdef __ANDROID__
+		soundId = jni->CallStaticIntMethod(soundClass, createSoundMethod, (jstring)jni->NewStringUTF("ding.ogg"));
+		int createResult = (int)soundId;
+	#endif
+}
 
-		jmethodID play = jni->GetStaticMethodID(theClass, "play", "(I)I");
-		jint playJavaResult = jni->CallStaticIntMethod(theClass, play, createJavaResult);
+void playAndroidSound()
+{
+	#ifdef __ANDROID__
+		jint playJavaResult = jni->CallStaticIntMethod(soundClass, playSoundMethod, soundId);
 		int playResult = (int)playJavaResult;
 	#endif
 }
 
-/*static android.app.Activity ParentActivity;
-descriptor: Landroid / app / Activity;
-static android.media.SoundPool soundPool;
-descriptor: Landroid / media / SoundPool;
-static java.util.List<java.lang.Integer> SoundIds;
-descriptor: Ljava / util / List;
-public com.example.simulo.androidnativeaudio.Sound();
-descriptor: ()V
+#ifdef __ANDROID__
+	jint musicId;
+	jmethodID playMusicMethod;
+#endif
 
-public static void init(android.app.Activity);
-descriptor: (Landroid / app / Activity;)V
+void prepareAndroidMusic()
+{
+#ifdef __ANDROID__
+	jmethodID create = jni->GetStaticMethodID(musicClass, "create", "(Ljava/lang/String;)I");
+	musicId = jni->CallStaticIntMethod(musicClass, create, (jstring)jni->NewStringUTF("ukulele.ogg"));
+	int createResult = (int)musicId;
 
-public static int create(java.lang.String);
-descriptor: (Ljava / lang / String;)I
+	playMusicMethod = jni->GetStaticMethodID(musicClass, "play", "(I)I");
+#endif
+}
 
-public static int play(int);
-descriptor: (I)I
+void playAndroidMusic()
+{
+#ifdef __ANDROID__
+	jint playJavaResult = jni->CallStaticIntMethod(musicClass, playMusicMethod, musicId);
+	int playResult = (int)playJavaResult;
+#endif
+}
 
-public static int release(int);
-descriptor: (I)I
+Uint32 wavLength;
+Uint8 *wavBuffer;
+SDL_AudioDeviceID deviceId;
 
-public static int setVolume(int, float);
-descriptor: (IF)I
-
-public static void release();
-descriptor: ()V
-
-static {};
-descriptor: ()V*/
+void playSound()
+{
+	int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
+	SDL_PauseAudioDevice(deviceId, 0);
+}
 
 void update()
 {
 	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
 		SDL_Log("test");
-		androidTest2();
+		playAndroidMusic();
+		playAndroidSound();
 	}
+}
+
+void init()
+{
+	SDL_Init(SDL_INIT_AUDIO);
+
+	SDL_AudioSpec wavSpec;
+
+	SDL_LoadWAV("losing.wav", &wavSpec, &wavBuffer, &wavLength);
+
+	deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
 }
 
 void run() 
 {
 	sb::Window window;
 
+	// init();
+	prepareAndroid();
+	prepareAndroidMusic();
+	prepareAndroidSound();
 	while (window.isOpen()) {
 		window.update();
 		update();

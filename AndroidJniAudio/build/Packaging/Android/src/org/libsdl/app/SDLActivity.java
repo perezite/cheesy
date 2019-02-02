@@ -36,7 +36,7 @@ import org.libsdl.app.Test;
     SDL Activity
 */
 public class SDLActivity extends Activity {
-	private static boolean DisableSdlAudio = true;
+	private static boolean DisableSdlAudio = false;
 
     private static final String TAG = "SDL";
 

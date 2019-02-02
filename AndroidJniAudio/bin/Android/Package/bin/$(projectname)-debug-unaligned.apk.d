@@ -5,7 +5,5 @@ D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\arme
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libmain.so \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libSDL2.so \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libSDL2_image.so \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\x86\gdbserver \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\x86\libmain.so \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\x86\libSDL2.so \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\x86\libSDL2_image.so \

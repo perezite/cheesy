@@ -42,7 +42,9 @@ public class Sound {
 
     public static int play(int soundId) {
         try {
-            soundPool.play(soundId, 1, 1, 0, 0, 1);
+            int res = soundPool.play(soundId, 1, 1, 0, 0, 1);
+			if (res == 0)
+				return -1;
         } catch (Exception e) {
             return -1;
         }
