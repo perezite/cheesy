@@ -1,6 +1,11 @@
+#include "Window.h"
+#include "Input.h"
 #include <SDL2/SDL.h>
+#include <iostream>
 
-#include "../build/Platform/Android/Application/SDL_android_main.h"
+#ifdef __ANDROID__
+	#include "../build/Platform/Android/Application/SDL_android_main.h"
+#endif
 
 void androidTest()
 {
@@ -34,8 +39,28 @@ void androidTest()
 	#endif
 }
 
+void update() 
+{
+	if (sb::Input::isMouseGoingDown())
+		std::cout << "test" << std::endl;
+}
+
+void run() 
+{
+	sb::Window window;
+
+	while (window.isOpen()) {
+		update();
+		window.update();
+		window.draw();
+	}
+}
+
 int main(int argc, char* args[])
 {
+	SDL_Log("Simple Renderer: Build %s %s", __DATE__, __TIME__);
+
+	run();
 	androidTest();
 
 	return 0;
