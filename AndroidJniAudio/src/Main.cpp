@@ -39,10 +39,58 @@ void androidTest()
 	#endif
 }
 
-void update() 
+void androidTest2()
 {
-	if (sb::Input::isMouseGoingDown())
-		std::cout << "test" << std::endl;
+	#ifdef __ANDROID__
+		auto jni = getJavaNativeInterface();
+		jclass theClass = jni->FindClass("org/libsdl/app/Sound");
+
+		jmethodID create = jni->GetStaticMethodID(theClass, "create", "(Ljava/lang/String;)I");
+		jint createJavaResult = jni->CallStaticIntMethod(theClass, create, (jstring)jni->NewStringUTF("ding.ogg"));
+		int createResult = (int)createJavaResult;
+
+		jmethodID play = jni->GetStaticMethodID(theClass, "play", "(I)I");
+		jint playJavaResult = jni->CallStaticIntMethod(theClass, play, createJavaResult);
+		int playResult = (int)playJavaResult;
+	#endif
+}
+
+/*static android.app.Activity ParentActivity;
+descriptor: Landroid / app / Activity;
+static android.media.SoundPool soundPool;
+descriptor: Landroid / media / SoundPool;
+static java.util.List<java.lang.Integer> SoundIds;
+descriptor: Ljava / util / List;
+public com.example.simulo.androidnativeaudio.Sound();
+descriptor: ()V
+
+public static void init(android.app.Activity);
+descriptor: (Landroid / app / Activity;)V
+
+public static int create(java.lang.String);
+descriptor: (Ljava / lang / String;)I
+
+public static int play(int);
+descriptor: (I)I
+
+public static int release(int);
+descriptor: (I)I
+
+public static int setVolume(int, float);
+descriptor: (IF)I
+
+public static void release();
+descriptor: ()V
+
+static {};
+descriptor: ()V*/
+
+void update()
+{
+	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
+		SDL_Log("test");
+		androidTest2();
+	}
 }
 
 void run() 
@@ -50,8 +98,8 @@ void run()
 	sb::Window window;
 
 	while (window.isOpen()) {
-		update();
 		window.update();
+		update();
 		window.draw();
 	}
 }
@@ -60,8 +108,8 @@ int main(int argc, char* args[])
 {
 	SDL_Log("Simple Renderer: Build %s %s", __DATE__, __TIME__);
 
+	// androidTest();
 	run();
-	androidTest();
 
 	return 0;
 }

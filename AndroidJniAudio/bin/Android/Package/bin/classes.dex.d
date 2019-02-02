@@ -1,6 +1,9 @@
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes.dex : \
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\Audio.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\BuildConfig.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\DummyEdit.class \
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\Music.class \
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\MusicPlayer.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\R$attr.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\R$string.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\R.class \
@@ -22,4 +25,5 @@ D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\class
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\SDLMain.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\SDLSurface$1.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\SDLSurface.class \
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\Sound.class \
 D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes\org\libsdl\app\Test.class \

@@ -28,7 +28,11 @@
     <Content Include="res\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <JavaCompile Include="src\org\libsdl\app\Audio.java" />
+    <JavaCompile Include="src\org\libsdl\app\Music.java" />
+    <JavaCompile Include="src\org\libsdl\app\MusicPlayer.java" />
     <JavaCompile Include="src\org\libsdl\app\SDLActivity.java" />
+    <JavaCompile Include="src\org\libsdl\app\Sound.java" />
     <JavaCompile Include="src\org\libsdl\app\Test.java" />
   </ItemGroup>
   <ItemGroup>
