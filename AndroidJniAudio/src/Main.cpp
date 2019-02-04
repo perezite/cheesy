@@ -1,5 +1,6 @@
 #include "Window.h"
 #include "Input.h"
+#include "Error.h"
 #include <SDL2/SDL.h>
 #include <iostream>
 
@@ -41,7 +42,29 @@ void androidTest()
 
 #ifdef __ANDROID__
 	JNIEnv* jni;
+	jclass audioClass;
+	jmethodID isAudioInitMethod;
+#endif
 
+void prepareAndroidAudio()
+{
+	#ifdef __ANDROID__
+		jni = getJavaNativeInterface();
+		audioClass = jni->FindClass("org/libsdl/app/Audio");
+		isAudioInitMethod = jni->GetStaticMethodID(audioClass, "isInit", "()I");
+	#endif
+}
+
+void checkAndroidAudio() {
+	#ifdef __ANDROID__
+		jint isInitResult = jni->CallStaticIntMethod(audioClass, isAudioInitMethod);
+		if (isInitResult != jint(1)) {
+			sb::Error().die() << "Failed to init android audio. Make sure you called Audio.Init(this) in the AndroidActivity Java class" << std::endl;
+		}
+	#endif
+}
+
+#ifdef __ANDROID__
 	jclass soundClass;
 
 	jmethodID loadSoundAsyncMethod;
@@ -54,7 +77,6 @@ void androidTest()
 void prepareAndroidSound()
 {
 	#ifdef __ANDROID__
-		jni = getJavaNativeInterface();
 		soundClass = jni->FindClass("org/libsdl/app/Sound");
 		loadSoundAsyncMethod = jni->GetStaticMethodID(soundClass, "loadAsync", "(Ljava/lang/String;)I");
 		IsSoundLoadCompleteMethod = jni->GetStaticMethodID(soundClass, "isLoadComplete", "(I)I");
@@ -128,6 +150,8 @@ void run()
 {
 	sb::Window window;
 
+	prepareAndroidAudio();
+	checkAndroidAudio();
 	prepareAndroidSound();
 	loadAndroidSound();
 	prepareAndroidMusic();
@@ -142,7 +166,7 @@ void run()
 
 int main(int argc, char* args[])
 {
-	SDL_Log("Simple Renderer: Build %s %s", __DATE__, __TIME__);
+	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 
 	run();
 

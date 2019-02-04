@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     int music1Id = -1;
     int music2Id = -1;
     int music3Id = -1;
+    int music4Id = -1;
 
     boolean fadeMusic2 = false;
     float music2Volume = 1f;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         music1Id = Music.loadAsync("ukulele.ogg");
         music2Id = Music.loadAsync("idea.wav");
         music3Id = Music.loadAsync("losing.wav");
+        music4Id = Music.loadAsync("losing.wav");
 
         updateThread = new Thread(updateRunner);
         updateThread.start();
@@ -120,5 +122,10 @@ public class MainActivity extends AppCompatActivity {
     public void stopMusic3(View view) {
         if (Music.isLoadCompleted(music3Id))
             Music.stop(music3Id);
+    }
+
+    public void startMusic4(View view) {
+        if (Music.isLoadCompleted(music4Id))
+            Music.play(music4Id);
     }
 }

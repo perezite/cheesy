@@ -203,8 +203,6 @@ public class SDLActivity extends Activity {
         }
 
 		Audio.init(this);
-		// int sound1Id = Sound.create("ding.ogg");
-		// Sound.play(sound1Id);
     }
 
     // Events
