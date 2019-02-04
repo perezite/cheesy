@@ -5,7 +5,6 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,18 +13,14 @@ public class Sound {
     static Activity ParentActivity;
     static SoundPool soundPool = null;
     static List<Integer> SoundIds = new ArrayList<Integer>();
+    static List<Integer> LoadedSoundIds = new ArrayList<Integer>();
 
     public static void init(Activity activity) {
-		try {
-			ParentActivity = activity;
-			soundPool = new SoundPool(20,AudioManager.STREAM_MUSIC, 0);
-			Log.e("SDL", "Successfully initialized sound");
-		} catch (Exception e) {
-			Log.e("SDL", "Failed to initialize sound");
-		}
+        ParentActivity = activity;
+        soundPool = new SoundPool(20,AudioManager.STREAM_MUSIC, 0);
     }
 
-    public static int create(String assetPath) {
+    public static int loadAsync(String assetPath) {
         int soundId = -1;
 
         try {
@@ -40,11 +35,24 @@ public class Sound {
         return soundId;
     }
 
+    public static int isLoadComplete(int soundId) {
+        try {
+            if (LoadedSoundIds.contains(new Integer(soundId)))
+                return 1;
+
+            boolean loadComplete = testIfLoadComplete(soundId);
+            if (loadComplete)
+                LoadedSoundIds.add(soundId);
+
+            return loadComplete ? 1 : 0;
+        } catch(Exception e) {
+            return -1;
+        }
+    }
+
     public static int play(int soundId) {
         try {
-            int res = soundPool.play(soundId, 1, 1, 0, 0, 1);
-			if (res == 0)
-				return -1;
+            soundPool.play(soundId, 1, 1, 0, 0, 1);
         } catch (Exception e) {
             return -1;
         }
@@ -56,9 +64,11 @@ public class Sound {
         try {
             soundPool.unload(soundId);
             SoundIds.remove(new Integer(soundId));
+            LoadedSoundIds.remove(new Integer(soundId));
         } catch (Exception e) {
             return -1;
         }
+
         return 0;
     }
 
@@ -75,5 +85,16 @@ public class Sound {
     public static void release() {
         for (Integer i : SoundIds)
             release(i);
+    }
+
+    // test if loading the sound has completed, by attempting to play the sound silently
+    private static boolean testIfLoadComplete(int soundId) {
+        int result = soundPool.play(soundId, 0, 0, 0, 0, 1.0f);
+        if (result > 0) {
+            soundPool.stop(soundId);
+            return true;
+        }
+
+        return false;
     }
 }

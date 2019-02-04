@@ -7,20 +7,35 @@ import android.media.MediaPlayer;
 
 import java.io.IOException;
 
-public class MusicPlayer implements MediaPlayer.OnCompletionListener {
+public class MusicPlayer implements MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener {
+    Activity parentActivity;
+    String assetPath;
     private MediaPlayer mediaPlayer = null;
+    private boolean isLoaded = false;
     private boolean isPrepared = false;
 
-    public MusicPlayer(String assetPath, Activity parentActivity) throws IOException {
+    public MusicPlayer(String _assetPath, Activity _parentActivity) {
+        assetPath = _assetPath;
+        parentActivity = _parentActivity;
+    }
+
+    public void loadAsync() throws IOException  {
         AssetManager assetManager = parentActivity.getAssets();
         AssetFileDescriptor assetDescriptor = assetManager.openFd(assetPath);
 
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setDataSource(assetDescriptor.getFileDescriptor(),
                 assetDescriptor.getStartOffset(), assetDescriptor.getLength());
+
         mediaPlayer.setOnCompletionListener(this);
-        mediaPlayer.prepare();
-        isPrepared = true;
+        mediaPlayer.setOnPreparedListener(this);
+        mediaPlayer.prepareAsync();
+    }
+
+    public boolean isLoadComplete() {
+        synchronized (this) {
+            return isLoaded;
+        }
     }
 
     public void play() throws IOException {
@@ -71,6 +86,14 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener {
             synchronized (this) {
                 isPrepared = false;
             }
+        }
+    }
+
+    @Override
+    public void onPrepared(MediaPlayer preparedMediaPlayer) {
+        synchronized (this) {
+            isLoaded = true;
+            isPrepared = true;
         }
     }
 }

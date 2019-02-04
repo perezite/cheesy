@@ -41,30 +41,34 @@ void androidTest()
 
 #ifdef __ANDROID__
 	JNIEnv* jni;
+
 	jclass soundClass;
-	jclass musicClass;
-	jmethodID createSoundMethod;
+
+	jmethodID loadSoundAsyncMethod;
+	jmethodID IsSoundLoadCompleteMethod;
 	jmethodID playSoundMethod;
 
 	jint soundId;
 #endif
 
-void prepareAndroid()
+void prepareAndroidSound()
 {
 	#ifdef __ANDROID__
 		jni = getJavaNativeInterface();
 		soundClass = jni->FindClass("org/libsdl/app/Sound");
-		musicClass = jni->FindClass("org/libsdl/app/Music");
-		createSoundMethod = jni->GetStaticMethodID(soundClass, "create", "(Ljava/lang/String;)I");
+		loadSoundAsyncMethod = jni->GetStaticMethodID(soundClass, "loadAsync", "(Ljava/lang/String;)I");
+		IsSoundLoadCompleteMethod = jni->GetStaticMethodID(soundClass, "isLoadComplete", "(I)I");
 		playSoundMethod = jni->GetStaticMethodID(soundClass, "play", "(I)I");
+
 	#endif
 }
 
-void prepareAndroidSound()
+void loadAndroidSound()
 {
 	#ifdef __ANDROID__
-		soundId = jni->CallStaticIntMethod(soundClass, createSoundMethod, (jstring)jni->NewStringUTF("ding.ogg"));
-		int createResult = (int)soundId;
+		soundId = jni->CallStaticIntMethod(soundClass, loadSoundAsyncMethod, (jstring)jni->NewStringUTF("ding.ogg"));
+		while(jni->CallStaticIntMethod(soundClass, IsSoundLoadCompleteMethod, soundId) == jint(0)) 
+			SDL_Delay(1);
 	#endif
 }
 
@@ -72,72 +76,63 @@ void playAndroidSound()
 {
 	#ifdef __ANDROID__
 		jint playJavaResult = jni->CallStaticIntMethod(soundClass, playSoundMethod, soundId);
-		int playResult = (int)playJavaResult;
 	#endif
 }
 
 #ifdef __ANDROID__
-	jint musicId;
+	jclass musicClass;
+
+	jmethodID loadMusicAsyncMethod;
+	jmethodID isMusicLoadCompleteMethod;
 	jmethodID playMusicMethod;
+
+	jint musicId;
 #endif
 
 void prepareAndroidMusic()
 {
-#ifdef __ANDROID__
-	jmethodID create = jni->GetStaticMethodID(musicClass, "create", "(Ljava/lang/String;)I");
-	musicId = jni->CallStaticIntMethod(musicClass, create, (jstring)jni->NewStringUTF("ukulele.ogg"));
-	int createResult = (int)musicId;
+	#ifdef __ANDROID__
+		musicClass = jni->FindClass("org/libsdl/app/Music");
+		loadMusicAsyncMethod = jni->GetStaticMethodID(musicClass, "loadAsync", "(Ljava/lang/String;)I");
+		isMusicLoadCompleteMethod = jni->GetStaticMethodID(musicClass, "isLoadComplete", "(I)I");
+		playMusicMethod = jni->GetStaticMethodID(musicClass, "play", "(I)I");
+	#endif
+}
 
-	playMusicMethod = jni->GetStaticMethodID(musicClass, "play", "(I)I");
-#endif
+void loadAndroidMusic()
+{
+	#ifdef __ANDROID__
+		musicId = jni->CallStaticIntMethod(musicClass, loadMusicAsyncMethod, (jstring)jni->NewStringUTF("ukulele.ogg"));
+		while (jni->CallStaticIntMethod(musicClass, isMusicLoadCompleteMethod, musicId) == jint(0))
+			SDL_Delay(1);
+	#endif
 }
 
 void playAndroidMusic()
 {
 #ifdef __ANDROID__
 	jint playJavaResult = jni->CallStaticIntMethod(musicClass, playMusicMethod, musicId);
-	int playResult = (int)playJavaResult;
 #endif
-}
-
-Uint32 wavLength;
-Uint8 *wavBuffer;
-SDL_AudioDeviceID deviceId;
-
-void playSound()
-{
-	int success = SDL_QueueAudio(deviceId, wavBuffer, wavLength);
-	SDL_PauseAudioDevice(deviceId, 0);
 }
 
 void update()
 {
 	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
-		SDL_Log("test");
+		SDL_Log("tap");
 		playAndroidMusic();
 		playAndroidSound();
 	}
-}
-
-void init()
-{
-	SDL_Init(SDL_INIT_AUDIO);
-
-	SDL_AudioSpec wavSpec;
-
-	SDL_LoadWAV("losing.wav", &wavSpec, &wavBuffer, &wavLength);
-
-	deviceId = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
 }
 
 void run() 
 {
 	sb::Window window;
 
-	// init();
-	prepareAndroid();
-	prepareAndroidMusic();
 	prepareAndroidSound();
+	loadAndroidSound();
+	prepareAndroidMusic();
+	loadAndroidMusic();
+
 	while (window.isOpen()) {
 		window.update();
 		update();
@@ -149,7 +144,6 @@ int main(int argc, char* args[])
 {
 	SDL_Log("Simple Renderer: Build %s %s", __DATE__, __TIME__);
 
-	// androidTest();
 	run();
 
 	return 0;
