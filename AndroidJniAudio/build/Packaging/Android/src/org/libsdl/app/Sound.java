@@ -17,7 +17,7 @@ public class Sound {
 
     public static void init(Activity activity) {
         ParentActivity = activity;
-        soundPool = new SoundPool(20,AudioManager.STREAM_MUSIC, 0);
+        soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
     }
 
     public static int loadAsync(String assetPath) {
@@ -49,6 +49,16 @@ public class Sound {
             return -1;
         }
     }
+
+	public static void pause() {
+		for (Integer i : SoundIds)
+			soundPool.pause(i);
+	}
+
+	public static void resume() {
+	    for (Integer i : SoundIds) 
+			soundPool.resume(i);
+	}
 
     public static int play(int soundId) {
         try {

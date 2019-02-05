@@ -13,6 +13,16 @@ public class Music {
         ParentActivity = activity;
     }
 
+	public static void pause() {
+		for (MusicPlayer player : players)
+            player.pause();
+	}
+
+	public static void resume() {
+		for (MusicPlayer player : players)
+            player.resume();
+	}
+
     public static int loadAsync(String assetPath)
     {
         int musicId;

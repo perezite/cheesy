@@ -21,9 +21,19 @@ public class Audio {
 		isInit = true;
     }
 
+	public static void pause() {
+		Sound.pause();
+		Music.pause();
+	}
+
+	public static void resume() {
+		Sound.resume();
+		Music.resume();
+	}
+
     public static void release() {
-        Sound.release();
         Music.release();
+        Sound.release();
 		isInit = false;
     }
 }

@@ -59,7 +59,7 @@ void checkAndroidAudio() {
 	#ifdef __ANDROID__
 		jint isInitResult = jni->CallStaticIntMethod(audioClass, isAudioInitMethod);
 		if (isInitResult != jint(1)) {
-			sb::Error().die() << "Failed to init android audio. Make sure you called Audio.Init(this) in the AndroidActivity Java class" << std::endl;
+			sb::Error().die() << "Failed to init android audio. Make sure you called Audio.Init(this) in your Activity Java class" << std::endl;
 		}
 	#endif
 }

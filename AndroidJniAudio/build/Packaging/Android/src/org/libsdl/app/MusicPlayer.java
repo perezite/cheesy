@@ -38,6 +38,16 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener, MediaPlaye
         }
     }
 
+	public void pause() {
+		// using mediaPlayer.pause() / mediaPlayer.resume() messes up the pitch of SoundPool for some weird reason, so we use this cheesy trick instead -.-
+		mediaPlayer.setVolume(0, 0);
+	}
+
+	public void resume() {
+		// using mediaPlayer.pause() / mediaPlayer.resume() messes up the pitch of SoundPool for some weird reason, so we use this cheesy trick instead -.-
+		mediaPlayer.setVolume(1, 1);
+	}
+
     public void play() throws IOException {
         if (mediaPlayer.isPlaying())
             return;

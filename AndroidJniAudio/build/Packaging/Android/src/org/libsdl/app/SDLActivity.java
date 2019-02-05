@@ -215,6 +215,7 @@ public class SDLActivity extends Activity {
            return;
         }
 
+		Audio.pause();
 		if (isFinishing()) {
             Audio.release();
         }
@@ -241,6 +242,8 @@ public class SDLActivity extends Activity {
             View.SYSTEM_UI_FLAG_FULLSCREEN;
 
         getWindow().getDecorView().setSystemUiVisibility(iFlags);    
+
+		Audio.resume();
     }
 
 
