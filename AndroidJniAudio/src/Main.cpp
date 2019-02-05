@@ -5,6 +5,7 @@
 #include <iostream>
 
 #ifdef __ANDROID__
+	#include "Android.h"
 	#include "../build/Platform/Android/Application/SDL_android_main.h"
 #endif
 
@@ -65,31 +66,14 @@ void checkAndroidAudio() {
 }
 
 #ifdef __ANDROID__
-	jclass soundClass;
-
-	jmethodID loadSoundAsyncMethod;
-	jmethodID IsSoundLoadCompleteMethod;
-	jmethodID playSoundMethod;
-
 	jint soundId;
 #endif
-
-void prepareAndroidSound()
-{
-	#ifdef __ANDROID__
-		soundClass = jni->FindClass("org/libsdl/app/Sound");
-		loadSoundAsyncMethod = jni->GetStaticMethodID(soundClass, "loadAsync", "(Ljava/lang/String;)I");
-		IsSoundLoadCompleteMethod = jni->GetStaticMethodID(soundClass, "isLoadComplete", "(I)I");
-		playSoundMethod = jni->GetStaticMethodID(soundClass, "play", "(I)I");
-
-	#endif
-}
 
 void loadAndroidSound()
 {
 	#ifdef __ANDROID__
-		soundId = jni->CallStaticIntMethod(soundClass, loadSoundAsyncMethod, (jstring)jni->NewStringUTF("ding.ogg"));
-		while(jni->CallStaticIntMethod(soundClass, IsSoundLoadCompleteMethod, soundId) == jint(0)) 
+		soundId = sb::Android::callStaticIntMethod("org/libsdl/app/Sound", "loadAsync", "(Ljava/lang/String;)I", (jstring)jni->NewStringUTF("ding.ogg"));
+		while (sb::Android::callStaticIntMethod("org/libsdl/app/Sound", "isLoadComplete", "(I)I", soundId) == jint(0))
 			SDL_Delay(1);
 	#endif
 }
@@ -97,7 +81,7 @@ void loadAndroidSound()
 void playAndroidSound()
 {
 	#ifdef __ANDROID__
-		jint playJavaResult = jni->CallStaticIntMethod(soundClass, playSoundMethod, soundId);
+		jint playResult = sb::Android::callStaticIntMethod("org/libsdl/app/Sound", "play", "(I)I", soundId);
 	#endif
 }
 
@@ -152,7 +136,6 @@ void run()
 
 	prepareAndroidAudio();
 	checkAndroidAudio();
-	prepareAndroidSound();
 	loadAndroidSound();
 	prepareAndroidMusic();
 	loadAndroidMusic();
