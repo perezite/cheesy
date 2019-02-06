@@ -5,6 +5,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Window.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Error.h" />
@@ -12,5 +13,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\GL.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Sound.h" />
   </ItemGroup>
 </Project>

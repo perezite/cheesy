@@ -1,6 +1,7 @@
 #include "Window.h"
 #include "Input.h"
 #include "Error.h"
+#include "Sound.h"
 #include <SDL2/SDL.h>
 #include <iostream>
 
@@ -9,31 +10,16 @@
 #endif
 
 #ifdef __ANDROID__
-	jint soundId;
 	jint musicId;
 #endif
+
+sb::Sound sound1;
 
 void checkAndroidAudio() {
 	#ifdef __ANDROID__
 		jint isInit = sb::Java::callStaticIntMethod("org/libsdl/app/Audio", "isInit", "()I");
 		if (isInit != jint(1)) 
 			sb::Error().die() << "Failed to init android audio. Make sure you called Audio.Init(this) in your Java Android Activity class" << std::endl;
-	#endif
-}
-
-void loadAndroidSound()
-{
-	#ifdef __ANDROID__
-		soundId = sb::Java::callStaticIntMethod("org/libsdl/app/Sound", "loadAsync", "(Ljava/lang/String;)I", sb::Java::newStringUtf("ding.ogg"));
-		while (sb::Java::callStaticIntMethod("org/libsdl/app/Sound", "isLoadComplete", "(I)I", soundId) == jint(0))
-			SDL_Delay(1);
-	#endif
-}
-
-void playAndroidSound()
-{
-	#ifdef __ANDROID__
-		sb::Java::callStaticIntMethod("org/libsdl/app/Sound", "play", "(I)I", soundId);
 	#endif
 }
 
@@ -58,16 +44,16 @@ void update()
 	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
 		SDL_Log("tap");
 		playAndroidMusic();
-		playAndroidSound();
+		sound1.play();
 	}
 }
 
 void run() 
 {
 	sb::Window window;
-
 	checkAndroidAudio();
-	loadAndroidSound();
+	
+	sound1.load("ding.ogg");
 	loadAndroidMusic();
 
 	while (window.isOpen()) {
