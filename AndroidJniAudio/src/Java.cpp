@@ -28,7 +28,7 @@ namespace sb
 		return result;
 	}
 
-	jstring Java::newStringUtf(std::string string) {
+	jstring Java::newUtfString(std::string string) {
 		static JNIEnv* jni = getJavaNativeInterface();
 		return jni->NewStringUTF(string.c_str());
 	}

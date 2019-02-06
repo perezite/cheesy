@@ -4,10 +4,9 @@
 #endif 
 #include <string>
 
-
 namespace sb 
 {
-	class Sound
+	class Music
 	{
 	public:
 		void load(std::string assetPath);
@@ -20,3 +19,5 @@ namespace sb
 		#endif
 	};
 }
+
+

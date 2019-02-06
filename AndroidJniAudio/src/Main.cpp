@@ -2,18 +2,15 @@
 #include "Input.h"
 #include "Error.h"
 #include "Sound.h"
-#include <SDL2/SDL.h>
-#include <iostream>
-
+#include "Music.h"
 #ifdef __ANDROID__
 	#include "Java.h"
 #endif
-
-#ifdef __ANDROID__
-	jint musicId;
-#endif
+#include <SDL2/SDL.h>
+#include <iostream>
 
 sb::Sound sound1;
+sb::Music music1;
 
 void checkAndroidAudio() {
 	#ifdef __ANDROID__
@@ -23,27 +20,11 @@ void checkAndroidAudio() {
 	#endif
 }
 
-void loadAndroidMusic()
-{
-	#ifdef __ANDROID__
-		musicId = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "loadAsync", "(Ljava/lang/String;)I", sb::Java::newStringUtf("ukulele.ogg"));
-		while (sb::Java::callStaticIntMethod("org/libsdl/app/Music", "isLoadComplete", "(I)I", musicId) == jint(0))
-			SDL_Delay(1);
-	#endif
-}
-
-void playAndroidMusic()
-{
-	#ifdef __ANDROID__
-		sb::Java::callStaticIntMethod("org/libsdl/app/Music", "play", "(I)I", musicId);
-	#endif
-}
-
 void update()
 {
 	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
 		SDL_Log("tap");
-		playAndroidMusic();
+		music1.play();
 		sound1.play();
 	}
 }
@@ -54,7 +35,7 @@ void run()
 	checkAndroidAudio();
 	
 	sound1.load("ding.ogg");
-	loadAndroidMusic();
+	music1.load("ukulele.ogg");
 
 	while (window.isOpen()) {
 		window.update();
