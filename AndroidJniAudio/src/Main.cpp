@@ -5,7 +5,7 @@
 #include <iostream>
 
 #ifdef __ANDROID__
-	#include "Android.h"
+	#include "Java.h"
 	#include "../build/Platform/Android/Application/SDL_android_main.h"
 #endif
 
@@ -72,8 +72,8 @@ void checkAndroidAudio() {
 void loadAndroidSound()
 {
 	#ifdef __ANDROID__
-		soundId = sb::Android::callStaticIntMethod("org/libsdl/app/Sound", "loadAsync", "(Ljava/lang/String;)I", (jstring)jni->NewStringUTF("ding.ogg"));
-		while (sb::Android::callStaticIntMethod("org/libsdl/app/Sound", "isLoadComplete", "(I)I", soundId) == jint(0))
+		soundId = sb::Java::callStaticIntMethod("org/libsdl/app/Sound", "loadAsync", "(Ljava/lang/String;)I", (jstring)jni->NewStringUTF("ding.ogg"));
+		while (sb::Java::callStaticIntMethod("org/libsdl/app/Sound", "isLoadComplete", "(I)I", soundId) == jint(0))
 			SDL_Delay(1);
 	#endif
 }
@@ -81,7 +81,7 @@ void loadAndroidSound()
 void playAndroidSound()
 {
 	#ifdef __ANDROID__
-		jint playResult = sb::Android::callStaticIntMethod("org/libsdl/app/Sound", "play", "(I)I", soundId);
+		jint playResult = sb::Java::callStaticIntMethod("org/libsdl/app/Sound", "play", "(I)I", soundId);
 	#endif
 }
 

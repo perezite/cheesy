@@ -15,13 +15,13 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Android.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Main.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Android.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Error.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\GL.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.h" />

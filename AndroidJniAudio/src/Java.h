@@ -9,16 +9,16 @@
 namespace sb 
 {
 	// a java android method
-	struct AndroidMethod { 
+	struct JavaMethod { 
 		jclass theClass; std::string name; std::string descriptor; 
 
-		bool operator < (const AndroidMethod& other) const {
+		bool operator < (const JavaMethod& other) const {
 			return std::tie(theClass, name, descriptor) < std::tie(other.theClass, other.name, other.descriptor);
 		}
 	};
 
 	// class for (cached) calling of native Android methods written in Java, using the Android Java Native Interface (JNI)
-	class Android
+	class Java
 	{
 	public:
 		static jint callStaticIntMethod(std::string classDescriptor, std::string methodName, std::string methodDescriptor, ...);
@@ -26,11 +26,11 @@ namespace sb
 	protected:
 		static void loadClass(std::string classDescriptor);
 
-		static void loadStaticMethod(AndroidMethod androidMethod);
+		static void loadStaticMethod(JavaMethod androidMethod);
 		
 	private: 
 		static std::map<std::string, jclass> m_classes;
-		static std::map<AndroidMethod, jmethodID> m_methods;
+		static std::map<JavaMethod, jmethodID> m_methods;
 	};
 }
 
