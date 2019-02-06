@@ -28,6 +28,11 @@ namespace sb
 		return result;
 	}
 
+	jstring Java::newStringUtf(std::string string) {
+		static JNIEnv* jni = getJavaNativeInterface();
+		return jni->NewStringUTF(string.c_str());
+	}
+
 	void Java::loadClass(std::string classDescriptor)
 	{
 		static JNIEnv* jni = getJavaNativeInterface();

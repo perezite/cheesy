@@ -23,6 +23,8 @@ namespace sb
 	public:
 		static jint callStaticIntMethod(std::string classDescriptor, std::string methodName, std::string methodDescriptor, ...);
 
+		static jstring newStringUtf(std::string string);
+
 	protected:
 		static void loadClass(std::string classDescriptor);
 
