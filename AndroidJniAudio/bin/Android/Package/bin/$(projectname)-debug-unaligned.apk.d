@@ -1,9 +1,0 @@
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\$(projectname)-debug-unaligned.apk : \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\$(projectname).ap_ \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\bin\classes.dex \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\gdbserver \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libmain.so \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libSDL2.so \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libSDL2_image.so \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\x86\libSDL2.so \
-D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\x86\libSDL2_image.so \
