@@ -20,4 +20,11 @@ namespace sb
 			sb::Java::callStaticIntMethod("org/libsdl/app/Music", "play", "(I)I", m_id);
 		#endif
 	}
+
+	void Music::stop()
+	{
+		#ifdef __ANDROID__
+			sb::Java::callStaticIntMethod("org/libsdl/app/Music", "stop", "(I)I", m_id);
+		#endif
+	}
 }

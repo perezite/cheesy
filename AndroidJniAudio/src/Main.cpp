@@ -9,15 +9,33 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 
+enum class PlaybackState {
+	OneSoundOneMusic,
+	OneSound,
+	TwoSounds
+};
+
+PlaybackState playbackState = PlaybackState::OneSoundOneMusic;
 sb::Sound sound1;
 sb::Music music1;
+
+void playback() {
+	if (playbackState == PlaybackState::OneSoundOneMusic) {
+		music1.play();
+		sound1.play();
+		playbackState = PlaybackState::OneSound;
+	}
+	else if (playbackState == PlaybackState::OneSound) {
+		music1.stop();
+		sound1.play();
+	}
+}
 
 void update()
 {
 	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
 		SDL_Log("tap");
-		music1.play();
-		sound1.play();
+		playback();
 	}
 }
 

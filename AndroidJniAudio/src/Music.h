@@ -13,6 +13,8 @@ namespace sb
 
 		void play();
 
+		void stop();
+
 	private: 
 		#ifdef __ANDROID__
 			jint m_id;
