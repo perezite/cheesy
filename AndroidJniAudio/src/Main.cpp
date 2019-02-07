@@ -12,14 +12,6 @@
 sb::Sound sound1;
 sb::Music music1;
 
-void checkAndroidAudio() {
-	#ifdef __ANDROID__
-		jint isInit = sb::Java::callStaticIntMethod("org/libsdl/app/Audio", "isInit", "()I");
-		if (isInit != jint(1)) 
-			sb::Error().die() << "Failed to init android audio. Make sure you called Audio.Init(this) in your Java Android Activity class" << std::endl;
-	#endif
-}
-
 void update()
 {
 	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
@@ -32,7 +24,6 @@ void update()
 void run() 
 {
 	sb::Window window;
-	checkAndroidAudio();
 	
 	sound1.load("ding.ogg");
 	music1.load("ukulele.ogg");
