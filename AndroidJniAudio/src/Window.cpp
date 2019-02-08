@@ -17,7 +17,7 @@ namespace sb
 			m_glContext = SDL_GL_CreateContext(m_sdlWindow);
 			GLenum glewError = glewInit();
 		#elif defined(__ANDROID__)
-			SDL_Init(SDL_INIT_VIDEO);
+			SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 			SDL_DisplayMode mode;
 			SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_ES);
 			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);

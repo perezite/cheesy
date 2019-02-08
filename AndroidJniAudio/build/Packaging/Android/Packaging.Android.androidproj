@@ -23,8 +23,10 @@
     <Content Include="build.xml" />
     <Content Include="libs\armeabi-v7a\libSDL2.so" />
     <Content Include="libs\armeabi-v7a\libSDL2_image.so" />
+    <Content Include="libs\armeabi-v7a\libSDL2_mixer.so" />
     <Content Include="libs\x86\libSDL2.so" />
     <Content Include="libs\x86\libSDL2_image.so" />
+    <Content Include="libs\x86\libSDL2_mixer.so" />
     <Content Include="res\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
