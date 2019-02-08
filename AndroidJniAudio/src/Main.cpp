@@ -12,7 +12,6 @@
 #endif
 #include <iostream>
 
-/*
 enum class PlaybackState {
 	OneSound,
 	OneMusic,
@@ -85,10 +84,10 @@ void run()
 {
 	sb::Window window;
 	
-	sound1.load("ding.ogg");
+	sound1.load("ding.oggg");
 	sound2.load("losing.wav");
 	music1.load("ukulele.ogg");
-	music2.load("idea.wav");
+	music2.load("idea.ogg");
 
 	while (window.isOpen()) {
 		window.update();
@@ -96,57 +95,12 @@ void run()
 		window.draw();
 	}
 }
-*/
-
-#ifdef __ANDROID__
-	sb::Music music;
-	sb::Sound sound1;
-	sb::Sound sound2;
-#endif
-
-void init2()
-{
-	#ifdef __ANDROID__
-		sound1.load("losing.wav");
-		sound2.load("ding.ogg");
-		music.load("ukulele.ogg");
-		music.play();
-	#endif
-}
-
-void update2()
-{
-	#ifdef __ANDROID__
-		static int counter = 0;
-
-		if (sb::Input::isTouchGoingDown()) {
-			if (counter % 2 == 0)
-				sound1.play();
-			else
-				sound2.play();
-			counter++;
-		}
-	#endif
-}
-
-void run2()
-{
-	sb::Window window;
-
-	init2();
-
-	while (window.isOpen()) {
-		window.update();
-		update2();
-		window.draw();
-	}	
-}
 
 int main(int argc, char* args[])
 {
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 
-	run2();
+	run();
 
 	return 0;
 }

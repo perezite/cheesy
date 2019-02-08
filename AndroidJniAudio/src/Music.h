@@ -15,6 +15,9 @@ namespace sb
 
 		void stop();
 
+	protected:
+		void validateFileEnding(std::string assetPath);
+
 	private: 
 		#ifdef __ANDROID__
 			jint m_id;
