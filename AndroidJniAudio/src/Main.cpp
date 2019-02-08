@@ -11,6 +11,7 @@
 	#include <SDL2/SDL_mixer.h>
 #endif
 #include <iostream>
+
 /*
 enum class PlaybackState {
 	OneSound,
@@ -99,16 +100,15 @@ void run()
 
 #ifdef __ANDROID__
 	sb::Music music;
-	Mix_Chunk *sound1 = NULL;
-	Mix_Chunk *sound2 = NULL;
+	sb::Sound sound1;
+	sb::Sound sound2;
 #endif
 
 void init2()
 {
 	#ifdef __ANDROID__
-		Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-		sound1 = Mix_LoadWAV("losing.wav");
-		sound2 = Mix_LoadWAV("ding.ogg");
+		sound1.load("losing.wav");
+		sound2.load("ding.ogg");
 		music.load("ukulele.ogg");
 		music.play();
 	#endif
@@ -121,20 +121,11 @@ void update2()
 
 		if (sb::Input::isTouchGoingDown()) {
 			if (counter % 2 == 0)
-				Mix_PlayChannel(-1, sound1, 0);
-			else 
-				Mix_PlayChannel(-1, sound2, 0);
+				sound1.play();
+			else
+				sound2.play();
 			counter++;
 		}
-	#endif
-
-}
-
-void close()
-{
-	#ifdef __ANDROID__
-		Mix_FreeChunk(sound1);
-		Mix_Quit();
 	#endif
 }
 
@@ -149,15 +140,12 @@ void run2()
 		update2();
 		window.draw();
 	}	
-
-	close();
 }
 
 int main(int argc, char* args[])
 {
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 
-	// run();
 	run2();
 
 	return 0;

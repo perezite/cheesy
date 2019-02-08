@@ -1,22 +1,23 @@
 #pragma once 
 #ifdef __ANDROID__
-	#include "Java.h"
-#endif 
+	#include <SDL2/SDL_mixer.h>
+#endif
 #include <string>
-
 
 namespace sb 
 {
 	class Sound
 	{
 	public:
+		~Sound();
+
 		void load(std::string assetPath);
 
 		void play();
 
-	private: 
+	private:
 		#ifdef __ANDROID__
-			jint m_id;
+			Mix_Chunk* m_sound;
 		#endif
 	};
 }

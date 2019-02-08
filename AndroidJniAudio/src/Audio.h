@@ -2,10 +2,12 @@
 
 namespace sb 
 {
-	class AndroidAudio
+	class Audio
 	{
 	public:
-		static void assertIsInit();
+		static void init();
+
+		static bool isInit() { return m_isInit; }
 
 	private: 
 		static bool m_isInit;
