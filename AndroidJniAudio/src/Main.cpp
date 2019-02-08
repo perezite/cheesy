@@ -17,7 +17,9 @@ enum class PlaybackState {
 	OneMusic,
 	OneSoundOneMusic,
 	TwoSounds,
-	TwoMusics
+	TwoMusics, 
+	TwoMusicsTwoSounds,
+	TheEnd
 };
 
 PlaybackState playbackState = PlaybackState::OneSound;
@@ -45,6 +47,7 @@ void playback() {
 		static unsigned int counter2 = 0;
 		if (counter2 == 0)
 			music1.stop();
+
 		music1.play();
 		sound1.play();
 		counter2++;
@@ -68,8 +71,32 @@ void playback() {
 		SDL_Log("TwoMusics");
 		music2.play();
 		music1.play();
-	}
+		playbackState = PlaybackState::TwoMusicsTwoSounds;
+	} 
+	else if (playbackState == PlaybackState::TwoMusicsTwoSounds)
+	{
+		SDL_Log("TwoMusicsTwoSounds");
+		static unsigned int counter4 = 0;
+		if (counter4 == 0) {
+			music1.stop();
+			music2.stop();
+		}
 
+		music1.play();
+		music2.play();
+		sound2.play();
+		SDL_Log("0.5 second delay...");
+		SDL_Delay(500);
+		SDL_Log("Done");
+		sound1.play();
+		counter4++;
+		if (counter4 == 3)
+			playbackState = PlaybackState::TheEnd;
+	}
+	else if (playbackState == PlaybackState::TheEnd) {
+		music1.stop();
+		music2.stop();
+	}
 }
 
 void update()
@@ -84,7 +111,7 @@ void run()
 {
 	sb::Window window;
 	
-	sound1.load("ding.oggg");
+	sound1.load("ding.ogg");
 	sound2.load("losing.wav");
 	music1.load("ukulele.ogg");
 	music2.load("idea.ogg");
