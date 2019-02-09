@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             music2Volume = 1f;
         }
 
-        float deltaVolume = deltaSeconds / 5f;;
+        float deltaVolume = deltaSeconds / 5f;
         music2Volume += music2VolumeIncreasing ? deltaVolume : -deltaVolume;
 
         Music.setVolume(music2Id, music2Volume);

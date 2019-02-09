@@ -130,21 +130,41 @@ float clamp(float value, float min, float max)
 	return value < min ? min : (value > max ? max : value);
 }
 
+void fadeMusic(sb::Music& music, sb::Stopwatch& sw, float& volume, bool& volumeIncreasing)
+{
+	if (volume <= 0) {
+		volumeIncreasing = true;
+	}
+	else if (volume >= 1) {
+		volumeIncreasing = false;
+	}
+
+	volume = clamp(volume, 0, 1);
+	float deltaVolume = sw.getElapsedSeconds() / 5;
+	sw.reset();
+	volume += volumeIncreasing ? deltaVolume : -deltaVolume;
+	music.setVolume(volume);
+}
+
+void fadeMusics()
+{
+	static sb::Stopwatch music1Sw;
+	static float volume1 = 0;
+	static bool volume1Increasing = true;
+
+	static sb::Stopwatch music2Sw;
+	static float volume2 = 1;
+	static bool volume2Increasing = false;
+
+	fadeMusic(music1, music1Sw, volume1, volume1Increasing);
+	fadeMusic(music2, music2Sw, volume2, volume2Increasing);
+	SDL_Log("%f %f", volume1, volume2);
+}
+
 void updatePlayback()
 {
 	if (playbackState == PlaybackState::TwoMusicsFading) {
-		static sb::Stopwatch sw;
-		static bool music1Up = true;
-		static bool music2Up = false;
-		float music1Volume = music1Up ? sw.getElapsedSeconds() / 5 : 1 - sw.getElapsedSeconds() / 5;
-		float music2Volume = music2Up ? sw.getElapsedSeconds() / 5 : 1 - sw.getElapsedSeconds() / 5;
-		music1Up = music1Volume > 1 ? false : music1Volume < 0 ? true : music1Up;
-		music2Up = music2Volume > 1 ? false : music2Volume < 0 ? true : music2Up;
-		music1Volume = clamp(music1Volume, 0, 1);
-		music2Volume = clamp(music2Volume, 0, 1);
-		music1.setVolume(music1Volume);
-		music2.setVolume(music2Volume);
-		SDL_Log("%f %f", music1Volume, music2Volume);
+		fadeMusics();
 	}
 }
 
