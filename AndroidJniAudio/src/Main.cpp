@@ -3,6 +3,7 @@
 #include "Sound.h"
 #include "Music.h"
 #include "Stopwatch.h"
+#include "Logger.h"
 #ifdef __ANDROID__
 	#include "Java.h"
 #endif
