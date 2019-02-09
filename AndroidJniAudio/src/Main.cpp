@@ -15,7 +15,8 @@
 
 enum class PlaybackState {
 	TheBeginning,
-	TwoMusicsFading,
+	TowSoundsTwoFadingMusics,
+	TwoFadingMusics,
 	LoopingMusic,
 	TwoMusicsTwoSounds,
 	TwoMusics,
@@ -35,11 +36,29 @@ sb::Music music3;
 
 void playback() {
 	if (playbackState == PlaybackState::TheBeginning) {
-		playbackState = PlaybackState::TwoMusicsFading;
+		playbackState = PlaybackState::TowSoundsTwoFadingMusics;
 	}
-	if (playbackState == PlaybackState::TwoMusicsFading) {
-		SDL_Log("TwoMusicsFading");
+	if (playbackState == PlaybackState::TowSoundsTwoFadingMusics) {
+		SDL_Log("TowSoundsTwoFadingMusics");
+		static int counter6 = 0;
+		music1.setVolume(0);
+		music2.setVolume(1);
+		music1.play();
+		music2.play();
+		sound1.play();
+		SDL_Log("0.5 second delay...");
+		SDL_Delay(500);
+		SDL_Log("Done");
+		sound2.play();
+		counter6++;
+		if (counter6 == 3)
+			playbackState = PlaybackState::TwoFadingMusics;
+	}
+	if (playbackState == PlaybackState::TwoFadingMusics) {
+		SDL_Log("TwoFadingMusics");
 		static int counter5 = 0;
+		music1.stop();
+		music2.stop();
 		music1.setVolume(0);
 		music2.setVolume(1);
 		music1.play();
@@ -132,13 +151,7 @@ float clamp(float value, float min, float max)
 
 void fadeMusic(sb::Music& music, sb::Stopwatch& sw, float& volume, bool& volumeIncreasing)
 {
-	if (volume <= 0) {
-		volumeIncreasing = true;
-	}
-	else if (volume >= 1) {
-		volumeIncreasing = false;
-	}
-
+	volumeIncreasing = volume <= 0 ? true : volume >= 1 ? false : volumeIncreasing;
 	volume = clamp(volume, 0, 1);
 	float deltaVolume = sw.getElapsedSeconds() / 5;
 	sw.reset();
@@ -163,7 +176,7 @@ void fadeMusics()
 
 void updatePlayback()
 {
-	if (playbackState == PlaybackState::TwoMusicsFading) {
+	if (playbackState == PlaybackState::TowSoundsTwoFadingMusics || playbackState == PlaybackState::TwoFadingMusics) {
 		fadeMusics();
 	}
 }
