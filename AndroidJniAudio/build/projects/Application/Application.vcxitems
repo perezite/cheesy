@@ -29,7 +29,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Audio.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Error.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\GL.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Music.h" />

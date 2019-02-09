@@ -22,5 +22,7 @@ namespace sb
 		#ifdef __ANDROID__
 			Mix_Chunk* m_sound;
 		#endif
+
+		std::string m_assetPath;
 	};
 }

@@ -26,6 +26,8 @@ namespace sb
 		#ifdef __ANDROID__
 			jint m_id;
 		#endif
+
+		std::string m_assetPath;
 	};
 }
 

@@ -1,7 +1,7 @@
 #ifdef __ANDROID__
 #include "Java.h"
 #include "../build/Platform/Android/Application/SDL_android_main.h"
-#include "Error.h"
+#include "Logger.h"
 #include <stdarg.h>
 
 namespace sb
@@ -22,7 +22,7 @@ namespace sb
 
 		va_list args;
 		va_start(args, methodDescriptor);
-		jint result = jni->CallStaticIntMethodV(m_classes[classDescriptor], m_methods[method], args);
+			jint result = jni->CallStaticIntMethodV(m_classes[classDescriptor], m_methods[method], args);
 		va_end(args);	
 
 		return result;
@@ -37,8 +37,7 @@ namespace sb
 	{
 		static JNIEnv* jni = getJavaNativeInterface();
 		jclass theClass = jni->FindClass(classDescriptor.c_str());
-		if (theClass == NULL)
-			Error().die() << "Failed to load java android class with descriptor " << classDescriptor << std::endl;
+		sb::Logger().errorIf(theClass == NULL) << "Failed to load java android class with descriptor " << classDescriptor << std::endl;
 
 		m_classes[classDescriptor] = theClass;
 	}
@@ -47,8 +46,7 @@ namespace sb
 	{
 		static JNIEnv* jni = getJavaNativeInterface();
 		jmethodID methodId = jni->GetStaticMethodID(javaMethod.theClass, javaMethod.name.c_str(), javaMethod.descriptor.c_str());
-		if (methodId == NULL)
-			Error().die() << "Failed to load java android method with name " << javaMethod.name << std::endl;
+		sb::Logger().errorIf(methodId == NULL) << "Failed to load java android method with name " << javaMethod.name << std::endl;
 
 		m_methods[javaMethod] = methodId;
 	}

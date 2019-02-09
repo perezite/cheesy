@@ -1,10 +1,23 @@
 #pragma once
 #ifdef __ANDROID__ 
 
+#include "Logger.h"
 #include <string>
 #include <map>
 #include <tuple>
 #include <jni.h>
+
+#define JNI_WARN(f) {																			\
+	jint result = f;																			\
+	if (result == jint(-1))																		\
+		sb::Logger().warning(true) << "The following jni call failed " << #f << std::endl;		\
+	}
+
+#define JNI_CHECK(f) {																		\
+	jint result = f;																		\
+	if (result == jint(-1))																	\
+		sb::Logger().error() << "The following jni call failed " << #f << std::endl;		\
+	}
 
 namespace sb 
 {

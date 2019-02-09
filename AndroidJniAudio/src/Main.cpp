@@ -1,6 +1,5 @@
 #include "Window.h"
 #include "Input.h"
-#include "Error.h"
 #include "Sound.h"
 #include "Music.h"
 #include "Stopwatch.h"
@@ -140,6 +139,7 @@ void playback() {
 			playbackState = PlaybackState::TheEnd;
 	}
 	else if (playbackState == PlaybackState::TheEnd) {
+		SDL_Log("The end");
 		music1.stop();
 	}
 }
@@ -160,6 +160,7 @@ void fadeMusic(sb::Music& music, sb::Stopwatch& sw, float& volume, bool& volumeI
 }
 
 void fadeMusics()
+
 {
 	static sb::Stopwatch music1Sw;
 	static float volume1 = 0;
@@ -191,6 +192,15 @@ void update()
 	updatePlayback();
 }
 
+void update2()
+{
+	if (sb::Input::isTouchGoingDown()) {
+		SDL_Log("tap");
+		music1.play();
+		sound1.play();
+	}
+}
+
 void run() 
 {
 	sb::Window window;
@@ -204,7 +214,8 @@ void run()
 
 	while (window.isOpen()) {
 		window.update();
-		update();
+		// update();
+		update2();
 		window.draw();
 	}
 }
@@ -212,7 +223,7 @@ void run()
 int main(int argc, char* args[])
 {
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
-
+	
 	run();
 
 	return 0;
