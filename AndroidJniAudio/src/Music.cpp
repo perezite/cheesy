@@ -33,6 +33,21 @@ namespace sb
 		#endif
 	}
 
+	void Music::setLooping(bool looping)
+	{
+		#ifdef __ANDROID__
+			sb::Java::callStaticIntMethod("org/libsdl/app/Music", "setLooping", "(IZ)I", m_id, jboolean(looping));
+		#endif
+	}
+
+	void Music::setVolume(float volume)
+	{
+		// public static int setVolume(int, float);descriptor: (IF)I
+		#ifdef __ANDROID__
+			sb::Java::callStaticIntMethod("org/libsdl/app/Music", "setVolume", "(IF)I", m_id, jfloat(volume));
+		#endif
+	}
+
 	void Music::validateFileEnding(std::string assetPath)
 	{
 		std::size_t pos = assetPath.rfind(".");    

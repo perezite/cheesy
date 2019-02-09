@@ -9,6 +9,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Music.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Audio.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Stopwatch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Error.h" />
@@ -20,5 +21,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Music.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Audio.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Stopwatch.h" />
   </ItemGroup>
 </Project>

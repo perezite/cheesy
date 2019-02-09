@@ -15,6 +15,10 @@ namespace sb
 
 		void stop();
 
+		void setLooping(bool looping);
+
+		void setVolume(float volume);
+
 	protected:
 		void validateFileEnding(std::string assetPath);
 
