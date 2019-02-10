@@ -9,11 +9,14 @@ namespace sb
 	class Sound
 	{
 	public:
+		static void init();
+
 		~Sound();
 
 		void load(std::string assetPath);
 
 		void play();
+
 
 	protected:
 		void validateFileEnding(std::string assetPath);
@@ -24,5 +27,9 @@ namespace sb
 		#endif
 
 		std::string m_assetPath;
+
+		static bool m_isInit;
+
+		static bool m_isValid;
 	};
 }

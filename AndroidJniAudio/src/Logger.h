@@ -4,6 +4,30 @@
 #include <assert.h>
 #include <SDL2/SDL.h>
 
+#define NO_ERROR_AS_WARNING_IN_DEBUG_MODE
+
+namespace sb
+{
+	class NullBuffer : public std::streambuf
+	{
+	public:
+		int overflow(int c) { return c; }
+	};
+
+	static NullBuffer NullBuf;
+	static std::ostream NullStream(&NullBuf);
+}
+
+#define SB_ERROR() sb::Logger().error()
+
+#define SB_ERROR_IF(condition) (condition ? sb::Logger().error() : sb::NullStream)
+
+#define SB_WARNING() sb::Logger().warning()
+
+#define SB_WARNING_IF(condition) (condition ? sb::Logger().warning() : sb::NullStream)
+
+#define SB_WARNING_IF2(condition, errorInDebugMode) (condition ? sb::Logger().warning(errorInDebugMode) : sb::NullStream)
+
 namespace sb
 {
 	class Logger

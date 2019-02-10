@@ -6,25 +6,22 @@
 	#include <SDL2/SDL_mixer.h>
 #endif 
 
-
 namespace sb
 {
 	bool Audio::m_isInit = false;
+	bool Audio::m_isValid = true;
 
 	void Audio::init()
 	{
 		#ifdef __ANDROID__
-			if (m_isInit)
-				sb::Logger().error() << "Calling Audio::init() twice is not allowed" << std::endl;
+			SB_ERROR_IF(m_isInit) << "Audio::init() can only be called once" << std::endl;
 
 			// initialize android playback
-			jint isInit = 0;
-			JNI_WARN(isInit = sb::Java::callStaticIntMethod("org/libsdl/app/Audio", "isInit", "()I"));
+			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Audio", "isInit", "()I");
+			SB_WARNING_IF2(result == 0, true) << "android audio was not init. Make sure you called Audio.init(this) in the java android activity" << std::endl;
+			SB_WARNING_IF2(result == -1, true) << "unable to initialize android audio" << std::endl;
 
-			// initialize SDL_mixer
-			sb::Logger().warningIf(Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1, true)
-				<< "Failed to init SDL mixer. " << std::endl;
-
+			m_isValid = (result == 1);
 			m_isInit = true;
 		#endif
 	}

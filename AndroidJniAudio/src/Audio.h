@@ -7,10 +7,13 @@ namespace sb
 	public:
 		static void init();
 
-		static bool isInit() { return m_isInit; }
+		inline static bool isInit() { return m_isInit; }
 
+		inline static bool isValid() { return m_isValid; }
 	private: 
 		static bool m_isInit;
+
+		static bool m_isValid;
 
 	};
 }
