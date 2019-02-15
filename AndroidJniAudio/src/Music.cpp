@@ -8,7 +8,7 @@ namespace sb
 	Music::~Music()
 	{
 		#ifdef __ANDROID__
-			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "release", "(I)I");
+			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "release", "(I)I", m_id);
 			SB_WARNING_IF2(result == jint(-1), true) << "unable to release music track " << m_assetPath << std::endl;
 		#endif		
 	}

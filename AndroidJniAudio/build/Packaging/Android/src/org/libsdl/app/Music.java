@@ -5,7 +5,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.io.StringWriter;
+import java.io.PrintWriter;
 
 public class Music {
     static Activity ParentActivity;
