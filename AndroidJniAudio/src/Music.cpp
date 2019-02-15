@@ -1,15 +1,23 @@
 #include "Music.h"
-#include "Audio.h"
+#include "AndroidAudio.h"
 #include "Logger.h"
 #include <SDL2/SDL.h>
 
 namespace sb
 {
+	Music::~Music()
+	{
+		#ifdef __ANDROID__
+			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "release", "(I)I");
+			SB_WARNING_IF2(result == jint(-1), true) << "unable to release music track " << m_assetPath << std::endl;
+		#endif		
+	}
+
 	void Music::load(std::string assetPath)
 	{
 		#ifdef __ANDROID__
-			if (!Audio::isInit()) Audio::init();
-			if (!Audio::isValid()) return;
+			if (!AndroidAudio::isInit()) AndroidAudio::init();
+			if (!AndroidAudio::isValid()) return;
 
 			m_assetPath = assetPath;
 			validateFileEnding(assetPath);
@@ -30,7 +38,7 @@ namespace sb
 	void Music::play()
 	{
 		#ifdef __ANDROID__
-			if (!Audio::isValid()) return;
+			if (!AndroidAudio::isValid()) return;
 
 			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "play", "(I)I", m_id);
 			SB_WARNING_IF2(result == jint(-1), true) << "unable to play music track " << m_assetPath << std::endl;
@@ -40,7 +48,7 @@ namespace sb
 	void Music::stop()
 	{
 		#ifdef __ANDROID__
-			if (!Audio::isValid()) return;
+			if (!AndroidAudio::isValid()) return;
 
 			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "stop", "(I)I", m_id);
 			SB_WARNING_IF2(result == jint(-1), true) << "unable to stop music track " << m_assetPath << std::endl;
@@ -50,7 +58,7 @@ namespace sb
 	void Music::setLooping(bool looping)
 	{
 		#ifdef __ANDROID__
-			if (!Audio::isValid()) return;
+			if (!AndroidAudio::isValid()) return;
 
 			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "setLooping", "(IZ)I", m_id, jboolean(looping));
 			SB_WARNING_IF2(result == jint(-1), true) << "unable to set looping on music track " << m_assetPath << std::endl;
@@ -60,7 +68,7 @@ namespace sb
 	void Music::setVolume(float volume)
 	{
 		#ifdef __ANDROID__
-			if (!Audio::isValid()) return;
+			if (!AndroidAudio::isValid()) return;
 
 			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "setVolume", "(IF)I", m_id, jfloat(volume));
 			SB_WARNING_IF2(result == jint(-1), true) << "unable to set volume on music track " << m_assetPath << std::endl;

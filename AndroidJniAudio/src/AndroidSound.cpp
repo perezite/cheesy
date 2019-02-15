@@ -1,5 +1,5 @@
 #include "AndroidSound.h"
-#include "Audio.h"
+#include "AndroidAudio.h"
 #include "Logger.h"
 #include <SDL2/SDL.h>
 
@@ -8,8 +8,10 @@ namespace sb
 	void AndroidSound::load(std::string assetPath)
 	{
 		#ifdef __ANDROID__
-			if (!Audio::isInit())
-				Audio::init();
+			SB_WARNING() << "The AndroidSound class is deprecated, use the Sound class instead!" << std::endl;
+
+			if (!AndroidAudio::isInit())
+				AndroidAudio::init();
 
 			m_assetPath = assetPath;
 

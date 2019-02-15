@@ -18,6 +18,8 @@ namespace sb
 
 		void draw();
 
+		void close() { m_isOpen = false; }
+
 	private:
 		bool m_isOpen;
 

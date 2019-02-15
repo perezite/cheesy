@@ -27,6 +27,8 @@ enum class PlaybackState {
 	TheEnd
 };
 
+static int tapCounter = 0;
+
 PlaybackState playbackState = PlaybackState::TheBeginning;
 sb::Sound sound1;
 sb::Sound sound2;
@@ -199,6 +201,7 @@ void update2()
 		SDL_Log("tap");
 		music1.play();
 		sound1.play();
+		tapCounter++;
 	}
 }
 
@@ -214,6 +217,9 @@ void run()
 	music3.setLooping(true);
 
 	while (window.isOpen()) {
+		if (tapCounter == 2)
+			window.close();
+
 		window.update();
 		// update();
 		update2();
@@ -226,6 +232,8 @@ int main(int argc, char* args[])
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 	
 	run();
+
+	SDL_Log("Shutting down...");
 
 	return 0;
 }

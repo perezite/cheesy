@@ -2,7 +2,7 @@
 
 namespace sb 
 {
-	class Audio
+	class AndroidAudio
 	{
 	public:
 		static void init();

@@ -10,7 +10,7 @@ namespace sb
 	{
 	public:
 		static void init();
-
+		
 		~Sound();
 
 		void load(std::string assetPath);

@@ -8,8 +8,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Sound.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Music.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Audio.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Stopwatch.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidAudio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Window.h" />
@@ -19,8 +19,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Sound.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Music.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Audio.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Stopwatch.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Logger.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidAudio.h" />
   </ItemGroup>
 </Project>

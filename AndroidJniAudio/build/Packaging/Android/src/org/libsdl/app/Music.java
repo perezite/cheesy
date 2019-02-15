@@ -1,9 +1,11 @@
 package org.libsdl.app;
 
 import android.app.Activity;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Music {
     static Activity ParentActivity;
@@ -111,5 +113,6 @@ public class Music {
     public static void release() {
         for (MusicPlayer player : players)
             player.release();
+			// Log.e("SDL", "Music.release()");
     }
 }

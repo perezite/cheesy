@@ -5,6 +5,7 @@ import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,6 +96,9 @@ public class Sound {
     public static void release() {
         for (Integer i : SoundIds)
             release(i);
+
+		// Log.e("SDL", "Sound.release()");
+
     }
 
     // test if loading the sound has completed, by attempting to play the sound silently

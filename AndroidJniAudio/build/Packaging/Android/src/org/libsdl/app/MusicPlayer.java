@@ -3,6 +3,7 @@ package org.libsdl.app;
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
+import android.util.Log;
 import android.media.MediaPlayer;
 
 import java.io.IOException;
@@ -82,12 +83,15 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener, MediaPlaye
     }
 
     public void release() {
-        mediaPlayer.setLooping(false);
-        mediaPlayer.stop();
-        mediaPlayer.release();
-        synchronized (this) {
-            isPrepared = false;
+	    synchronized (this) {
+			if (isPrepared) {
+				mediaPlayer.setLooping(false);
+				mediaPlayer.stop();
+				mediaPlayer.release();
+				isPrepared = false;
+			}
         }
+		// Log.e("SDL", "MusicPlayer.release(): " + assetPath);
     }
 
     @Override

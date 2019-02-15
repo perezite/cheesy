@@ -24,6 +24,14 @@ JNIEnv* getJavaNativeInterface()
 /* Called before SDL_main() to startLevel JNI bindings in SDL library */
 extern void SDL_Android_Init(JNIEnv* env, jclass cls);
 
+// release java audio
+void releaseJavaAudio(JNIEnv* env)
+{	
+	jclass theClass = (*env)->FindClass(env,"org/libsdl/app/Audio"); 
+	jmethodID methodId = (*env)->GetStaticMethodID(env, theClass, "release", "()V");
+	(*env)->CallStaticVoidMethod(env, theClass, methodId);
+}
+
 /* Start up the SDL app */
 JNIEXPORT int JNICALL Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jclass cls, jobject array)
 {
@@ -78,10 +86,10 @@ JNIEXPORT int JNICALL Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jc
 	}
 
 	/* Do not issue an exit or the whole application will terminate instead of just the SDL thread */
-	/* exit(status); */
+	/* Well, actually, we do it anyways, but first, we clean up  the audio*/
+	releaseJavaAudio(env);
+	exit(status); 
 
-	// well, we do it anyways...
-	exit(status);
 	// return status;
 }
 

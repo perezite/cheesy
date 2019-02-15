@@ -1,4 +1,4 @@
-#include "Audio.h"
+#include "AndroidAudio.h"
 #include "Logger.h"
 #ifdef __ANDROID__
 	#include "Java.h"
@@ -8,13 +8,13 @@
 
 namespace sb
 {
-	bool Audio::m_isInit = false;
-	bool Audio::m_isValid = true;
+	bool AndroidAudio::m_isInit = false;
+	bool AndroidAudio::m_isValid = true;
 
-	void Audio::init()
+	void AndroidAudio::init()
 	{
 		#ifdef __ANDROID__
-			SB_ERROR_IF(m_isInit) << "Audio::init() can only be called once" << std::endl;
+			SB_ERROR_IF(m_isInit) << "AndroidAudio::init() can only be called once" << std::endl;
 
 			// initialize android playback
 			jint result = sb::Java::callStaticIntMethod("org/libsdl/app/Audio", "isInit", "()I");

@@ -9,6 +9,8 @@ namespace sb
 	class Music
 	{
 	public:
+		~Music();
+
 		void load(std::string assetPath);
 
 		void play();

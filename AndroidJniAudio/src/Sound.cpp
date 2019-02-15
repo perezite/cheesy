@@ -1,5 +1,5 @@
 #include "Sound.h"
-#include "Audio.h"
+#include "AndroidAudio.h"
 #include "Logger.h"
 #ifdef __ANDROID__
 	#include <SDL2/SDL_mixer.h>
@@ -8,11 +8,7 @@
 namespace sb
 {
 	bool Sound::m_isInit = false;
-	bool Sound::m_isValid = true;;
-
-	#ifdef __ANDROID__
-		Mix_Chunk* m_sound;
-	#endif
+	bool Sound::m_isValid = true;
 
 	void Sound::init() {
 		#ifdef __ANDROID__

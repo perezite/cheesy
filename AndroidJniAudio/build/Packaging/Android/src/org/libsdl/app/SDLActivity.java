@@ -217,6 +217,7 @@ public class SDLActivity extends Activity {
 
 		Audio.pause();
 		if (isFinishing()) {
+			Log.e("SDL", "hit");
             Audio.release();
         }
 
@@ -288,6 +289,8 @@ public class SDLActivity extends Activity {
         // Send a quit message to the application
         SDLActivity.mExitCalledFromJava = true;
         SDLActivity.nativeQuit();
+
+
 
         // Now wait for the SDL thread to quit
         if (SDLActivity.mSDLThread != null) {
