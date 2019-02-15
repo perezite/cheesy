@@ -195,6 +195,16 @@ void update()
 	updatePlayback();
 }
 
+void init()
+{
+	sound1.load("ding.ogg");
+	sound2.load("losing.wav");
+	music1.load("ukulele.ogg");
+	music2.load("idea.ogg");
+	music3.load("losing.ogg");
+	music3.setLooping(true);
+}
+
 void update2()
 {
 	if (sb::Input::isTouchGoingDown()) {
@@ -208,21 +218,16 @@ void update2()
 void run() 
 {
 	sb::Window window;
-	
-	sound1.load("ding.ogg");
-	sound2.load("losing.wav");
-	music1.load("ukulele.ogg");
-	music2.load("idea.ogg");
-	music3.load("losing.ogg");
-	music3.setLooping(true);
+	init();
 
 	while (window.isOpen()) {
-		if (tapCounter == 2)
-			window.close();
+		/*if (tapCounter == 2)
+			window.close();*/
+
 
 		window.update();
-		// update();
-		update2();
+		update();
+		// update2();
 		window.draw();
 	}
 }
