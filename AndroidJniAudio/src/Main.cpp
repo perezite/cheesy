@@ -198,10 +198,10 @@ void update()
 void init()
 {
 	sound1.load("ding.ogg");
-	sound2.load("losing.wav");
+	sound2.load("dong.wav");
 	music1.load("ukulele.ogg");
-	music2.load("idea.ogg");
-	music3.load("losing.ogg");
+	music2.load("magic.ogg");
+	music3.load("dong.ogg");
 	music3.setLooping(true);
 }
 
@@ -223,7 +223,6 @@ void run()
 	while (window.isOpen()) {
 		/*if (tapCounter == 2)
 			window.close();*/
-
 
 		window.update();
 		update();
