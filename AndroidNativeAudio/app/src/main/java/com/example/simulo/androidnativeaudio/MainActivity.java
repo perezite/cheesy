@@ -59,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
         Audio.init(this);
 
         sound1Id = Sound.loadAsync("ding.ogg");
-        sound2Id = Sound.loadAsync("losing.wav");
+        sound2Id = Sound.loadAsync("dong.wav");
 
         music1Id = Music.loadAsync("ukulele.ogg");
-        music2Id = Music.loadAsync("idea.wav");
-        music3Id = Music.loadAsync("losing.wav");
-        music4Id = Music.loadAsync("losing.wav");
+        music2Id = Music.loadAsync("magic.wav");
+        music3Id = Music.loadAsync("dong.wav");
+        music4Id = Music.loadAsync("dong.wav");
 
         updateThread = new Thread(updateRunner);
         updateThread.start();
